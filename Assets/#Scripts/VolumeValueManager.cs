@@ -10,6 +10,7 @@ public class VolumeValueManager : MonoBehaviour {
     public Slider SoundSlider;
     public GameObject soundbtn;
     public GameObject bgmbtn;
+    public GameObject vibratebtn;
    
 
 	// Use this for initialization
@@ -17,6 +18,7 @@ public class VolumeValueManager : MonoBehaviour {
         audiosrc = GetComponent<AudioSource>();
         BGMSlider.value = PlayerPrefs.GetFloat("BGMVolume", 1);
         SoundSlider.value = PlayerPrefs.GetFloat("GlobalVolume", 1);
+        
         if (BGMSlider.value == 0)
         {
             bgmbtn.GetComponent<Image>().sprite = Resources.Load("#Images/BGMSilent", typeof(Sprite)) as Sprite;
@@ -38,6 +40,15 @@ public class VolumeValueManager : MonoBehaviour {
         {
             soundbtn.GetComponent<Image>().sprite = Resources.Load("#Images/OptionButton", typeof(Sprite)) as Sprite;
 
+        }
+        if (PlayerPrefs.GetInt("Vibrate", 0) == 0)
+        {
+            vibratebtn.GetComponent<Image>().sprite = Resources.Load("#Images/VibrateOff", typeof(Sprite)) as Sprite;
+           
+        }
+        else
+        {
+           vibratebtn.GetComponent<Image>().sprite = Resources.Load("#Images/VibrateButton", typeof(Sprite)) as Sprite;
         }
     }
 	
@@ -118,5 +129,17 @@ public class VolumeValueManager : MonoBehaviour {
 
 
         PlayerPrefs.SetFloat("GlobalVolume", SoundSlider.value);
+    }
+    public void setVibrateButtonClick() {
+        if (PlayerPrefs.GetInt("Vibrate", 0) == 0)
+        {
+            PlayerPrefs.SetInt("Vibrate", 1);//Vibrate On
+            vibratebtn.GetComponent<Image>().sprite = Resources.Load("#Images/VibrateButton", typeof(Sprite)) as Sprite;
+        }
+        else {
+            PlayerPrefs.SetInt("Vibrate", 0);//Vibrate Off
+            vibratebtn.GetComponent<Image>().sprite = Resources.Load("#Images/VibrateOff", typeof(Sprite)) as Sprite;
+        }
+
     }
 }
