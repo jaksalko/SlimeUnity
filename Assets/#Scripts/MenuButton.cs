@@ -15,7 +15,9 @@ public class MenuButton : MonoBehaviour {
     string str;
     public static int CurStage;
     public GameObject optionUI;
-
+    public GameObject ExitUI;
+    public Button exityes;
+    public Button exitno;
     public GameObject storeUI;
 
     float clickedX;
@@ -45,9 +47,9 @@ public class MenuButton : MonoBehaviour {
     {
         if (Application.platform == RuntimePlatform.Android)
         {
-            if (Input.GetKey(KeyCode.Escape))
+            if (Input.GetKey(KeyCode.Escape) && ExitUI.active == false)
             {
-
+                ExitUI.SetActive(true);
             }
         }
         //승철아 다음에 여기 고쳐라/////////////////////////////////@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
@@ -93,6 +95,12 @@ public class MenuButton : MonoBehaviour {
             AutoFade.LoadLevel("Stage" + CurStage.ToString(), 1, 1, Color.black);
             RedMove.DieCheck = 0;
         }
+    }
+    public void ExitYesClick() {
+        Application.Quit();
+    }
+    public void ExitNoClick() {
+        ExitUI.SetActive(false);
     }
     public void deletepref()
     {
