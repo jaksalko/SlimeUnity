@@ -1360,7 +1360,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 226779749}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1751574077}
+        m_MethodName: setVibrateButtonClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &226779749
@@ -3175,7 +3186,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   payPopup: {fileID: 1009998718}
-  itemButton: []
+  SantaButton: {fileID: 0}
+  CrownButton: {fileID: 0}
+  redItem: {fileID: 0}
+  blueItem: {fileID: 0}
+  RedWearButton: []
+  BlueWearButton: []
 --- !u!1 &737594033
 GameObject:
   m_ObjectHideFlags: 0
@@ -3611,7 +3627,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   payPopup: {fileID: 1009998718}
-  itemButton: []
+  SantaButton: {fileID: 0}
+  CrownButton: {fileID: 0}
+  redItem: {fileID: 0}
+  blueItem: {fileID: 0}
+  RedWearButton: []
+  BlueWearButton: []
 --- !u!1 &852864912
 GameObject:
   m_ObjectHideFlags: 0
@@ -3985,7 +4006,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   payPopup: {fileID: 1009998718}
-  itemButton: []
+  SantaButton: {fileID: 0}
+  CrownButton: {fileID: 0}
+  redItem: {fileID: 0}
+  blueItem: {fileID: 0}
+  RedWearButton: []
+  BlueWearButton: []
 --- !u!1 &890012522
 GameObject:
   m_ObjectHideFlags: 0
@@ -4383,7 +4409,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   payPopup: {fileID: 1009998718}
-  itemButton: []
+  SantaButton: {fileID: 0}
+  CrownButton: {fileID: 0}
+  redItem: {fileID: 0}
+  blueItem: {fileID: 0}
+  RedWearButton: []
+  BlueWearButton: []
 --- !u!1 &1009998718
 GameObject:
   m_ObjectHideFlags: 0
@@ -7241,6 +7272,7 @@ MonoBehaviour:
   optionButton: {fileID: 1405868197}
   optionExitButton: {fileID: 1179531112}
   optionUI: {fileID: 2105717605}
+  storeUI: {fileID: 0}
 --- !u!4 &1629803290
 Transform:
   m_ObjectHideFlags: 0
@@ -7917,11 +7949,7 @@ MonoBehaviour:
   SoundSlider: {fileID: 1650052368}
   soundbtn: {fileID: 1030743456}
   bgmbtn: {fileID: 1845893088}
-  img:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  vibratebtn: {fileID: 226779746}
 --- !u!82 &1751574078
 AudioSource:
   m_ObjectHideFlags: 0
@@ -8759,7 +8787,7 @@ MonoBehaviour:
   SoundSlider: {fileID: 0}
   soundbtn: {fileID: 0}
   bgmbtn: {fileID: 0}
-  img: []
+  vibratebtn: {fileID: 0}
 --- !u!1 &1954260220
 GameObject:
   m_ObjectHideFlags: 0
