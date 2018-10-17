@@ -43,6 +43,13 @@ public class MenuButton : MonoBehaviour {
     }
     public void Update()
     {
+        if (Application.platform == RuntimePlatform.Android)
+        {
+            if (Input.GetKey(KeyCode.Escape))
+            {
+
+            }
+        }
         //승철아 다음에 여기 고쳐라/////////////////////////////////@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
         if (Input.GetMouseButtonDown(0))
         {
