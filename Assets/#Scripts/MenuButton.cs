@@ -15,17 +15,17 @@ public class MenuButton : MonoBehaviour {
     string str;
     public static int CurStage;
     public GameObject optionUI;
+<<<<<<< HEAD
     public GameObject ExitUI;
     public Button exityes;
     public Button exitno;
+=======
+>>>>>>> 4fff2abca66371f49672c1fb9319df7db7e82fbc
     public GameObject storeUI;
-
-    float clickedX;
-    
 
     private void Awake()
     {
-        
+
         ClearStage = PlayerPrefs.GetInt("ClearStage", 0);       //클리어한 가장 마지막 스테이지 저장
 
         StageButton[0] = GetComponent<Button>();
@@ -52,21 +52,6 @@ public class MenuButton : MonoBehaviour {
                 ExitUI.SetActive(true);
             }
         }
-        //승철아 다음에 여기 고쳐라/////////////////////////////////@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-        if (Input.GetMouseButtonDown(0))
-        {
-            clickedX = Input.mousePosition.x;
-        }
-        if(Input.GetMouseButtonUp(0)) {
-            if (Input.mousePosition.x > clickedX)
-            {
-                Debug.Log("Go Left");
-            }
-            else {
-                Debug.Log("Go Right");
-            }
-        }
-        //여기까지@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
     }
     public void storeButtonClick() {
         storeUI.SetActive(true);
