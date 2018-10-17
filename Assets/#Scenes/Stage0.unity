@@ -2254,7 +2254,7 @@ GameObject:
   - component: {fileID: 316267047}
   - component: {fileID: 316267048}
   m_Layer: 0
-  m_Name: hat
+  m_Name: bluehat
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7960,7 +7960,7 @@ GameObject:
   - component: {fileID: 1062846720}
   - component: {fileID: 1062846721}
   m_Layer: 0
-  m_Name: hat
+  m_Name: redhat
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
