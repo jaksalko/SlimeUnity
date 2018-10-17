@@ -15,12 +15,10 @@ public class MenuButton : MonoBehaviour {
     string str;
     public static int CurStage;
     public GameObject optionUI;
-<<<<<<< HEAD
     public GameObject ExitUI;
     public Button exityes;
     public Button exitno;
-=======
->>>>>>> 4fff2abca66371f49672c1fb9319df7db7e82fbc
+
     public GameObject storeUI;
 
     private void Awake()
