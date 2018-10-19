@@ -167,7 +167,6 @@ public class ButtonManager : MonoBehaviour {
     public void NextStageButton()
     {
 
-        MenuButton.CurStage++;
         Debug.Log(MenuButton.CurStage);
         PlayerPrefs.SetInt("CurStage", MenuButton.CurStage);
         PlayerPrefs.Save();
