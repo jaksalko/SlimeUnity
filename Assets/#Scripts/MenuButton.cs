@@ -72,14 +72,14 @@ public class MenuButton : MonoBehaviour {
         optionUI.SetActive(true);
     }
     public void gameStartButton() {
-<<<<<<< HEAD
+
         Debug.Log(ClearStage);
            str = EventSystem.current.currentSelectedGameObject.name;
            str = str.Replace("Stage", "");
            CurStage = Convert.ToInt32(str);
            PlayerPrefs.SetInt("CurStage", CurStage);
            AutoFade.LoadLevel("Stage" + CurStage.ToString(), 1, 1, Color.black);
-=======
+
         Debug.Log("ClearStage = " + ClearStage);
         if (PlayerPrefs.GetInt("ClearStage", 0) == 0)
             AutoFade.LoadLevel("Stage0", 1, 1, Color.black);
@@ -90,8 +90,9 @@ public class MenuButton : MonoBehaviour {
             CurStage = Convert.ToInt32(str);
             PlayerPrefs.SetInt("CurStage", CurStage);
             AutoFade.LoadLevel("Stage" + CurStage.ToString(), 1, 1, Color.black);
->>>>>>> 26f222a07fced759658381ecec97a4aa99f04ab2
+
             RedMove.DieCheck = 0;
+        }
     }
     public void ExitYesClick() {
         Application.Quit();
