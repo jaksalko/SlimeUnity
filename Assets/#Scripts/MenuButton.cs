@@ -71,6 +71,7 @@ public class MenuButton : MonoBehaviour {
     public void optionButtonClick() {
         optionUI.SetActive(true);
     }
+<<<<<<< HEAD
     public void gameStartButton()
     {
         // HEAD
@@ -84,6 +85,30 @@ public class MenuButton : MonoBehaviour {
         RedMove.DieCheck = 0;
         Debug.Log("ClearStage = " + ClearStage);
 
+=======
+    public void gameStartButton() {
+
+        Debug.Log(ClearStage);
+           str = EventSystem.current.currentSelectedGameObject.name;
+           str = str.Replace("Stage", "");
+           CurStage = Convert.ToInt32(str);
+           PlayerPrefs.SetInt("CurStage", CurStage);
+           AutoFade.LoadLevel("Stage" + CurStage.ToString(), 1, 1, Color.black);
+
+        Debug.Log("ClearStage = " + ClearStage);
+        if (PlayerPrefs.GetInt("ClearStage", 0) == 0)
+            AutoFade.LoadLevel("Stage0", 1, 1, Color.black);
+        else
+        {
+            str = EventSystem.current.currentSelectedGameObject.name;
+            str = str.Replace("Stage", "");
+            CurStage = Convert.ToInt32(str);
+            PlayerPrefs.SetInt("CurStage", CurStage);
+            AutoFade.LoadLevel("Stage" + CurStage.ToString(), 1, 1, Color.black);
+
+            RedMove.DieCheck = 0;
+        }
+>>>>>>> e792a331e90343fc07170766366faaed8757bb1d
     }
     public void ExitYesClick() {
         Application.Quit();
