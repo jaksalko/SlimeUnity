@@ -204,7 +204,7 @@ public class BlueThornMove : MonoBehaviour
             for (int i = 0; i < ReversePotal.Count; i++)
                 ReversePotal[i].transform.Translate(0, -3f * Time.deltaTime, 0, Space.World);
             for (int i = 0; i < coinn.Length; i++)
-                coinn[i].transform.Translate(0, 3f * Time.deltaTime, 0, Space.World);
+                coinn[i].transform.Translate(0, -3f * Time.deltaTime, 0, Space.World);
         }
 
     }
@@ -218,7 +218,7 @@ public class BlueThornMove : MonoBehaviour
                 BlueMove.BlueEndPortalLook = true;
                 //Debug.Log("potal");
             }
-            else if (EndPotal[0].localPosition.y <= 1.5f && EndPotal[0].localPosition.y >= 1f)
+            else if (EndPotal[0].localPosition.y <= 2f && EndPotal[0].localPosition.y >= 1.5f)
             {
                 BlueMove.BlueEndPortalLook = true;
             }
