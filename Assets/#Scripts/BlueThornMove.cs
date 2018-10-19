@@ -204,7 +204,7 @@ public class BlueThornMove : MonoBehaviour
             for (int i = 0; i < ReversePotal.Count; i++)
                 ReversePotal[i].transform.Translate(0, -3f * Time.deltaTime, 0, Space.World);
             for (int i = 0; i < coinn.Length; i++)
-                coinn[i].transform.Translate(0, 3f * Time.deltaTime, 0, Space.World);
+                coinn[i].transform.Translate(0, -3f * Time.deltaTime, 0, Space.World);
         }
 
     }
