@@ -74,7 +74,10 @@ public class BlueMove : MonoBehaviour
         }
 
         if (BlueAlive == false || RedMove.AllAlive == false)
+        {
+            Debug.Log("블루 멈춤");
             return;
+        }
         if (BlueMove.BlueEndPortalLook == true)//포탈이 화면에 보이면 슬라임이 떨어짐
         {
             if (BlueThornMove.BlueReverse == false)
@@ -187,7 +190,7 @@ public class BlueMove : MonoBehaviour
 
             BlueMove.BlueReversePortalLook = false; // Reverse포탈에 닿으면 다시 false로 바꿔줌
 
-            BlueHidePortal.SetActive(false);//Blue 장애물 중 Portal을 보이지 않게함
+            other.gameObject.SetActive(false);
             Bluerev(0);
             this.transform.Rotate(new Vector3(180, 0, 180));
             ReverseCount++;
@@ -200,10 +203,10 @@ public class BlueMove : MonoBehaviour
             
 
 
-            RedMove.AllAlive = false;
+            
             if (RedMove.RedAlive == true)
                 return;
-
+            RedMove.AllAlive = false;
             Debug.Log("Blue Clear Game");
 
 

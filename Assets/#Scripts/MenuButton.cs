@@ -23,20 +23,26 @@ public class MenuButton : MonoBehaviour {
 
     private void Awake()
     {
+        
 
-        ClearStage = PlayerPrefs.GetInt("ClearStage", 0);       //클리어한 가장 마지막 스테이지 저장
+
 
         StageButton[0] = GetComponent<Button>();
         for (int i = 1; i < StageButton.Length; i++)
             StageButton[i] = GameObject.Find("Stage" + i).GetComponent<Button>();
 
 
-        for (int i = 1; i < StageButton.Length; i++) {
-            if (ClearStage + 1 >= i)
+        StageButton[1].interactable = true;
+        for (int i = 2; i < StageButton.Length; i++)
+        {
+
+            if (PlayerPrefs.GetInt("ClearStage", 0) >= i)
             {
+                Debug.Log("여기여기" + PlayerPrefs.GetInt("ClearStage", 0));
                 StageButton[i].interactable = true;
             }
-            else {
+            else
+            {
                 StageButton[i].interactable = false;
             }
         }
@@ -66,8 +72,16 @@ public class MenuButton : MonoBehaviour {
         optionUI.SetActive(true);
     }
     public void gameStartButton() {
+<<<<<<< HEAD
         Debug.Log(ClearStage);
-        if (ClearStage == 0)
+           str = EventSystem.current.currentSelectedGameObject.name;
+           str = str.Replace("Stage", "");
+           CurStage = Convert.ToInt32(str);
+           PlayerPrefs.SetInt("CurStage", CurStage);
+           AutoFade.LoadLevel("Stage" + CurStage.ToString(), 1, 1, Color.black);
+=======
+        Debug.Log("ClearStage = " + ClearStage);
+        if (PlayerPrefs.GetInt("ClearStage", 0) == 0)
             AutoFade.LoadLevel("Stage0", 1, 1, Color.black);
         else
         {
@@ -76,8 +90,8 @@ public class MenuButton : MonoBehaviour {
             CurStage = Convert.ToInt32(str);
             PlayerPrefs.SetInt("CurStage", CurStage);
             AutoFade.LoadLevel("Stage" + CurStage.ToString(), 1, 1, Color.black);
+>>>>>>> 26f222a07fced759658381ecec97a4aa99f04ab2
             RedMove.DieCheck = 0;
-        }
     }
     public void ExitYesClick() {
         Application.Quit();

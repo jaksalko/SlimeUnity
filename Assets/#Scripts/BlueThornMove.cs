@@ -46,9 +46,12 @@ public class BlueThornMove : MonoBehaviour
             return;
         if (BlueMove.BlueDieOrClear == false)
             return;
+        if (RedMove.AllAlive == false && RedMove.RedDieOrClear == true && BlueMove.BlueDieOrClear == true)
+        {
+            return;
+        }
         if (BlueMove.BlueAlive == false || RedMove.AllAlive == false)
         {
-            Move();
             return;
         }
         ReverseMove();
