@@ -73,12 +73,7 @@ public class MenuButton : MonoBehaviour {
     }
     public void gameStartButton() {
 
-        Debug.Log(ClearStage);
-           str = EventSystem.current.currentSelectedGameObject.name;
-           str = str.Replace("Stage", "");
-           CurStage = Convert.ToInt32(str);
-           PlayerPrefs.SetInt("CurStage", CurStage);
-           AutoFade.LoadLevel("Stage" + CurStage.ToString(), 1, 1, Color.black);
+        
 
         Debug.Log("ClearStage = " + ClearStage);
         if (PlayerPrefs.GetInt("ClearStage", 0) == 0)
