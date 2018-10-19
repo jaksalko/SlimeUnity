@@ -233,6 +233,22 @@ public class BlueMove : MonoBehaviour
 
 
         }
+        if (other.gameObject.tag == "EndPortal")
+        {
+            Debug.Log("블루슬라임 앤드포탈 만남");
+            BlueAlive = false;
+            BlueMove.BlueDieOrClear = true;
+
+
+
+
+            if (RedMove.RedAlive == true)
+                return;
+            RedMove.AllAlive = false;
+            Debug.Log("Blue Clear Game");
+
+
+        }
     }
     void OnDestroy()
     {
