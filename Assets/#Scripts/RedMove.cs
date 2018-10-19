@@ -141,11 +141,12 @@ public class RedMove : MonoBehaviour
 
         if (RedAlive == false || RedMove.AllAlive == false)//둘중에 하나가 false 상태면 움직x
         {
+            Debug.Log("레드 멈춤");
             return;
         }
         if (RedMove.RedEndPortalLook == true)//포탈이 화면에 보이면 슬라임이 떨어짐
 
-        {
+        
 
             {
 
@@ -177,7 +178,7 @@ public class RedMove : MonoBehaviour
 
 
 
-        }
+        
     }
 
     void reds()
@@ -273,7 +274,7 @@ public class RedMove : MonoBehaviour
                                                   //RedThornMove 스크립트의 ReverseMove()에서
                                                   //정상 작동을 하지 않음.
 
-            RedHidePortal.SetActive(false);
+            other.gameObject.SetActive(false);
             Redrev(0); // RedThornMove에 있는 redreev() 메소드를 호출
             this.transform.Rotate(new Vector3(180, 0, 180));
             ReverseCount++;
@@ -284,7 +285,6 @@ public class RedMove : MonoBehaviour
             popuptextmanager.totalcoinPlus();
             RedAlive = false;
             RedDieOrClear = true;
-            redManAnimator.Play("RedSlimeDie");
             Debug.Log("Red Clear Game");
 
 
@@ -305,6 +305,7 @@ public class RedMove : MonoBehaviour
             PlayerPrefs.Save();
             if (BlueMove.BlueAlive == true)
                 return;
+            RedMove.AllAlive = false;
 
 
 
