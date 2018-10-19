@@ -85,8 +85,27 @@ public class MenuButton : MonoBehaviour {
                 PlayerPrefs.SetInt("CurStage", CurStage);
                 AutoFade.LoadLevel("Stage" + CurStage.ToString(), 1, 1, Color.black);
 
+<<<<<<< HEAD
                 RedMove.DieCheck = 0;
            }
+=======
+        
+
+        Debug.Log("ClearStage = " + ClearStage);
+        if (PlayerPrefs.GetInt("ClearStage", 0) == 0)
+            AutoFade.LoadLevel("Stage0", 1, 1, Color.black);
+        else
+        {
+            str = EventSystem.current.currentSelectedGameObject.name;
+            str = str.Replace("Stage", "");
+            CurStage = Convert.ToInt32(str);
+            PlayerPrefs.SetInt("CurStage", CurStage);
+            AutoFade.LoadLevel("Stage" + CurStage.ToString(), 1, 1, Color.black);
+
+            RedMove.DieCheck = 0;
+        }
+>>>>>>> e792a331e90343fc07170766366faaed8757bb1d
+>>>>>>> d7fd0a4488dd8634be8b201f9f0e46714c91ea0a
     }
 
     public void ExitYesClick() {
