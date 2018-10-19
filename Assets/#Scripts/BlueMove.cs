@@ -142,7 +142,7 @@ public class BlueMove : MonoBehaviour
         }
         if (other.gameObject.tag == "BluePortal" && this.tag.ToString() == "BlueMan")
         {
-            
+            other.gameObject.SetActive(false);
             posRed = redMan.transform.position;
             posBlue = blueMan.transform.position;
             tempx = posRed.x;
@@ -180,7 +180,29 @@ public class BlueMove : MonoBehaviour
 
 
         }
-        if (other.gameObject.tag == "BlueReversePortal" && this.tag.ToString() == "BlueMan")
+        if (other.gameObject.tag == "RedReversePortal" && this.tag.ToString() == "BlueMan")
+        {
+            popuptextmanager.totalcoinPlus();
+            blueManAnimator.Play("BlueSlimeDie");
+            BlueMove.BlueDieOrClear = false;
+            BlueAlive = false;
+            if (RedMove.RedAlive == true)
+            {
+                return;
+            }
+        }
+        if (other.gameObject.tag == "RedEndPortal")
+        {
+            popuptextmanager.totalcoinPlus();
+            blueManAnimator.Play("BlueSlimeDie");
+            BlueMove.BlueDieOrClear = false;
+            BlueAlive = false;
+            if (RedMove.RedAlive == true)
+            {
+                return;
+            }
+        }
+            if (other.gameObject.tag == "BlueReversePortal" && this.tag.ToString() == "BlueMan")
         {
             Debug.Log("reverse Bluereversecount = " + ReverseCount);
             if (ReverseCount % 2 == 0)//리버스 포탈이 아래쪽에 있을 때
@@ -195,7 +217,7 @@ public class BlueMove : MonoBehaviour
             this.transform.Rotate(new Vector3(180, 0, 180));
             ReverseCount++;
         }//ReversePortal을 만나고 그것이 BlueMan일 경우
-        if (other.gameObject.tag == "EndPortal")
+        if (other.gameObject.tag == "BlueEndPortal")
         {
             Debug.Log("블루슬라임 앤드포탈 만남");
             BlueAlive = false;

@@ -218,7 +218,7 @@ public class BlueThornMove : MonoBehaviour
                 BlueMove.BlueEndPortalLook = true;
                 //Debug.Log("potal");
             }
-            else if (EndPotal[0].localPosition.y <= 1.5f && EndPotal[0].localPosition.y >= 1f)
+            else if (EndPotal[0].localPosition.y <= 2f && EndPotal[0].localPosition.y >= 1.5f)
             {
                 BlueMove.BlueEndPortalLook = true;
             }

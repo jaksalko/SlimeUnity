@@ -73,6 +73,13 @@ public class MenuButton : MonoBehaviour {
     }
 
 
+<<<<<<< HEAD
+=======
+    
+
+   
+
+>>>>>>> 7bc6e08488dbcdae3f3a8a6762ff6125f290be18
     public void gameStartButton() {
         
             Debug.Log("ClearStage = " + ClearStage);

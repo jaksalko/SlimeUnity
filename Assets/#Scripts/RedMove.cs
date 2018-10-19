@@ -222,7 +222,7 @@ public class RedMove : MonoBehaviour
         }
         if (other.gameObject.tag == "RedPortal" && this.tag.ToString() == "RedMan")
         {
-
+            other.gameObject.SetActive(false);
             posRed = redMan.transform.position;
             posBlue = blueMan.transform.position;
             tempx = posRed.x;
@@ -279,7 +279,33 @@ public class RedMove : MonoBehaviour
             this.transform.Rotate(new Vector3(180, 0, 180));
             ReverseCount++;
         }
-        if (other.gameObject.tag == "EndPortal")
+        if (other.gameObject.tag == "BlueReversePortal" && this.tag.ToString() == "BlueMan")
+        {
+            popuptextmanager.totalcoinPlus();
+            Debug.Log("가시에 찔림");
+            RedDieOrClear = false;
+            redManAnimator.Play("RedSlimeDie");
+            RedAlive = false;
+
+            if (BlueMove.BlueAlive == true)
+            {
+                return;
+            }
+        }
+        if (other.gameObject.tag == "BlueEndPortal")
+        {
+            popuptextmanager.totalcoinPlus();
+            Debug.Log("가시에 찔림");
+            RedDieOrClear = false;
+            redManAnimator.Play("RedSlimeDie");
+            RedAlive = false;
+
+            if (BlueMove.BlueAlive == true)
+            {
+                return;
+            }
+        }
+        if (other.gameObject.tag == "RedEndPortal")
         {
             Debug.Log("레드슬라임 앤드포탈 만남");
             popuptextmanager.totalcoinPlus();

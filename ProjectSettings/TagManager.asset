@@ -13,6 +13,8 @@ TagManager:
   - EndPortal
   - BlueReversePortal
   - Enemy
+  - BlueEndPortal
+  - RedEndPortal
   layers:
   - Default
   - TransparentFX
