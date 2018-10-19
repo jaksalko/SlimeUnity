@@ -17,6 +17,10 @@ public class BlueBackGroundMove : MonoBehaviour
         {
             return;
         }
+        if (BlueMove.BlueAlive == false || RedMove.AllAlive == false)
+        {
+            return;
+        }
 
         BlueBackMove();
 

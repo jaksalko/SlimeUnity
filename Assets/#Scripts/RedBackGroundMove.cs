@@ -17,6 +17,10 @@ public class RedBackGroundMove : MonoBehaviour
         {
             return;
         }
+        if (RedMove.RedAlive == false || RedMove.AllAlive == false)
+        {
+            return;
+        }
 
         RedBackMove();
 
