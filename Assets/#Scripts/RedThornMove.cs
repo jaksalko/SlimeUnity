@@ -75,8 +75,8 @@ public class RedThornMove : MonoBehaviour
 
     void redreev(int i)
     {
-        Destroy(ReversePotal[i]);
-        ReversePotal.RemoveAt(i);
+        Destroy(ReversePotal[0]);
+        ReversePotal.RemoveAt(0);
     }
 
     void ReverseMove()//Reverse모드인지 아닌지 구별하기 위한 함수

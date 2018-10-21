@@ -278,6 +278,7 @@ public class RedMove : MonoBehaviour
             Redrev(0); // RedThornMove에 있는 redreev() 메소드를 호출
             this.transform.Rotate(new Vector3(180, 0, 180));
             ReverseCount++;
+         
         }
         if (other.gameObject.tag == "BlueReversePortal" && this.tag.ToString() == "BlueMan")
         {
