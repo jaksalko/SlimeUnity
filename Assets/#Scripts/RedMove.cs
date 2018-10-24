@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class RedMove : MonoBehaviour
 {
-    public delegate void reverR(int i);
+    public delegate void reverR();
     public static event reverR Redrev;
 
     private PopupCoinTextManager popuptextmanager;
@@ -13,6 +13,7 @@ public class RedMove : MonoBehaviour
     public static bool RedReversePortalLook;
     public bool check;
     //public int a = 0;
+    private RedThornMove rev;
     public float tempx = 0;
     public float tempy = 0;
     public Vector3 posRed;
@@ -152,7 +153,7 @@ public class RedMove : MonoBehaviour
 
                 Handheld.Vibrate(); // 진동 메소드
 
-                Handheld.Vibrate();
+                
 
                 if (RedThornMove.RedReverse == false)
                     this.transform.Translate(0, -3f * Time.deltaTime, 0, Space.World);
@@ -273,12 +274,12 @@ public class RedMove : MonoBehaviour
                                                   //바꿔주지 않으면 계속 보이는 상태로인해
                                                   //RedThornMove 스크립트의 ReverseMove()에서
                                                   //정상 작동을 하지 않음.
-
-            other.gameObject.SetActive(false);
-            Redrev(0); // RedThornMove에 있는 redreev() 메소드를 호출
+            Destroy(RedThornMove.ReversePotal2[0]);
+            RedThornMove.ReversePotal2.RemoveAt(0);
             this.transform.Rotate(new Vector3(180, 0, 180));
             ReverseCount++;
-         
+
+
         }
         if (other.gameObject.tag == "BlueReversePortal" && this.tag.ToString() == "BlueMan")
         {

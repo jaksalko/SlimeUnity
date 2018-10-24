@@ -12,7 +12,9 @@ public class RedThornMove : MonoBehaviour
     public GameObject[] Wall;
     public Transform[] Potal;
     public Transform[] EndPotal;
-    public List<GameObject> ReversePotal;//Transform -> GameObject로 바꿔줌
+    public GameObject[] ReversePotalArr;
+    public List<GameObject> ReversePotal;
+    public static List<GameObject> ReversePotal2;
     public GameObject[] coinn;
     public static bool RedReverse;
     //Reverse방향으로 가는지 즉, ReversePortal을 탔는지
@@ -20,9 +22,11 @@ public class RedThornMove : MonoBehaviour
     public GameObject blueSideObject;
     public GameObject redSideObject;
     float moveX, moveY;
+    int temp;
     bool a;
     void Awake()
     {
+        temp = 0;
         RedMove.RedEndPortalLook = false;//End포탈이 보이지 않는 상태 초기화
         BlueMove.BlueEndPortalLook = false;
 
@@ -34,7 +38,6 @@ public class RedThornMove : MonoBehaviour
         //{
         //    reverseportalnum++;
         //}
-        RedMove.Redrev += redreev;
         for (int i = 0; i < Wall.Length; i++)
             Wall[i] = GameObject.Find("RWall").transform.Find("red_wall (" + i + ")").gameObject;
 
@@ -43,8 +46,17 @@ public class RedThornMove : MonoBehaviour
 
         for (int i=0; i<coinn.Length;i++)
             coinn[i] = GameObject.Find("RCoins").transform.Find("rcoin ("+i+")").gameObject;
-        
-        
+
+        for (int i = 0; i < ReversePotalArr.Length; i++)
+        {
+            ReversePotalArr[i] = GameObject.Find("RedReversePortal").transform.Find("RedReverse (" + i + ")").gameObject;
+
+        }
+        for (int i = 0; i < ReversePotalArr.Length; i++)
+        {
+            ReversePotal.Insert(i, ReversePotalArr[i]);
+        }
+        ReversePotal2 = ReversePotal;
 
 
         // for(int i=0;i< ReversePotal.Count;i++)
@@ -73,12 +85,7 @@ public class RedThornMove : MonoBehaviour
         //ThornMoveY(1, 0);
     }
 
-    void redreev(int i)
-    {
-        Destroy(ReversePotal[0]);
-        ReversePotal.RemoveAt(0);
-    }
-
+   
     void ReverseMove()//Reverse모드인지 아닌지 구별하기 위한 함수
     {
         
@@ -255,9 +262,6 @@ public class RedThornMove : MonoBehaviour
         }
     }
 
-    void onDestroy()
-    {
-        RedMove.Redrev -= redreev;
-    }
+
 
 }

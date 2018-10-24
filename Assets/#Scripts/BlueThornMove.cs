@@ -9,16 +9,18 @@ public class BlueThornMove : MonoBehaviour
     public GameObject[] Wall;
     public Transform[] Potal;
     public Transform[] EndPotal;
+    public GameObject[] ReversePotalArr;
     public List<GameObject> ReversePotal;
+    public static List<GameObject> ReversePotal2;
     public GameObject[] coinn;
     public static bool BlueReverse;
     public GameObject blueSideObject;
     public GameObject redSideObject;
-    bool a;
+    public bool a;
     float moveX, moveY;
     void Awake()
     {
-        a = true;
+        
         RedMove.RedEndPortalLook = false;
         BlueMove.BlueEndPortalLook = false;
 
@@ -26,8 +28,6 @@ public class BlueThornMove : MonoBehaviour
         BlueMove.BlueReversePortalLook = false;
 
         BlueReverse = false;
-
-        BlueMove.Bluerev += bluereev;
 
         for (int i = 0; i < Wall.Length; i++)
             Wall[i] = GameObject.Find("BWall").transform.Find("blue_wall (" + i + ")").gameObject;
@@ -37,6 +37,30 @@ public class BlueThornMove : MonoBehaviour
 
         for (int i = 0; i < coinn.Length; i++)
             coinn[i] = GameObject.Find("BCoins").transform.Find("bcoin (" + i + ")").gameObject;
+
+        for (int i = 0; i < ReversePotalArr.Length; i++)
+        {
+            ReversePotalArr[i] = GameObject.Find("BlueReversePortal").transform.Find("BlueReverse (" + i + ")").gameObject;
+            
+        }
+        for (int i = 0; i < ReversePotalArr.Length; i++)
+        {
+            ReversePotal.Insert(i, ReversePotalArr[i]);
+        }
+        ReversePotal2 = ReversePotal;
+        a = true;
+    }
+    void go()
+    {
+        for (int i = 0; i < ReversePotalArr.Length; i++)
+        {
+            ReversePotalArr[i] = GameObject.Find("BlueReversePortal").transform.Find("BlueReverse (" + i + ")").gameObject;
+            
+        }
+        for (int i = 0; i < ReversePotalArr.Length; i++)
+        {
+            ReversePotal.Insert(i, ReversePotalArr[i]);
+        }
     }
 
     // Update is called once per frame
@@ -59,11 +83,6 @@ public class BlueThornMove : MonoBehaviour
         BluePotalisLooked();
     }
 
-    void bluereev(int i)
-    {
-        Destroy(ReversePotal[i]);
-        ReversePotal.RemoveAt(i);
-    }
 
     void ReverseMove()
     {
@@ -179,7 +198,11 @@ public class BlueThornMove : MonoBehaviour
                 EndPotal[i].Translate(0, 3f * Time.deltaTime, 0, Space.World);
 
             for (int i = 0; i < ReversePotal.Count; i++)
+            {
                 ReversePotal[i].transform.Translate(0, 3f * Time.deltaTime, 0, Space.World);
+                Debug.Log("카운트 = " + ReversePotal.Count);
+            }  
+            
 
             for (int i = 0; i < coinn.Length; i++)
                 coinn[i].transform.Translate(0, 3f * Time.deltaTime, 0, Space.World);
@@ -202,7 +225,10 @@ public class BlueThornMove : MonoBehaviour
                 EndPotal[i].Translate(0, -3f * Time.deltaTime, 0, Space.World);
 
             for (int i = 0; i < ReversePotal.Count; i++)
+            {
                 ReversePotal[i].transform.Translate(0, -3f * Time.deltaTime, 0, Space.World);
+                Debug.Log("카운트 = " + ReversePotal.Count);
+            }
             for (int i = 0; i < coinn.Length; i++)
                 coinn[i].transform.Translate(0, -3f * Time.deltaTime, 0, Space.World);
         }
@@ -238,8 +264,5 @@ public class BlueThornMove : MonoBehaviour
 
         }
     }
-    void onDestroy()
-    {
-        BlueMove.Bluerev -= bluereev;
-    }
+
 }

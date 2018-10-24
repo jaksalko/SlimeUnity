@@ -1560,9 +1560,10 @@ MonoBehaviour:
   Potal: []
   EndPotal:
   - {fileID: 292913403}
-  ReversePotal:
-  - {fileID: 1484760953}
-  - {fileID: 2002066426}
+  ReversePotalArr:
+  - {fileID: 0}
+  - {fileID: 0}
+  ReversePotal: []
   coinn: []
   blueSideObject: {fileID: 561664067}
   redSideObject: {fileID: 1527842578}
@@ -3147,7 +3148,7 @@ GameObject:
   - component: {fileID: 1484760956}
   - component: {fileID: 1484760955}
   m_Layer: 0
-  m_Name: BlueReverse
+  m_Name: BlueReverse (0)
   m_TagString: BlueReversePortal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3299,12 +3300,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Thorn: []
   Wall: []
+  ReversePotalArr:
+  - {fileID: 0}
+  - {fileID: 0}
   Potal: []
   EndPotal:
   - {fileID: 463927577}
-  ReversePotal:
-  - {fileID: 1572765705}
-  - {fileID: 1018880536}
+  ReversePotal: []
   coinn: []
   blueSideObject: {fileID: 561664067}
   redSideObject: {fileID: 1527842578}
@@ -3349,7 +3351,7 @@ GameObject:
   - component: {fileID: 1572765708}
   - component: {fileID: 1572765707}
   m_Layer: 0
-  m_Name: RedReverse
+  m_Name: RedReverse (0)
   m_TagString: RedReversePortal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3362,7 +3364,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1572765705}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.99, y: -9.18, z: 0}
+  m_LocalPosition: {x: -0.99, y: -5.57, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 949288402}

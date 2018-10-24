@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class BlueMove : MonoBehaviour
 {
-    public delegate void reverB(int i);
-    public static event reverB Bluerev;
     public GameObject popup;
     private PopupCoinTextManager popuptextmanager;
     private TextManager textmanager;
@@ -21,6 +19,7 @@ public class BlueMove : MonoBehaviour
     public int ReverseCount;
     public static bool BlueAlive;
     Animator blueManAnimator;
+   // private BlueThornMove blue;
     public AudioSource BlueSound;
     public int ClearStage;
     private MenuButton menuButton;
@@ -31,6 +30,8 @@ public class BlueMove : MonoBehaviour
     // Use this for initialization
     void Awake()
     {
+
+        Debug.Log("블루무브 awake");
         BlueStart = true;
         BlueDieOrClear = true;
         BlueAlive = true;
@@ -212,10 +213,35 @@ public class BlueMove : MonoBehaviour
 
             BlueMove.BlueReversePortalLook = false; // Reverse포탈에 닿으면 다시 false로 바꿔줌
 
-            other.gameObject.SetActive(false);
-            Bluerev(0);
+
+
+            Debug.Log(this.ToString());
+            Debug.Log("들어옴블루" + BlueThornMove.ReversePotal2.Count);
+            Destroy(BlueThornMove.ReversePotal2[0]);
+            BlueThornMove.ReversePotal2.RemoveAt(0);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
             this.transform.Rotate(new Vector3(180, 0, 180));
             ReverseCount++;
+
+
         }//ReversePortal을 만나고 그것이 BlueMan일 경우
         if (other.gameObject.tag == "BlueEndPortal")
         {
