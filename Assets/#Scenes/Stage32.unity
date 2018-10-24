@@ -6700,7 +6700,7 @@ GameObject:
   - component: {fileID: 505942966}
   - component: {fileID: 505942965}
   m_Layer: 0
-  m_Name: bluereverse
+  m_Name: BlueReverse (0)
   m_TagString: BlueReversePortal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7356,9 +7356,10 @@ MonoBehaviour:
   Potal: []
   EndPotal:
   - {fileID: 292913403}
-  ReversePotal:
-  - {fileID: 505942963}
-  - {fileID: 1155995504}
+  ReversePotalArr:
+  - {fileID: 0}
+  - {fileID: 0}
+  ReversePotal: []
   coinn:
   - {fileID: 0}
   - {fileID: 0}
@@ -13526,7 +13527,7 @@ GameObject:
   - component: {fileID: 1155995506}
   - component: {fileID: 1155995505}
   m_Layer: 0
-  m_Name: bluereverse (1)
+  m_Name: BlueReverse (1)
   m_TagString: BlueReversePortal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -17478,11 +17479,12 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  ReversePotalArr:
+  - {fileID: 0}
   Potal: []
   EndPotal:
   - {fileID: 463927577}
-  ReversePotal:
-  - {fileID: 1758023753}
+  ReversePotal: []
   coinn:
   - {fileID: 0}
   - {fileID: 0}
@@ -20489,7 +20491,7 @@ GameObject:
   - component: {fileID: 1758023755}
   - component: {fileID: 1758023754}
   m_Layer: 0
-  m_Name: redReverse
+  m_Name: RedReverse (0)
   m_TagString: RedReversePortal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

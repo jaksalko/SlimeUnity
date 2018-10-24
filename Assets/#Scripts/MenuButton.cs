@@ -31,21 +31,23 @@ public class MenuButton : MonoBehaviour {
         for (int i = 1; i < StageButton.Length; i++)
             StageButton[i] = GameObject.Find("Stage" + i).GetComponent<Button>();
 
-
+       
         StageButton[1].interactable = true;
         for (int i = 2; i < StageButton.Length; i++)
-        {
+            StageButton[i].interactable = true;
+        //for (int i = 2; i < StageButton.Length; i++)
+        //{
 
-            if (PlayerPrefs.GetInt("ClearStage", 0) >= i)
-            {
-                Debug.Log("여기여기" + PlayerPrefs.GetInt("ClearStage", 0));
-                StageButton[i].interactable = true;
-            }
-            else
-            {
-                StageButton[i].interactable = false;
-            }
-        }
+            //    if (PlayerPrefs.GetInt("ClearStage", 0) >= i)
+            //    {
+            //        Debug.Log("여기여기" + PlayerPrefs.GetInt("ClearStage", 0));
+            //        StageButton[i].interactable = true;
+            //    }
+            //    else
+            //    {
+            //        StageButton[i].interactable = false;
+            //    }
+            //}
     }
     public void Update()
     {

@@ -6,7 +6,6 @@ public class ChangeScene : MonoBehaviour {
 
     private void Awake()
     {
-        PlayerPrefs.DeleteAll();
         AutoFade.LoadLevel("StartScene", 0, 1, Color.black);
 
     }
