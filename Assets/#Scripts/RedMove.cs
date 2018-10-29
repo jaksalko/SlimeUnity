@@ -65,7 +65,7 @@ public class RedMove : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        Debug.Log("CurStage = " + PlayerPrefs.GetInt("CurStage", 0) + "현재 ");
 
         if (RedStart == true)
         {

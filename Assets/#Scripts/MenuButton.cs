@@ -88,6 +88,7 @@ public class MenuButton : MonoBehaviour {
                 PlayerPrefs.SetInt("CurStage", CurStage);
                 AutoFade.LoadLevel("Stage" + CurStage.ToString(), 1, 1, Color.black);
 
+            Debug.Log("CurStage = " + PlayerPrefs.GetInt("CurStage", 0)+"로 저장");
 
                 RedMove.DieCheck = 0;
            }

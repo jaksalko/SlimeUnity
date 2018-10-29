@@ -715,7 +715,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 124040569}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.5, y: -11.9, z: 0}
+  m_LocalPosition: {x: 2.5, y: -13.72, z: 0}
   m_LocalScale: {x: 5, y: 3, z: 1}
   m_Children: []
   m_Father: {fileID: 1246566232}
@@ -2890,7 +2890,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 390428902}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.48, y: -10.58, z: 0}
+  m_LocalPosition: {x: 0.48, y: -11.83, z: 0}
   m_LocalScale: {x: 5, y: 3, z: 1}
   m_Children: []
   m_Father: {fileID: 1246566232}
@@ -3980,6 +3980,7 @@ MonoBehaviour:
   Potal: []
   EndPotal:
   - {fileID: 292913403}
+  ReversePotalArr: []
   ReversePotal: []
   coinn:
   - {fileID: 0}
@@ -4013,6 +4014,7 @@ MonoBehaviour:
   - {fileID: 0}
   blueSideObject: {fileID: 561664067}
   redSideObject: {fileID: 1527842578}
+  a: 
 --- !u!1 &625167136
 GameObject:
   m_ObjectHideFlags: 0
@@ -7051,7 +7053,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1268195581}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.47, y: -10.56, z: 0}
+  m_LocalPosition: {x: -0.47, y: -11.89, z: 0}
   m_LocalScale: {x: 5, y: 3, z: 1}
   m_Children: []
   m_Father: {fileID: 1213617068}
@@ -7140,7 +7142,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1282807880}
   m_LocalRotation: {x: -0, y: -0, z: -0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: 0.67, y: -11.88, z: 0}
+  m_LocalPosition: {x: 0.67, y: -10.19, z: 0}
   m_LocalScale: {x: 0.25000012, y: 0.25000012, z: 0.25}
   m_Children: []
   m_Father: {fileID: 458365633}
@@ -8068,7 +8070,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1415472167}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2.5, y: -12.39, z: 0}
+  m_LocalPosition: {x: -2.5, y: -13.52, z: 0}
   m_LocalScale: {x: 5, y: 3, z: 1}
   m_Children: []
   m_Father: {fileID: 1213617068}
@@ -8595,6 +8597,7 @@ MonoBehaviour:
   Potal: []
   EndPotal:
   - {fileID: 463927577}
+  ReversePotalArr: []
   ReversePotal: []
   coinn:
   - {fileID: 0}
