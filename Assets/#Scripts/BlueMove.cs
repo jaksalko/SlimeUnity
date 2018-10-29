@@ -143,6 +143,11 @@ public class BlueMove : MonoBehaviour
         }
         if (other.gameObject.tag == "BluePortal" && this.tag.ToString() == "BlueMan")
         {
+            if (PlayerPrefs.GetInt("Vibrate", 0) != 0)
+            {
+                Handheld.Vibrate(); // 진동 메소드
+                Debug.Log("Vibrate");
+            }
             other.gameObject.SetActive(false);
             posRed = redMan.transform.position;
             posBlue = blueMan.transform.position;
