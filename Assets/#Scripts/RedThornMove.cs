@@ -243,6 +243,21 @@ public class RedThornMove : MonoBehaviour
                     }
                     break;
                 }
+            case 38:
+                {
+                    ThornMoveX(0.7f, 19);
+                    ThornMoveX(0.7f, 21);
+
+                    ThornMoveY(0.7f, 19);
+                    ThornMoveY(0.7f, 21);
+
+                    ThornMoveX(0.7f, 22);
+                    ThornMoveX(0.7f, 23);
+
+                    ThornMoveY(0.7f, 22);
+                    ThornMoveY(0.7f, 23);
+                    break;
+                }
 
         }
         return;

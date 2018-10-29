@@ -17,8 +17,8 @@ public class BlueThornMove : MonoBehaviour
     public GameObject blueSideObject;
     public GameObject redSideObject;
     public bool[] a;
-    float moveX, moveY;
     bool check;
+    float[] moveY;
     void Awake()
     {
         check = false;
@@ -30,12 +30,16 @@ public class BlueThornMove : MonoBehaviour
 
         BlueReverse = false;
         a = new bool[Thorn.Length];
+        moveY = new float[Thorn.Length];
         for (int i = 0; i < Wall.Length; i++)
             Wall[i] = GameObject.Find("BWall").transform.Find("blue_wall (" + i + ")").gameObject;
 
         for (int i = 0; i < Thorn.Length; i++)
+        {
             Thorn[i] = GameObject.Find("BThorns").transform.Find("blue_thorn (" + i + ")").gameObject;
-
+            a[i] = true;
+            moveY[i] = Thorn[i].transform.localPosition.y;
+        }
         for (int i = 0; i < coinn.Length; i++)
             coinn[i] = GameObject.Find("BCoins").transform.Find("bcoin (" + i + ")").gameObject;
 
@@ -52,6 +56,7 @@ public class BlueThornMove : MonoBehaviour
             }
             ReversePotal2 = ReversePotal;
         }
+
     }
 
     // Update is called once per frame
@@ -95,18 +100,18 @@ public class BlueThornMove : MonoBehaviour
         {
             case 6:
                 {
-                    ThornMoveY(0.5f, 0);
-                    ThornMoveY(1f, 1);
+                    ThornMoveY(1f, 0);
+                    ThornMoveY(1.5f, 1);
                     break;
                 }
             case 7:
                 {
-                    ThornMoveY(0.5f, 0);
-                    ThornMoveY(1f, 1);
+                    ThornMoveY(1f, 0);
+                    ThornMoveY(1.5f, 1);
                     ThornMoveX(0.5f, 2);
                     ThornMoveX(0.5f, 3);
-                    ThornMoveY(0.5f, 2);
-                    ThornMoveY(0.5f, 3);
+                    ThornMoveY(1f, 2);
+                    ThornMoveY(1f, 3);
 
                     break;
                 }
@@ -159,9 +164,9 @@ public class BlueThornMove : MonoBehaviour
             case 36:
                 {
                     ThornMoveX(0.5f, 5);
-                    ThornMoveY(0.5f, 5);
+                    ThornMoveY(1f, 5);
                     ThornMoveX(0.5f, 8);
-                    ThornMoveY(0.5f, 8);
+                    ThornMoveY(1f, 8);
 
                     if (ReversePotal.Count == 0 && check == false)
                     {
@@ -250,6 +255,57 @@ public class BlueThornMove : MonoBehaviour
                     }
                     break;
                 }
+            case 38:
+                {
+                    ThornMoveY(1f, 9);
+                    ThornMoveX(1f, 0);
+                    if (ReversePotal.Count== 0 && check == false)
+                    {
+
+                        List<int> TThornNum = new List<int>();
+                        List<int> FThornNum = new List<int>();
+                        List<int> TWallNum = new List<int>();
+                        List<int> FWallNum = new List<int>();
+                        TThornNum.Insert(0, 15);
+                        TThornNum.Insert(1, 16);
+                        TThornNum.Insert(2, 17);
+                        TThornNum.Insert(3, 18);
+
+                        FThornNum.Insert(0, 2);
+                        FThornNum.Insert(1, 3);
+                        FThornNum.Insert(2, 11);
+                        FThornNum.Insert(3, 10);
+
+                        FWallNum.Insert(0, 6);
+                        FWallNum.Insert(1, 15);
+                        FWallNum.Insert(2, 16);
+
+                        TWallNum.Insert(0, 19);
+                        TWallNum.Insert(1, 20);
+                        TWallNum.Insert(2, 21);
+
+
+
+
+                        for (int i = 0; i < FThornNum.Count; i++)
+                            Thorn[FThornNum[i]].SetActive(false);//0,1,9,10
+                        for (int i = 0; i < FWallNum.Count; i++)
+                            Wall[FWallNum[i]].SetActive(false);//6,15,16
+
+
+                        for (int i = 0; i < TThornNum.Count; i++)
+                            Thorn[TThornNum[i]].SetActive(true);//16,17,18,19
+                        for (int i = 0; i < TWallNum.Count; i++)
+                            Wall[TWallNum[i]].SetActive(true);//19,20,21
+                        check = true;
+                    }
+                    break;
+                }
+            case 39:
+                {
+                    ThornMoveX(1f, 21);
+                    break;
+                }
         }
         return;
 
@@ -296,23 +352,29 @@ public class BlueThornMove : MonoBehaviour
     }
     void ThornMoveY(float speed, int ThornNum)
     {
-        moveY = Thorn[ThornNum].transform.localPosition.y;
-       
+        
+
+
             if (a[ThornNum] == true)
             {
-                Thorn[ThornNum].transform.Translate(0, -speed * Time.deltaTime, 0, Space.World);
-                if (Thorn[ThornNum].transform.localPosition.y > moveY + 1.2f)
+                Thorn[ThornNum].transform.Translate(0, speed * Time.deltaTime, 0, Space.World);
+                if (Thorn[ThornNum].transform.localPosition.y > (moveY[ThornNum] + 2.0f))
                 {
+                Debug.Log(Thorn[ThornNum].transform.localPosition.y + ">" + (moveY[ThornNum] + 2f));
+                Debug.Log("너무 올라감");
                     a[ThornNum] = false;
                 }
 
             }
-            else
+            else if(a[ThornNum]==false)
             {
-                Thorn[ThornNum].transform.Translate(0, speed * Time.deltaTime, 0, Space.World);
-                if (Thorn[ThornNum].transform.localPosition.y < moveY - 1.2f)
+                Thorn[ThornNum].transform.Translate(0, -speed * Time.deltaTime, 0, Space.World);
+            Debug.Log(Thorn[ThornNum].transform.localPosition.y + "<" + (moveY[ThornNum] - 2.0f));
+            if (Thorn[ThornNum].transform.localPosition.y < (moveY[ThornNum] - 2f))
                 {
-                    a[ThornNum] = true;
+                
+                Debug.Log("너무 내려감");
+                a[ThornNum] = true;
                 }
             }
         
@@ -328,7 +390,7 @@ public class BlueThornMove : MonoBehaviour
             for (int i = 0; i < Thorn.Length; i++)
             {
                 Thorn[i].transform.Translate(0, 3f * Time.deltaTime, 0, Space.World);
-                
+                moveY[i] += 3f * Time.deltaTime;
             }
             for (int i = 0; i < Wall.Length; i++)
                 Wall[i].transform.Translate(0, 3f * Time.deltaTime, 0, Space.World);
@@ -354,8 +416,10 @@ public class BlueThornMove : MonoBehaviour
 
 
             for (int i = 0; i < Thorn.Length; i++)
+            {
                 Thorn[i].transform.Translate(0, -3f * Time.deltaTime, 0, Space.World);
-
+                moveY[i] -= 3f * Time.deltaTime;
+            }
 
             for (int i = 0; i < Wall.Length; i++)
                 Wall[i].transform.Translate(0, -3f * Time.deltaTime, 0, Space.World);
