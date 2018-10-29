@@ -117,6 +117,7 @@ public class RedMove : MonoBehaviour
             if (ClearStage < CurStage && RedDieOrClear == true && BlueMove.BlueDieOrClear == true)
             {
                 ClearStage = CurStage;
+
             }
             PlayerPrefs.SetInt("ClearStage", ClearStage);
             PlayerPrefs.Save();
@@ -323,20 +324,7 @@ public class RedMove : MonoBehaviour
 
 
 
-            //만일 클리어 하면
-            MenuButton.CurStage++;
-            PlayerPrefs.SetInt("CurStage", MenuButton.CurStage);
-            //만일 클리어 하면
-            Debug.Log("CurStage = " + MenuButton.CurStage + "ClearStGE = " + PlayerPrefs.GetInt("ClearStage", 0));
-            CurStage = PlayerPrefs.GetInt("CurStage");
-            ClearStage = PlayerPrefs.GetInt("ClearStage", 0);       //클리어한 가장 마지막 스테이지 저장
-            if (ClearStage < CurStage)
-            {
-                ClearStage = CurStage;
-                Debug.Log("ClearStage가 CurStage로 변경" + CurStage);
-            }
-            PlayerPrefs.SetInt("ClearStage", ClearStage);
-            PlayerPrefs.Save();
+            
             if (BlueMove.BlueAlive == true)
                 return;
             RedMove.AllAlive = false;
@@ -355,20 +343,7 @@ public class RedMove : MonoBehaviour
 
 
 
-            //만일 클리어 하면
-            MenuButton.CurStage++;
-            PlayerPrefs.SetInt("CurStage", MenuButton.CurStage);
-            //만일 클리어 하면
-            Debug.Log("CurStage = " + MenuButton.CurStage + "ClearStGE = " + PlayerPrefs.GetInt("ClearStage", 0));
-            CurStage = PlayerPrefs.GetInt("CurStage");
-            ClearStage = PlayerPrefs.GetInt("ClearStage", 0);       //클리어한 가장 마지막 스테이지 저장
-            if (ClearStage < CurStage)
-            {
-                ClearStage = CurStage;
-                Debug.Log("ClearStage가 CurStage로 변경" + CurStage);
-            }
-            PlayerPrefs.SetInt("ClearStage", ClearStage);
-            PlayerPrefs.Save();
+            
             if (BlueMove.BlueAlive == true)
                 return;
             RedMove.AllAlive = false;

@@ -83,6 +83,12 @@ public class BlueThornMove : MonoBehaviour
     void ReverseMove()
     {
 
+        if (BlueMove.BlueEndPortalLook == true)
+        {
+
+            return;
+        }
+
         if (BlueMove.BlueReversePortalLook == false)
         {
             Move();
@@ -91,11 +97,7 @@ public class BlueThornMove : MonoBehaviour
         }
         //여러번 실행되지 않게 하기위한 변수
         Debug.Log(PlayerPrefs.GetInt("CurStage", 0) + "stage");
-        if (BlueMove.BlueEndPortalLook == true)
-        {
-
-            return;
-        }
+        
         switch (PlayerPrefs.GetInt("CurStage", 0))
         {
             case 6:
@@ -444,7 +446,7 @@ public class BlueThornMove : MonoBehaviour
     void BluePotalisLooked()//화면은 움직이지 않고 슬라임이 움직일 EndPortal의 y좌표값 입력
     {
         if (EndPotal.Length > 0)
-            if (EndPotal[0].localPosition.y >= -4.5f && EndPotal[0].localPosition.y <= -4f)
+            if (EndPotal[0].localPosition.y >= -4f && EndPotal[0].localPosition.y <= -3.5f)
             {
                 //BlueMove.BlueEndPortalLook = true;
                 BlueMove.BlueEndPortalLook = true;

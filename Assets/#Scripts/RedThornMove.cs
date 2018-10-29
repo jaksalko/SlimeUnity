@@ -94,7 +94,12 @@ public class RedThornMove : MonoBehaviour
    
     void ReverseMove()//Reverse모드인지 아닌지 구별하기 위한 함수
     {
-        
+        if (RedMove.RedEndPortalLook == true)//Reverse포탈이 보이고 && End 포탈이 보이면 return;
+                                             //사실상 이런 상황이 없을 것으로 맵이 만들어질 것임.
+        {
+
+            return;
+        }
         if (RedMove.RedReversePortalLook == false)//Reverse포탈이 보이지 않는다면
         {
             Move();
@@ -102,12 +107,7 @@ public class RedThornMove : MonoBehaviour
             //return;
         }
         
-        if (RedMove.RedEndPortalLook == true)//Reverse포탈이 보이고 && End 포탈이 보이면 return;
-                                             //사실상 이런 상황이 없을 것으로 맵이 만들어질 것임.
-        {
-
-            return;
-        }
+        
         switch (PlayerPrefs.GetInt("CurStage", 0))
         {
             case 6:
@@ -364,11 +364,10 @@ public class RedThornMove : MonoBehaviour
     {
         if (EndPotal.Length > 0)
         {
-            if (EndPotal[0].localPosition.y >= -4.5f && EndPotal[0].localPosition.y <= -4f)
+            if (EndPotal[0].localPosition.y >= -4f && EndPotal[0].localPosition.y <= -3.5f)
             {
                 //BlueMove.BlueEndPortalLook = true;
                 RedMove.RedEndPortalLook = true;
-                //Debug.Log("potal");
             }
             else if (EndPotal[0].localPosition.y <= 2f && EndPotal[0].localPosition.y >= 1.5f)
             {

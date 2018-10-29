@@ -168,6 +168,7 @@ public class ButtonManager : MonoBehaviour {
     {
 
         Debug.Log(MenuButton.CurStage);
+        MenuButton.CurStage++;
         PlayerPrefs.SetInt("CurStage", MenuButton.CurStage);
         PlayerPrefs.Save();
         AutoFade.LoadLevel("Stage"+ MenuButton.CurStage.ToString(), 1, 1, Color.black);
