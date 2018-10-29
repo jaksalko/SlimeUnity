@@ -11,11 +11,14 @@ public class MenuButton : MonoBehaviour {
     public Button storeButton;
     public Button optionButton;
     public Button optionExitButton;
+    public Button missionButton;
+    public Button missionExitButton;
     int ClearStage;
     string str;
     public static int CurStage;
     public GameObject optionUI;
     public GameObject ExitUI;
+    public GameObject missionUI;
     public Button exityes;
     public Button exitno;
 
@@ -73,6 +76,13 @@ public class MenuButton : MonoBehaviour {
     public void optionButtonClick() {
         optionUI.SetActive(true);
     }
+    public void missionButtonClick() {
+        missionUI.SetActive(true);
+    }
+    public void missionExitClick() {
+        missionUI.SetActive(false);
+
+    }
 
 
     public void gameStartButton() {
@@ -109,5 +119,5 @@ public class MenuButton : MonoBehaviour {
     {
         PlayerPrefs.DeleteAll();
     }
-
+    
 }
