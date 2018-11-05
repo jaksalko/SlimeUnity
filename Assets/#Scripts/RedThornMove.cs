@@ -245,6 +245,45 @@ public class RedThornMove : MonoBehaviour
                 }
             case 38:
                 {
+                    if (Wall[33].transform.localPosition.y > -4f && check == false)
+                    {
+                        List<int> TThornNum = new List<int>();
+                        List<int> FThornNum = new List<int>();
+                        List<int> TWallNum = new List<int>();
+                        List<int> FWallNum = new List<int>();
+                        TThornNum.Insert(0, 24);
+                        TThornNum.Insert(1, 25);
+                        TThornNum.Insert(2, 26);
+                        TThornNum.Insert(3, 27);
+
+                        FThornNum.Insert(0, 2);
+                        FThornNum.Insert(1, 3);
+                        FThornNum.Insert(2, 17);
+                        FThornNum.Insert(3, 18);
+
+                        FWallNum.Insert(0, 35);
+                        FWallNum.Insert(1, 36);
+                        FWallNum.Insert(2, 37);
+
+                        TWallNum.Insert(0, 38);
+                        TWallNum.Insert(1, 39);
+                        TWallNum.Insert(2, 40);
+                        for (int i = 0; i < FThornNum.Count; i++)
+                            Thorn[FThornNum[i]].SetActive(false);//0,1,13,14,15
+                        for (int i = 0; i < FWallNum.Count; i++)
+                            Wall[FWallNum[i]].SetActive(false);//6,15,16
+
+
+                        for (int i = 0; i < TThornNum.Count; i++)
+                            Thorn[TThornNum[i]].SetActive(true);//16,17,18,19
+                        for (int i = 0; i < TWallNum.Count; i++)
+                            Wall[TWallNum[i]].SetActive(true);//19,20,21
+                        check = true;
+                    }
+                    break;
+                }
+            case 39:
+                {
                     ThornMoveX(0.7f, 19);
                     ThornMoveX(0.7f, 21);
 
@@ -257,6 +296,7 @@ public class RedThornMove : MonoBehaviour
                     ThornMoveY(0.7f, 22);
                     ThornMoveY(0.7f, 23);
                     break;
+                    
                 }
 
         }

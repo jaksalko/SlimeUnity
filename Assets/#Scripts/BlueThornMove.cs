@@ -95,222 +95,225 @@ public class BlueThornMove : MonoBehaviour
             //Debug.Log("redreverse");
             //return;
         }
-        //여러번 실행되지 않게 하기위한 변수
-        Debug.Log(PlayerPrefs.GetInt("CurStage", 0) + "stage");
-        
-        switch (PlayerPrefs.GetInt("CurStage", 0))
+        else
         {
-            case 6:
-                {
-                    ThornMoveY(1f, 0);
-                    ThornMoveY(1.5f, 1);
-                    break;
-                }
-            case 7:
-                {
-                    ThornMoveY(1f, 0);
-                    ThornMoveY(1.5f, 1);
-                    ThornMoveX(0.5f, 2);
-                    ThornMoveX(0.5f, 3);
-                    ThornMoveY(1f, 2);
-                    ThornMoveY(1f, 3);
+            //여러번 실행되지 않게 하기위한 변수
+            Debug.Log(PlayerPrefs.GetInt("CurStage", 0) + "stage");
 
-                    break;
-                }
-            case 8:
-                {
-                    ThornMoveX(0.5f, 4);
-                    break;
-                }
-            case 35:
-                {
-
-                    if (ReversePotal.Count == 0 && check == false)
+            switch (PlayerPrefs.GetInt("CurStage", 0))
+            {
+                case 6:
                     {
-                        List<int> TThornNum = new List<int>();
-                        List<int> FThornNum = new List<int>();
-                        List<int> TWallNum = new List<int>();
-                        List<int> FWallNum = new List<int>();
-                        TThornNum.Insert(0, 16);
-                        TThornNum.Insert(1, 17);
-                        TThornNum.Insert(2, 18);
-                        TThornNum.Insert(3, 19);
-
-                        FThornNum.Insert(0, 0);
-                        FThornNum.Insert(1, 1);
-                        FThornNum.Insert(2, 13);
-                        FThornNum.Insert(3, 14);
-                        FThornNum.Insert(4, 15);
-
-                        FWallNum.Insert(0, 6);
-                        FWallNum.Insert(1, 15);
-                        FWallNum.Insert(2, 16);
-
-                        TWallNum.Insert(0, 19);
-                        TWallNum.Insert(1, 20);
-                        TWallNum.Insert(2, 21);
-                        for (int i = 0; i < FThornNum.Count; i++)
-                            Thorn[FThornNum[i]].SetActive(false);//0,1,13,14,15
-                        for (int i = 0; i < FWallNum.Count; i++)
-                            Wall[FWallNum[i]].SetActive(false);//6,15,16
-
-
-                        for (int i = 0; i < TThornNum.Count; i++)
-                            Thorn[TThornNum[i]].SetActive(true);//16,17,18,19
-                        for (int i = 0; i < TWallNum.Count; i++)
-                            Wall[TWallNum[i]].SetActive(true);//19,20,21
-                        check = true;
+                        ThornMoveY(1f, 0);
+                        ThornMoveY(1.5f, 1);
+                        break;
                     }
-                    break;
-                }
-            case 36:
-                {
-                    ThornMoveX(0.5f, 5);
-                    ThornMoveY(1f, 5);
-                    ThornMoveX(0.5f, 8);
-                    ThornMoveY(1f, 8);
-
-                    if (ReversePotal.Count == 0 && check == false)
+                case 7:
                     {
-                        List<int> TThornNum = new List<int>();
-                        List<int> FThornNum = new List<int>();
-                        List<int> TWallNum = new List<int>();
-                        List<int> FWallNum = new List<int>();
-                        TThornNum.Insert(0, 11);
-                        TThornNum.Insert(1, 12);
-                        TThornNum.Insert(2, 13);
-                        TThornNum.Insert(3, 14);
+                        ThornMoveY(1f, 0);
+                        ThornMoveY(1.5f, 1);
+                        ThornMoveX(0.5f, 2);
+                        ThornMoveX(0.5f, 3);
+                        ThornMoveY(1f, 2);
+                        ThornMoveY(1f, 3);
 
-                        FThornNum.Insert(0, 0);
-                        FThornNum.Insert(1, 1);
-                        FThornNum.Insert(2, 9);
-                        FThornNum.Insert(3, 10);
-
-                        FWallNum.Insert(0, 6);
-                        FWallNum.Insert(1, 15);
-                        FWallNum.Insert(2, 16);
-
-                        TWallNum.Insert(0, 19);
-                        TWallNum.Insert(1, 20);
-                        TWallNum.Insert(2, 21);
-                        for (int i = 0; i < FThornNum.Count; i++)
-                            Thorn[FThornNum[i]].SetActive(false);//0,1,9,10
-                        for (int i = 0; i < FWallNum.Count; i++)
-                            Wall[FWallNum[i]].SetActive(false);//6,15,16
-
-
-                        for (int i = 0; i < TThornNum.Count; i++)
-                            Thorn[TThornNum[i]].SetActive(true);//16,17,18,19
-                        for (int i = 0; i < TWallNum.Count; i++)
-                            Wall[TWallNum[i]].SetActive(true);//19,20,21
-                        check = true;
+                        break;
                     }
-                    break;
-                }
-            case 37:
-                {
-                    
-                    if (ReversePotal.Count % 2 == 1 && check == true)
+                case 8:
                     {
-                       
-                        List<int> TPortalNum = new List<int>();
-                        List<int> FPortalNum = new List<int>();
-                        TPortalNum.Insert(0, 1);
+                        ThornMoveX(0.5f, 4);
+                        break;
+                    }
+                case 35:
+                    {
+
+                        if (ReversePotal.Count == 0 && check == false)
+                        {
+                            List<int> TThornNum = new List<int>();
+                            List<int> FThornNum = new List<int>();
+                            List<int> TWallNum = new List<int>();
+                            List<int> FWallNum = new List<int>();
+                            TThornNum.Insert(0, 16);
+                            TThornNum.Insert(1, 17);
+                            TThornNum.Insert(2, 18);
+                            TThornNum.Insert(3, 19);
+
+                            FThornNum.Insert(0, 0);
+                            FThornNum.Insert(1, 1);
+                            FThornNum.Insert(2, 13);
+                            FThornNum.Insert(3, 14);
+                            FThornNum.Insert(4, 15);
+
+                            FWallNum.Insert(0, 6);
+                            FWallNum.Insert(1, 15);
+                            FWallNum.Insert(2, 16);
+
+                            TWallNum.Insert(0, 19);
+                            TWallNum.Insert(1, 20);
+                            TWallNum.Insert(2, 21);
+                            for (int i = 0; i < FThornNum.Count; i++)
+                                Thorn[FThornNum[i]].SetActive(false);//0,1,13,14,15
+                            for (int i = 0; i < FWallNum.Count; i++)
+                                Wall[FWallNum[i]].SetActive(false);//6,15,16
 
 
-                        FPortalNum.Insert(0, 0);
+                            for (int i = 0; i < TThornNum.Count; i++)
+                                Thorn[TThornNum[i]].SetActive(true);//16,17,18,19
+                            for (int i = 0; i < TWallNum.Count; i++)
+                                Wall[TWallNum[i]].SetActive(true);//19,20,21
+                            check = true;
+                        }
+                        break;
+                    }
+                case 36:
+                    {
+                        ThornMoveX(0.5f, 5);
+                        ThornMoveY(1f, 5);
+                        ThornMoveX(0.5f, 8);
+                        ThornMoveY(1f, 8);
+
+                        if (ReversePotal.Count == 0 && check == false)
+                        {
+                            List<int> TThornNum = new List<int>();
+                            List<int> FThornNum = new List<int>();
+                            List<int> TWallNum = new List<int>();
+                            List<int> FWallNum = new List<int>();
+                            TThornNum.Insert(0, 11);
+                            TThornNum.Insert(1, 12);
+                            TThornNum.Insert(2, 13);
+                            TThornNum.Insert(3, 14);
+
+                            FThornNum.Insert(0, 0);
+                            FThornNum.Insert(1, 1);
+                            FThornNum.Insert(2, 9);
+                            FThornNum.Insert(3, 10);
+
+                            FWallNum.Insert(0, 6);
+                            FWallNum.Insert(1, 15);
+                            FWallNum.Insert(2, 16);
+
+                            TWallNum.Insert(0, 19);
+                            TWallNum.Insert(1, 20);
+                            TWallNum.Insert(2, 21);
+                            for (int i = 0; i < FThornNum.Count; i++)
+                                Thorn[FThornNum[i]].SetActive(false);//0,1,9,10
+                            for (int i = 0; i < FWallNum.Count; i++)
+                                Wall[FWallNum[i]].SetActive(false);//6,15,16
+
+
+                            for (int i = 0; i < TThornNum.Count; i++)
+                                Thorn[TThornNum[i]].SetActive(true);//16,17,18,19
+                            for (int i = 0; i < TWallNum.Count; i++)
+                                Wall[TWallNum[i]].SetActive(true);//19,20,21
+                            check = true;
+                        }
+                        break;
+                    }
+                case 37:
+                    {
+
+                        if (ReversePotal.Count % 2 == 1 && check == true)
+                        {
+
+                            List<int> TPortalNum = new List<int>();
+                            List<int> FPortalNum = new List<int>();
+                            TPortalNum.Insert(0, 1);
+
+
+                            FPortalNum.Insert(0, 0);
+
+
+
+
+                            for (int i = 0; i < FPortalNum.Count; i++)
+                                Potal[FPortalNum[i]].SetActive(false);//6,15,16
+
+
+
+                            for (int i = 0; i < TPortalNum.Count; i++)
+                                Potal[TPortalNum[i]].SetActive(true);//19,20,21
+                            check = false;
+                            Debug.Log("레드포탈 On");
+                        }
+
+                        if (ReversePotal.Count % 2 == 0 && check == false)
+                        {
+
+                            List<int> TPortalNum = new List<int>();
+                            List<int> FPortalNum = new List<int>();
+                            TPortalNum.Insert(0, 0);
+
+
+                            FPortalNum.Insert(0, 1);
+
+
+
+                            for (int i = 0; i < FPortalNum.Count; i++)
+                                Potal[FPortalNum[i]].SetActive(false);//6,15,16
+
+
+                            for (int i = 0; i < TPortalNum.Count; i++)
+                                Potal[TPortalNum[i]].SetActive(true);//19,20,21
+                            check = true;
+                            Debug.Log("블루포탈 On");
+                        }
+                        break;
+                    }
+                case 38:
+                    {
                         
+                        if (ReversePotal.Count == 0 && check == false)
+                        {
+
+                            List<int> TThornNum = new List<int>();
+                            List<int> FThornNum = new List<int>();
+                            List<int> TWallNum = new List<int>();
+                            List<int> FWallNum = new List<int>();
+                            TThornNum.Insert(0, 15);
+                            TThornNum.Insert(1, 16);
+                            TThornNum.Insert(2, 17);
+                            TThornNum.Insert(3, 18);
+
+                            FThornNum.Insert(0, 2);
+                            FThornNum.Insert(1, 3);
+                            FThornNum.Insert(2, 11);
+                            FThornNum.Insert(3, 10);
+
+                            FWallNum.Insert(0, 6);
+                            FWallNum.Insert(1, 15);
+                            FWallNum.Insert(2, 16);
+
+                            TWallNum.Insert(0, 19);
+                            TWallNum.Insert(1, 20);
+                            TWallNum.Insert(2, 21);
 
 
-                        
-                        for (int i = 0; i < FPortalNum.Count; i++)
-                            Potal[FPortalNum[i]].SetActive(false);//6,15,16
 
 
-                       
-                        for (int i = 0; i < TPortalNum.Count; i++)
-                            Potal[TPortalNum[i]].SetActive(true);//19,20,21
-                        check = false;
-                        Debug.Log("레드포탈 On");
+                            for (int i = 0; i < FThornNum.Count; i++)
+                                Thorn[FThornNum[i]].SetActive(false);//0,1,9,10
+                            for (int i = 0; i < FWallNum.Count; i++)
+                                Wall[FWallNum[i]].SetActive(false);//6,15,16
+
+
+                            for (int i = 0; i < TThornNum.Count; i++)
+                                Thorn[TThornNum[i]].SetActive(true);//16,17,18,19
+                            for (int i = 0; i < TWallNum.Count; i++)
+                                Wall[TWallNum[i]].SetActive(true);//19,20,21
+                            check = true;
+                        }
+                        break;
                     }
-
-                    if (ReversePotal.Count % 2 == 0 && check == false)
+                case 39:
                     {
-                       
-                        List<int> TPortalNum = new List<int>();
-                        List<int> FPortalNum = new List<int>();
-                        TPortalNum.Insert(0, 0);
-
-
-                        FPortalNum.Insert(0, 1);
-                       
-
-                       
-                        for (int i = 0; i < FPortalNum.Count; i++)
-                            Potal[FPortalNum[i]].SetActive(false);//6,15,16
-
-
-                        for (int i = 0; i < TPortalNum.Count; i++)
-                            Potal[TPortalNum[i]].SetActive(true);//19,20,21
-                        check = true;
-                        Debug.Log("블루포탈 On");
+                        ThornMoveY(1f, 9);
+                        ThornMoveX(1f, 0);
+                        ThornMoveX(1f, 21);
+                        break;
                     }
-                    break;
-                }
-            case 38:
-                {
-                    ThornMoveY(1f, 9);
-                    ThornMoveX(1f, 0);
-                    if (ReversePotal.Count== 0 && check == false)
-                    {
-
-                        List<int> TThornNum = new List<int>();
-                        List<int> FThornNum = new List<int>();
-                        List<int> TWallNum = new List<int>();
-                        List<int> FWallNum = new List<int>();
-                        TThornNum.Insert(0, 15);
-                        TThornNum.Insert(1, 16);
-                        TThornNum.Insert(2, 17);
-                        TThornNum.Insert(3, 18);
-
-                        FThornNum.Insert(0, 2);
-                        FThornNum.Insert(1, 3);
-                        FThornNum.Insert(2, 11);
-                        FThornNum.Insert(3, 10);
-
-                        FWallNum.Insert(0, 6);
-                        FWallNum.Insert(1, 15);
-                        FWallNum.Insert(2, 16);
-
-                        TWallNum.Insert(0, 19);
-                        TWallNum.Insert(1, 20);
-                        TWallNum.Insert(2, 21);
-
-
-
-
-                        for (int i = 0; i < FThornNum.Count; i++)
-                            Thorn[FThornNum[i]].SetActive(false);//0,1,9,10
-                        for (int i = 0; i < FWallNum.Count; i++)
-                            Wall[FWallNum[i]].SetActive(false);//6,15,16
-
-
-                        for (int i = 0; i < TThornNum.Count; i++)
-                            Thorn[TThornNum[i]].SetActive(true);//16,17,18,19
-                        for (int i = 0; i < TWallNum.Count; i++)
-                            Wall[TWallNum[i]].SetActive(true);//19,20,21
-                        check = true;
-                    }
-                    break;
-                }
-            case 39:
-                {
-                    ThornMoveX(1f, 21);
-                    break;
-                }
+            }
+            return;
         }
-        return;
-
 
     }
 
