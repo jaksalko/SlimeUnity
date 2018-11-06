@@ -7,10 +7,12 @@ public class MenuTextManager : MonoBehaviour {
     public static int totalcoin;
     // Use this for initialization
     private void Awake () {
+        
         totalcoinText = GetComponent<TextMeshProUGUI>();
         totalcoin = PlayerPrefs.GetInt("TotalCoin", totalcoin);
         PopupCoinTextManager.temp = totalcoin;
         totalcoinText.text = totalcoin.ToString();
+        Debug.Log("menu text manager script awake    " + totalcoin.ToString());
     }
    
     // Update is called once per frame

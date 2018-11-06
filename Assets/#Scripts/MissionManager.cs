@@ -99,52 +99,62 @@ public class MissionManager : MonoBehaviour {
                 case 0:
                     PlayerPrefs.SetInt("TotalCoin", PlayerPrefs.GetInt("TotalCoin", 0)+100);
                     PlayerPrefs.SetString("mission0", "cy");
+                    MenuTextManager.totalcoin += 100;
                     menutextmanager.GetComponent<TextMeshProUGUI>().text = PlayerPrefs.GetInt("TotalCoin", 0).ToString();
                     break;
                 case 1:
                     //Debug.Log("미션전 " + PlayerPrefs.GetInt("TotalCoin", 0));
                     PlayerPrefs.SetInt("TotalCoin", PlayerPrefs.GetInt("TotalCoin", 0) + 100);
                     PlayerPrefs.SetString("mission1", "cy");
+                    MenuTextManager.totalcoin += 100;
                     menutextmanager.GetComponent<TextMeshProUGUI>().text = PlayerPrefs.GetInt("TotalCoin", 0).ToString();
                     //Debug.Log("미션 후  " + PlayerPrefs.GetInt("TotalCoin", 0));
                     break;
                 case 2:
                     PlayerPrefs.SetInt("TotalCoin", PlayerPrefs.GetInt("TotalCoin", 0) + 500);
                     PlayerPrefs.SetString("mission2", "cy");
+                    MenuTextManager.totalcoin += 500;
                     menutextmanager.GetComponent<TextMeshProUGUI>().text = PlayerPrefs.GetInt("TotalCoin", 0).ToString();
                     break;
                 case 3:
                     PlayerPrefs.SetInt("TotalCoin", PlayerPrefs.GetInt("TotalCoin", 0) + 500);
                     PlayerPrefs.SetString("mission3", "cy");
+                    MenuTextManager.totalcoin += 500;
                     menutextmanager.GetComponent<TextMeshProUGUI>().text = PlayerPrefs.GetInt("TotalCoin", 0).ToString();
                     break;
                 case 4:
                     PlayerPrefs.SetInt("TotalCoin", PlayerPrefs.GetInt("TotalCoin", 0) + 5000);
                     PlayerPrefs.SetString("mission4", "cy");
+                    MenuTextManager.totalcoin += 5000;
                     menutextmanager.GetComponent<TextMeshProUGUI>().text = PlayerPrefs.GetInt("TotalCoin", 0).ToString();
                     break;
                 case 5:
                     PlayerPrefs.SetInt("TotalCoin", PlayerPrefs.GetInt("TotalCoin", 0) + 5000);
                     PlayerPrefs.SetString("mission5", "cy");
+                    MenuTextManager.totalcoin += 5000;
                     menutextmanager.GetComponent<TextMeshProUGUI>().text = PlayerPrefs.GetInt("TotalCoin", 0).ToString();
                     break;
                 case 6:
                     PlayerPrefs.SetInt("TotalCoin", PlayerPrefs.GetInt("TotalCoin", 0) + 10000);
                     PlayerPrefs.SetString("mission6", "cy");
+                    MenuTextManager.totalcoin += 10000;
                     menutextmanager.GetComponent<TextMeshProUGUI>().text = PlayerPrefs.GetInt("TotalCoin", 0).ToString();
                     break;
                 case 7:
                     PlayerPrefs.SetInt("TotalCoin", PlayerPrefs.GetInt("TotalCoin", 0) + 10000);
                     PlayerPrefs.SetString("mission7", "cy");
+                    MenuTextManager.totalcoin += 10000;
                     menutextmanager.GetComponent<TextMeshProUGUI>().text = PlayerPrefs.GetInt("TotalCoin", 0).ToString();
                     break;
                 case 8:
                     PlayerPrefs.SetInt("TotalCoin", PlayerPrefs.GetInt("TotalCoin", 0) + 20000);
                     PlayerPrefs.SetString("mission8", "cy");
+                    MenuTextManager.totalcoin += 20000;
                     menutextmanager.GetComponent<TextMeshProUGUI>().text = PlayerPrefs.GetInt("TotalCoin", 0).ToString();
                     break;
 
             }
+            PlayerPrefs.Save();
         }
        
         
