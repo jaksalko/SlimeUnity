@@ -27,6 +27,7 @@ public class ButtonManager : MonoBehaviour {
     string str;
     void Awake()
     {
+        //PlayerPrefs.DeleteAll();
         Application.targetFrameRate = 60;
 
         //Debug.Log("타임 스케일 1로 변경");
@@ -141,7 +142,12 @@ public class ButtonManager : MonoBehaviour {
         
         cointxt.SetActive(true);
         AutoFade.LoadLevel("Menu", 1, 1, Color.black);
-
+        if (PlayerPrefs.GetInt("CurStage", 0) == 0)
+        {
+            MenuButton.CurStage++;
+            PlayerPrefs.SetInt("CurStage", MenuButton.CurStage);
+            PlayerPrefs.Save();
+        }
         Time.timeScale = 1;
 
     }
