@@ -13,6 +13,8 @@ public class StoreManager : MonoBehaviour {
     public GameObject CrownButton;
     public GameObject StrawButton;
     public GameObject BeretButton;
+    public GameObject CookButton;
+    public GameObject CatButton;
     public GameObject redItem;
     public GameObject blueItem;
     public Toggle[] RedWearButton;
@@ -48,6 +50,12 @@ public class StoreManager : MonoBehaviour {
                     case 4:
                         redItem.GetComponent<SpriteRenderer>().sprite = Resources.Load("#Images/beret", typeof(Sprite)) as Sprite;
                         break;
+                    case 5:
+                        redItem.GetComponent<SpriteRenderer>().sprite = Resources.Load("#Images/Cook", typeof(Sprite)) as Sprite;
+                        break;
+                    case 6:
+                        redItem.GetComponent<SpriteRenderer>().sprite = Resources.Load("#Images/Cat", typeof(Sprite)) as Sprite;
+                        break;
 
                 }
                 RedWearButton[a].isOn = true;
@@ -72,6 +80,12 @@ public class StoreManager : MonoBehaviour {
                     case 4:
                         blueItem.GetComponent<SpriteRenderer>().sprite = Resources.Load("#Images/beret", typeof(Sprite)) as Sprite;
                         break;
+                    case 5:
+                        blueItem.GetComponent<SpriteRenderer>().sprite = Resources.Load("#Images/Cook", typeof(Sprite)) as Sprite;
+                        break;
+                    case 6:
+                        blueItem.GetComponent<SpriteRenderer>().sprite = Resources.Load("#Images/Cat", typeof(Sprite)) as Sprite;
+                        break;
 
                 }
                 BlueWearButton[a].isOn = true;
@@ -79,11 +93,11 @@ public class StoreManager : MonoBehaviour {
             }
         }
 
-        //str => Santa == 0  Crown == 1 Straw == 2 Beret == 3
+        //str => Santa == 0  Crown == 1 Straw == 2 Beret == 3 Cook == 4 Cat == 5
         itemstate = new List<int>();//itemstate[itemnumber] : 0 -> Not buy  1 -> Buy   2 -> Wear
 
 
-        for (int k =  i ; k < 4; k++)// i is itemnumber and Itemstate is state of itemnumber
+        for (int k =  i ; k < 6; k++)// i is itemnumber and Itemstate is state of itemnumber
         {
             
             itemstate.Add(PlayerPrefs.GetInt(k.ToString(), 0));
@@ -98,6 +112,10 @@ public class StoreManager : MonoBehaviour {
                     StrawButton.SetActive(true);
                 else if (k == 3)
                     BeretButton.SetActive(true);
+                else if (k == 4)
+                    CookButton.SetActive(true);
+                else if (k == 5)
+                    CatButton.SetActive(true);
 
                 Debug.Log("산게 있음");
             }
@@ -148,6 +166,18 @@ public class StoreManager : MonoBehaviour {
             str = "3";
             paycoin = 1;
         }
+        else if (str == "Cook")
+        {
+            Debug.Log("Cook Yesbutton" + str + " is clicked");
+            str = "4";
+            paycoin = 1;
+        }
+        else if (str == "Cat")
+        {
+            Debug.Log("Cat Yesbutton" + str + " is clicked");
+            str = "5";
+            paycoin = 1;
+        }
 
 
 
@@ -185,6 +215,18 @@ public class StoreManager : MonoBehaviour {
                 Debug.Log("Beret is Sold out");
 
                 BeretButton.SetActive(true);
+            }
+            else if (str == "4")
+            {
+                Debug.Log("Cook is Sold out");
+
+                CookButton.SetActive(true);
+            }
+            else if (str == "5")
+            {
+                Debug.Log("Cat is Sold out");
+
+                CatButton.SetActive(true);
             }
 
             payPopup.SetActive(false);
@@ -227,6 +269,18 @@ public class StoreManager : MonoBehaviour {
             }
             else if (toggle.ToString() == "BeretRedToggle (UnityEngine.UI.Toggle)")
                 redItem.GetComponent<SpriteRenderer>().sprite = Resources.Load("#Images/beret", typeof(Sprite)) as Sprite;
+            else if (toggle.ToString() == "CookRedToggle (UnityEngine.UI.Toggle)")
+            {
+                redItem.transform.localScale = new Vector3(55f, 50f, 0);
+                redItem.GetComponent<SpriteRenderer>().sprite = Resources.Load("#Images/Cook", typeof(Sprite)) as Sprite;
+                redItem.transform.localPosition = new Vector3(-85f, -367f, -17280f);
+            }
+            else if (toggle.ToString() == "CatRedToggle (UnityEngine.UI.Toggle)")
+            {
+                redItem.transform.localScale = new Vector3(55f, 50f, 0);
+                redItem.GetComponent<SpriteRenderer>().sprite = Resources.Load("#Images/Cat", typeof(Sprite)) as Sprite;
+                redItem.transform.localPosition = new Vector3(-85f, -367f, -17280f);
+            }
         }
             
     }
@@ -251,6 +305,18 @@ public class StoreManager : MonoBehaviour {
             }
             else if (toggle.ToString() == "BeretBlueToggle (UnityEngine.UI.Toggle)")
                 blueItem.GetComponent<SpriteRenderer>().sprite = Resources.Load("#Images/beret", typeof(Sprite)) as Sprite;
+            else if (toggle.ToString() == "CookBlueToggle (UnityEngine.UI.Toggle)")
+            {
+                blueItem.GetComponent<SpriteRenderer>().sprite = Resources.Load("#Images/Cook", typeof(Sprite)) as Sprite;
+                blueItem.transform.localScale = new Vector3(55f, 50f, 0);
+                blueItem.transform.localPosition = new Vector3(85f, -367f, -17280f);
+            }
+            else if (toggle.ToString() == "CatBlueToggle (UnityEngine.UI.Toggle)")
+            {
+                blueItem.GetComponent<SpriteRenderer>().sprite = Resources.Load("#Images/Cat", typeof(Sprite)) as Sprite;
+                blueItem.transform.localScale = new Vector3(55f, 50f, 0);
+                blueItem.transform.localPosition = new Vector3(85f, -367f, -17280f);
+            }
         }
     }
            
