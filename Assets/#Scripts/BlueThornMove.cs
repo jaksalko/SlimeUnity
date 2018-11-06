@@ -21,6 +21,8 @@ public class BlueThornMove : MonoBehaviour
     float[] moveY;
     void Awake()
     {
+        
+
         check = false;
         RedMove.RedEndPortalLook = false;
         BlueMove.BlueEndPortalLook = false;
@@ -521,8 +523,7 @@ public class BlueThornMove : MonoBehaviour
                 Thorn[ThornNum].transform.Translate(0, speed * Time.deltaTime, 0, Space.World);
                 if (Thorn[ThornNum].transform.localPosition.y > (moveY[ThornNum] + 2.0f))
                 {
-                Debug.Log(Thorn[ThornNum].transform.localPosition.y + ">" + (moveY[ThornNum] + 2f));
-                Debug.Log("너무 올라감");
+               
                     a[ThornNum] = false;
                 }
 
@@ -530,11 +531,11 @@ public class BlueThornMove : MonoBehaviour
             else if(a[ThornNum]==false)
             {
                 Thorn[ThornNum].transform.Translate(0, -speed * Time.deltaTime, 0, Space.World);
-            Debug.Log(Thorn[ThornNum].transform.localPosition.y + "<" + (moveY[ThornNum] - 2.0f));
+            
             if (Thorn[ThornNum].transform.localPosition.y < (moveY[ThornNum] - 2f))
                 {
                 
-                Debug.Log("너무 내려감");
+                
                 a[ThornNum] = true;
                 }
             }
