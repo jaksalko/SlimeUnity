@@ -319,8 +319,8 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_text: STAGE 10
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 55ed7aa8bc713e04798396c2643bdcdb, type: 2}
-  m_sharedMaterial: {fileID: 21164955037135056, guid: 55ed7aa8bc713e04798396c2643bdcdb,
+  m_fontAsset: {fileID: 11400000, guid: d980aed595cbfc54389301122101cb19, type: 2}
+  m_sharedMaterial: {fileID: 21808775285572596, guid: d980aed595cbfc54389301122101cb19,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -2520,8 +2520,8 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_text: COIN 1000
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 55ed7aa8bc713e04798396c2643bdcdb, type: 2}
-  m_sharedMaterial: {fileID: 21164955037135056, guid: 55ed7aa8bc713e04798396c2643bdcdb,
+  m_fontAsset: {fileID: 11400000, guid: d980aed595cbfc54389301122101cb19, type: 2}
+  m_sharedMaterial: {fileID: 21808775285572596, guid: d980aed595cbfc54389301122101cb19,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -4630,8 +4630,8 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_text: stage 20
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 55ed7aa8bc713e04798396c2643bdcdb, type: 2}
-  m_sharedMaterial: {fileID: 21164955037135056, guid: 55ed7aa8bc713e04798396c2643bdcdb,
+  m_fontAsset: {fileID: 11400000, guid: d980aed595cbfc54389301122101cb19, type: 2}
+  m_sharedMaterial: {fileID: 21808775285572596, guid: d980aed595cbfc54389301122101cb19,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -4894,7 +4894,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &485800438
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6916,8 +6916,8 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_text: stage 30
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 55ed7aa8bc713e04798396c2643bdcdb, type: 2}
-  m_sharedMaterial: {fileID: 21164955037135056, guid: 55ed7aa8bc713e04798396c2643bdcdb,
+  m_fontAsset: {fileID: 11400000, guid: d980aed595cbfc54389301122101cb19, type: 2}
+  m_sharedMaterial: {fileID: 21808775285572596, guid: d980aed595cbfc54389301122101cb19,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -9914,8 +9914,8 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_text: Coin 100
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 55ed7aa8bc713e04798396c2643bdcdb, type: 2}
-  m_sharedMaterial: {fileID: 21164955037135056, guid: 55ed7aa8bc713e04798396c2643bdcdb,
+  m_fontAsset: {fileID: 11400000, guid: d980aed595cbfc54389301122101cb19, type: 2}
+  m_sharedMaterial: {fileID: 21808775285572596, guid: d980aed595cbfc54389301122101cb19,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -14045,8 +14045,8 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_text: stage 5
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 55ed7aa8bc713e04798396c2643bdcdb, type: 2}
-  m_sharedMaterial: {fileID: 21164955037135056, guid: 55ed7aa8bc713e04798396c2643bdcdb,
+  m_fontAsset: {fileID: 11400000, guid: d980aed595cbfc54389301122101cb19, type: 2}
+  m_sharedMaterial: {fileID: 21808775285572596, guid: d980aed595cbfc54389301122101cb19,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -15373,8 +15373,8 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_text: MISSION
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 55ed7aa8bc713e04798396c2643bdcdb, type: 2}
-  m_sharedMaterial: {fileID: 21164955037135056, guid: 55ed7aa8bc713e04798396c2643bdcdb,
+  m_fontAsset: {fileID: 11400000, guid: d980aed595cbfc54389301122101cb19, type: 2}
+  m_sharedMaterial: {fileID: 21808775285572596, guid: d980aed595cbfc54389301122101cb19,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -19095,8 +19095,8 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_text: COIN 10000
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 55ed7aa8bc713e04798396c2643bdcdb, type: 2}
-  m_sharedMaterial: {fileID: 21164955037135056, guid: 55ed7aa8bc713e04798396c2643bdcdb,
+  m_fontAsset: {fileID: 11400000, guid: d980aed595cbfc54389301122101cb19, type: 2}
+  m_sharedMaterial: {fileID: 21808775285572596, guid: d980aed595cbfc54389301122101cb19,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
