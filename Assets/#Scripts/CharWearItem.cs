@@ -30,6 +30,21 @@ public class CharWearItem : MonoBehaviour {
         }
         else if (PlayerPrefs.GetString("RedWear", "DefaultRedToggle") == "BeretRedToggle (UnityEngine.UI.Toggle)")
             redhat.GetComponent<SpriteRenderer>().sprite = Resources.Load("#Images/beret", typeof(Sprite)) as Sprite;
+        else if (PlayerPrefs.GetString("RedWear", "DefaultRedToggle") == "CookRedToggle (UnityEngine.UI.Toggle)")
+        {
+            redhat.transform.localScale = new Vector3(0.5f, 0.5f, 0);
+            redhat.GetComponent<SpriteRenderer>().sprite = Resources.Load("#Images/Cook", typeof(Sprite)) as Sprite;
+
+        }
+        else if (PlayerPrefs.GetString("RedWear", "DefaultRedToggle") == "CatRedToggle (UnityEngine.UI.Toggle)")
+        {
+            redhat.transform.localScale = new Vector3(0.5f, 0.5f, 0);
+            redhat.GetComponent<SpriteRenderer>().sprite = Resources.Load("#Images/Cat", typeof(Sprite)) as Sprite;
+
+        }
+
+
+
 
         if (PlayerPrefs.GetString("BlueWear", "DefaultBlueToggle") == "DefaultBlueToggle (UnityEngine.UI.Toggle)")
         {
@@ -49,6 +64,16 @@ public class CharWearItem : MonoBehaviour {
         }
         else if (PlayerPrefs.GetString("BlueWear", "DefaultBlueToggle") == "BeretBlueToggle (UnityEngine.UI.Toggle)")
             bluehat.GetComponent<SpriteRenderer>().sprite = Resources.Load("#Images/beret", typeof(Sprite)) as Sprite;
+        else if (PlayerPrefs.GetString("BlueWear", "DefaultRedToggle") == "CookBlueToggle (UnityEngine.UI.Toggle)")
+        {
+            bluehat.transform.localScale = new Vector3(0.5f, 0.5f, 0);
+            bluehat.GetComponent<SpriteRenderer>().sprite = Resources.Load("#Images/Cook", typeof(Sprite)) as Sprite;
+        }
+        else if (PlayerPrefs.GetString("BlueWear", "DefaultRedToggle") == "CatBlueToggle (UnityEngine.UI.Toggle)")
+        {
+            bluehat.transform.localScale = new Vector3(0.5f, 0.5f, 0);
+            bluehat.GetComponent<SpriteRenderer>().sprite = Resources.Load("#Images/Cat", typeof(Sprite)) as Sprite;
+        }
     }
     // Update is called once per frame
     void Update () {
