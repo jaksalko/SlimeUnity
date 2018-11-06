@@ -34,6 +34,7 @@ public class RedMove : MonoBehaviour
     public static bool RedDieOrClear;//false = Die , true = Clear
     public static bool RedStart;
     public static int DieCheck;
+    public static bool clearSt;
     bool onetimeclear;
 
 
@@ -47,7 +48,7 @@ public class RedMove : MonoBehaviour
         RedAlive = true;
         onetimeclear = false;
         RedMove.AllAlive = true;
-
+        clearSt = false;
         DieCheck = 0;
         RedDieOrClear = true;
         popup.gameObject.SetActive(true);
@@ -120,6 +121,7 @@ public class RedMove : MonoBehaviour
             {
                 //Debug.Log("레드 슬라임 다이체크");
                 popuptextmanager.OnGameOverIn();
+                clearSt = true;
                 DieCheck++;
             }
             else

@@ -11,6 +11,8 @@ public class StoreManager : MonoBehaviour {
     public GameObject payPopup;
     public GameObject SantaButton;
     public GameObject CrownButton;
+    public GameObject StrawButton;
+    public GameObject BeretButton;
     public GameObject redItem;
     public GameObject blueItem;
     public Toggle[] RedWearButton;
@@ -40,6 +42,12 @@ public class StoreManager : MonoBehaviour {
                     case 2:
                         redItem.GetComponent<SpriteRenderer>().sprite = Resources.Load("#Images/crown", typeof(Sprite)) as Sprite;
                         break;
+                    case 3:
+                        redItem.GetComponent<SpriteRenderer>().sprite = Resources.Load("#Images/Straw_hat", typeof(Sprite)) as Sprite;
+                        break;
+                    case 4:
+                        redItem.GetComponent<SpriteRenderer>().sprite = Resources.Load("#Images/beret", typeof(Sprite)) as Sprite;
+                        break;
 
                 }
                 RedWearButton[a].isOn = true;
@@ -58,6 +66,12 @@ public class StoreManager : MonoBehaviour {
                     case 2:
                         blueItem.GetComponent<SpriteRenderer>().sprite = Resources.Load("#Images/crown", typeof(Sprite)) as Sprite;
                         break;
+                    case 3:
+                        blueItem.GetComponent<SpriteRenderer>().sprite = Resources.Load("#Images/Straw_hat", typeof(Sprite)) as Sprite;
+                        break;
+                    case 4:
+                        blueItem.GetComponent<SpriteRenderer>().sprite = Resources.Load("#Images/beret", typeof(Sprite)) as Sprite;
+                        break;
 
                 }
                 BlueWearButton[a].isOn = true;
@@ -65,13 +79,13 @@ public class StoreManager : MonoBehaviour {
             }
         }
 
-        //str => Santa == 0  Crown == 1
+        //str => Santa == 0  Crown == 1 Straw == 2 Beret == 3
         itemstate = new List<int>();//itemstate[itemnumber] : 0 -> Not buy  1 -> Buy   2 -> Wear
 
 
-        for (int k =  i ; k < 2; k++)// i is itemnumber and Itemstate is state of itemnumber
+        for (int k =  i ; k < 4; k++)// i is itemnumber and Itemstate is state of itemnumber
         {
-            PlayerPrefs.SetInt(k.ToString(), 0);
+            
             itemstate.Add(PlayerPrefs.GetInt(k.ToString(), 0));
             //Debug.Log(k + " itemstate =" +itemstate[k]);
             if (itemstate[k] != 0)//if itemstate is "bought", buy button is "false"
@@ -80,13 +94,17 @@ public class StoreManager : MonoBehaviour {
                     SantaButton.SetActive(true);
                 else if (k == 1)
                     CrownButton.SetActive(true);
+                else if (k == 2)
+                    StrawButton.SetActive(true);
+                else if (k == 3)
+                    BeretButton.SetActive(true);
 
-
+                Debug.Log("산게 있음");
             }
         }//i = 2;
 
-        
-        
+
+        PlayerPrefs.Save();
         vibrate = new Vector3(0.5f, 0, 0);
         menutextmanager = GameObject.Find("TotalCoinText").GetComponent<MenuTextManager>();
        
@@ -112,12 +130,25 @@ public class StoreManager : MonoBehaviour {
             str = "0";
             paycoin = 1;
         }
-        else if (str == "Crown") {
+        else if (str == "Crown")
+        {
             Debug.Log("Crown Yesbutton" + str + " is clicked");
             str = "1";
             paycoin = 1;
         }
-        
+        else if (str == "Straw")
+        {
+            Debug.Log("Crown Yesbutton" + str + " is clicked");
+            str = "2";
+            paycoin = 1;
+        }
+        else if (str == "Beret")
+        {
+            Debug.Log("Beret Yesbutton" + str + " is clicked");
+            str = "3";
+            paycoin = 1;
+        }
+
 
 
         if (MenuTextManager.totalcoin < paycoin)
@@ -132,18 +163,30 @@ public class StoreManager : MonoBehaviour {
             if (str == "0")
             {
                 Debug.Log("Santa is Sold out");
-               
-                    SantaButton.SetActive(true);
-               
+
+                SantaButton.SetActive(true);
+
             }
 
             else if (str == "1")
             {
                 Debug.Log("Crown is Sold out");
-               
-                    CrownButton.SetActive(true);
+
+                CrownButton.SetActive(true);
             }
-               
+            else if (str == "2")
+            {
+                Debug.Log("Crown is Sold out");
+
+                StrawButton.SetActive(true);
+            }
+            else if (str == "3")
+            {
+                Debug.Log("Beret is Sold out");
+
+                BeretButton.SetActive(true);
+            }
+
             payPopup.SetActive(false);
             menutextmanager.totalcoinText.text = MenuTextManager.totalcoin.ToString();
             PlayerPrefs.SetInt(str, 1);// if buy it, str state is "Buy"(1)
@@ -167,7 +210,8 @@ public class StoreManager : MonoBehaviour {
     {
         if (toggle.isOn)
         {
-            
+            redItem.transform.localScale = new Vector3(110f, 100f, 0);
+            redItem.transform.localPosition = new Vector3(-85f, -347f, -17280f);
             PlayerPrefs.SetString("RedWear", toggle.ToString());
             if (toggle.ToString() == "DefaultRedToggle (UnityEngine.UI.Toggle)")
                 redItem.GetComponent<SpriteRenderer>().sprite = null;
@@ -175,6 +219,14 @@ public class StoreManager : MonoBehaviour {
                 redItem.GetComponent<SpriteRenderer>().sprite = Resources.Load("#Images/santa_hat", typeof(Sprite)) as Sprite;
             else if (toggle.ToString() == "CrownRedToggle (UnityEngine.UI.Toggle)")
                 redItem.GetComponent<SpriteRenderer>().sprite = Resources.Load("#Images/crown", typeof(Sprite)) as Sprite;
+            else if (toggle.ToString() == "StrawRedToggle (UnityEngine.UI.Toggle)")
+            {
+                redItem.transform.localScale = new Vector3(55f, 50f, 0);
+                redItem.GetComponent<SpriteRenderer>().sprite = Resources.Load("#Images/Straw_hat", typeof(Sprite)) as Sprite;
+                redItem.transform.localPosition = new Vector3(-85f, -367f, -17280f);
+            }
+            else if (toggle.ToString() == "BeretRedToggle (UnityEngine.UI.Toggle)")
+                redItem.GetComponent<SpriteRenderer>().sprite = Resources.Load("#Images/beret", typeof(Sprite)) as Sprite;
         }
             
     }
@@ -182,7 +234,8 @@ public class StoreManager : MonoBehaviour {
     {
         if (toggle.isOn)
         {
-            
+            blueItem.transform.localScale = new Vector3(110f, 100f, 0);
+            blueItem.transform.localPosition = new Vector3(85f, -347f, -17280f);
             PlayerPrefs.SetString("BlueWear", toggle.ToString());
             if (toggle.ToString() == "DefaultBlueToggle (UnityEngine.UI.Toggle)")
                 blueItem.GetComponent<SpriteRenderer>().sprite = null;
@@ -190,6 +243,14 @@ public class StoreManager : MonoBehaviour {
                 blueItem.GetComponent<SpriteRenderer>().sprite = Resources.Load("#Images/santa_hat", typeof(Sprite)) as Sprite;
             else if (toggle.ToString() == "CrownBlueToggle (UnityEngine.UI.Toggle)")
                 blueItem.GetComponent<SpriteRenderer>().sprite = Resources.Load("#Images/crown", typeof(Sprite)) as Sprite;
+            else if (toggle.ToString() == "StrawBlueToggle (UnityEngine.UI.Toggle)")
+            {
+                blueItem.GetComponent<SpriteRenderer>().sprite = Resources.Load("#Images/Straw_hat", typeof(Sprite)) as Sprite;
+                blueItem.transform.localScale = new Vector3(55f, 50f, 0);
+                blueItem.transform.localPosition = new Vector3(85f, -367f, -17280f);
+            }
+            else if (toggle.ToString() == "BeretBlueToggle (UnityEngine.UI.Toggle)")
+                blueItem.GetComponent<SpriteRenderer>().sprite = Resources.Load("#Images/beret", typeof(Sprite)) as Sprite;
         }
     }
            

@@ -28,7 +28,7 @@ public class MenuButton : MonoBehaviour {
     {
         
 
-       // PlayerPrefs.DeleteAll();
+        //PlayerPrefs.DeleteAll();
 
         StageButton[0] = GetComponent<Button>();
         for (int i = 1; i < StageButton.Length; i++)

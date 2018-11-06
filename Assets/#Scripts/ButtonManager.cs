@@ -142,7 +142,7 @@ public class ButtonManager : MonoBehaviour {
         next.SetActive(true);
         
         cointxt.SetActive(true);
-        if (RedMove.DieCheck > 0)
+        if (RedMove.DieCheck > 0&&RedMove.clearSt==true)
         {
             if (PlayerPrefs.GetInt("ClearStage", 0) < PlayerPrefs.GetInt("CurStage", 0))
             {
@@ -183,7 +183,19 @@ public class ButtonManager : MonoBehaviour {
     {
         
         popup.SetActive(false);
-        
+        if (RedMove.DieCheck > 0 && RedMove.clearSt == true)
+        {
+            if (PlayerPrefs.GetInt("ClearStage", 0) < PlayerPrefs.GetInt("CurStage", 0))
+            {
+                Debug.Log("클리어 스테이지 증가" + PlayerPrefs.GetInt("ClearStage", 0) + " -> " + PlayerPrefs.GetInt("CurStage", 0));
+                int ClearStage = PlayerPrefs.GetInt("CurStage", 0);
+
+
+                PlayerPrefs.SetInt("ClearStage", ClearStage);
+                PlayerPrefs.Save();
+
+            }
+        }
         AutoFade.LoadLevel("Stage" + MenuButton.CurStage.ToString(), 1, 1, Color.black);
         
         Time.timeScale = 1;
@@ -191,7 +203,7 @@ public class ButtonManager : MonoBehaviour {
     public void NextStageButton()
     {
 
-        if (RedMove.DieCheck > 0)
+        if (RedMove.DieCheck > 0 && RedMove.clearSt == true)
         {
             if (PlayerPrefs.GetInt("ClearStage", 0) < PlayerPrefs.GetInt("CurStage", 0))
             {
