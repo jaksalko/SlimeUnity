@@ -64,10 +64,12 @@ public class MenuButton : MonoBehaviour {
     }
     public void storeButtonClick() {
         storeUI.SetActive(true);
+
     }
     public void storeExitClick()
     {
         storeUI.SetActive(false);
+        
     }
     public void optionExitClick() {
         optionUI.SetActive(false);

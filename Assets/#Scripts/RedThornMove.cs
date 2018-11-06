@@ -467,6 +467,119 @@ public class RedThornMove : MonoBehaviour
                     }
                     break;
 
+                case 44:
+                    if (Wall[10].transform.localPosition.y >= 0)
+                    {
+                        Debug.Log("in wall10");
+                        List<int> TThornNum = new List<int>();
+                        List<int> FThornNum = new List<int>();
+                        FThornNum.Insert(0, 57);
+                        FThornNum.Insert(1, 58);
+                        FThornNum.Insert(2, 59);
+                        FThornNum.Insert(3, 104);
+                        FThornNum.Insert(4, 105);
+                        FThornNum.Insert(5, 106);
+
+                        TThornNum.Insert(0, 6);
+                        TThornNum.Insert(1, 7);
+                        TThornNum.Insert(2, 8);
+
+                        for (int i = 0; i < FThornNum.Count; i++)
+                            Thorn[FThornNum[i]].SetActive(false);//57,58,59,104,105,106
+                        for (int i = 0; i < TThornNum.Count; i++)
+                            Thorn[TThornNum[i]].SetActive(true);//6,7,8
+                    }
+                    if (Wall[17].transform.localPosition.y >= 2.5)
+                    {
+
+
+                        List<int> FWallNum = new List<int>();
+
+                        FWallNum.Insert(0, 17);
+                        FWallNum.Insert(1, 18);
+                        FWallNum.Insert(2, 19);
+                        for (int i = 0; i < FWallNum.Count; i++)
+                            Wall[FWallNum[i]].SetActive(false);
+
+                    }
+                    if (Wall[23].transform.localPosition.y >= 1)
+                    {
+                        Debug.Log("in wall23");
+
+                        List<int> FThornNum = new List<int>();
+                        FThornNum.Insert(0, 70);
+                        FThornNum.Insert(1, 71);
+                        FThornNum.Insert(2, 72);
+
+                        for (int i = 0; i < FThornNum.Count; i++)
+                            Thorn[FThornNum[i]].SetActive(false);
+
+                        List<int> FWallNum = new List<int>();
+
+                        FWallNum.Insert(0, 79);
+                        FWallNum.Insert(1, 80);
+                        FWallNum.Insert(2, 81);
+                        for (int i = 0; i < FWallNum.Count; i++)
+                            Wall[FWallNum[i]].SetActive(false);
+
+                    }
+                    if (Wall[32].transform.localPosition.y >= 2.5)
+                    {
+
+
+                        List<int> FWallNum = new List<int>();
+
+                        FWallNum.Insert(0, 88);
+                        FWallNum.Insert(1, 89);
+                        FWallNum.Insert(2, 90);
+                        for (int i = 0; i < FWallNum.Count; i++)
+                            Wall[FWallNum[i]].SetActive(false);
+
+                    }
+                    if (Wall[49].transform.localPosition.y >= 0)
+                    {
+                        Debug.Log("in wall10");
+                        List<int> TThornNum = new List<int>();
+                        List<int> FThornNum = new List<int>();
+
+                        FThornNum.Insert(0, 96);
+                        FThornNum.Insert(1, 97);
+                        FThornNum.Insert(2, 98);
+                        FThornNum.Insert(0, 99);
+                        FThornNum.Insert(1, 100);
+                        FThornNum.Insert(2, 101);
+
+
+                        TThornNum.Insert(0, 113);
+                        TThornNum.Insert(1, 114);
+
+
+                        for (int i = 0; i < FThornNum.Count; i++)
+                            Thorn[FThornNum[i]].SetActive(false);//57,58,59,104,105,106
+                        for (int i = 0; i < TThornNum.Count; i++)
+                            Thorn[TThornNum[i]].SetActive(true);//6,7,8
+                    }
+                    if (Wall[53].transform.localPosition.y >= 0)
+                    {
+                        Debug.Log("in wall10");
+                        List<int> TThornNum = new List<int>();
+                        List<int> FThornNum = new List<int>();
+
+                        FThornNum.Insert(0, 113);
+                        FThornNum.Insert(1, 114);
+
+
+
+                        TThornNum.Insert(0, 0);
+
+
+
+                        for (int i = 0; i < FThornNum.Count; i++)
+                            Thorn[FThornNum[i]].SetActive(false);//57,58,59,104,105,106
+                        for (int i = 0; i < TThornNum.Count; i++)
+                            Thorn[TThornNum[i]].SetActive(true);//6,7,8
+                    }
+                    break;
                 case 45:
                     {
 
