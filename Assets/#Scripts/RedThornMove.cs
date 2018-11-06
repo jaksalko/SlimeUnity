@@ -21,7 +21,7 @@ public class RedThornMove : MonoBehaviour
     //Red, Blue 두개로 만들어야 함. 아직 하나만 구현(Red만 구현)
     public GameObject blueSideObject;
     public GameObject redSideObject;
-    float moveX, moveY;
+    float[] moveY;
     int temp;
     bool[] a;
     bool check ;
@@ -41,13 +41,17 @@ public class RedThornMove : MonoBehaviour
         //{
         //    reverseportalnum++;
         //}
+        a = new bool[Thorn.Length];
+        moveY = new float[Thorn.Length];
         for (int i = 0; i < Wall.Length; i++)
             Wall[i] = GameObject.Find("RWall").transform.Find("red_wall (" + i + ")").gameObject;
 
         for (int i = 0; i < Thorn.Length; i++)
+        {
             Thorn[i] = GameObject.Find("RThorns").transform.Find("red_thorn (" + i + ")").gameObject;
-
-        a = new bool[Thorn.Length];
+            a[i] = true;
+            moveY[i] = Thorn[i].transform.localPosition.y;
+        }
 
         for (int i=0; i<coinn.Length;i++)
             coinn[i] = GameObject.Find("RCoins").transform.Find("rcoin ("+i+")").gameObject;
@@ -103,202 +107,384 @@ public class RedThornMove : MonoBehaviour
         if (RedMove.RedReversePortalLook == false)//Reverse포탈이 보이지 않는다면
         {
             Move();
-            
+
             //return;
-        }
-        
-        
-        switch (PlayerPrefs.GetInt("CurStage", 0))
-        {
-            case 6:
-                {
-                    ThornMoveX(0.5f, 0);
-                    ThornMoveX(1f, 1);
-                    break;
-                }
-            case 7:
-                {
-                    ThornMoveX(0.5f, 0);
-                    ThornMoveX(1f, 1);
-                    ThornMoveY(0.7f, 2);
 
-                    ThornMoveX(0.5f, 3);
-                    ThornMoveX(0.5f, 4);
-                    ThornMoveY(1f, 3);
-                    ThornMoveY(1f, 4);
-                    break;
-                }
-            case 8:
-                {
-                    ThornMoveX(0.5f, 5);
-                    ThornMoveX(0.5f, 6);
-                    break;
-                }
-            case 36:
-                {
-                    ThornMoveX(1.5f, 17);
-                    ThornMoveX(1f, 18);
-                    ThornMoveX(0.5f, 19);
-                    if (ReversePotal.Count == 0 && check == false)
+
+
+            switch (PlayerPrefs.GetInt("CurStage", 0))
+            {
+                case 6:
                     {
-                        List<int> TThornNum = new List<int>();
-                        List<int> FThornNum = new List<int>();
-                        List<int> TWallNum = new List<int>();
-                        List<int> FWallNum = new List<int>();
-                        TThornNum.Insert(0, 11);
-                        TThornNum.Insert(1, 12);
-                        TThornNum.Insert(2, 13);
-                        TThornNum.Insert(3, 14);
-
-                        FThornNum.Insert(0, 0);
-                        FThornNum.Insert(1, 1);
-                        FThornNum.Insert(2, 16);
-                        FThornNum.Insert(3, 15);
-
-                        FWallNum.Insert(0, 18);
-                        FWallNum.Insert(1, 17);
-                        FWallNum.Insert(2, 16);
-
-                        TWallNum.Insert(0, 19);
-                        TWallNum.Insert(1, 20);
-                        TWallNum.Insert(2, 21);
-                        for (int i = 0; i < FThornNum.Count; i++)
-                            Thorn[FThornNum[i]].SetActive(false);//0,1,13,14,15
-                        for (int i = 0; i < FWallNum.Count; i++)
-                            Wall[FWallNum[i]].SetActive(false);//6,15,16
-
-
-                        for (int i = 0; i < TThornNum.Count; i++)
-                            Thorn[TThornNum[i]].SetActive(true);//16,17,18,19
-                        for (int i = 0; i < TWallNum.Count; i++)
-                            Wall[TWallNum[i]].SetActive(true);//19,20,21
-                        check = true;
+                        ThornMoveX(0.5f, 0);
+                        ThornMoveX(1f, 1);
+                        break;
                     }
-                    break;
-                }
-            case 37:
-                {
-                    
-                    if (ReversePotal.Count % 2 == 1 && check == true)
+                case 7:
                     {
-                        List<int> TThornNum = new List<int>();
-                        List<int> FThornNum = new List<int>();
-                        
-                        TThornNum.Insert(0, 2);
-                        TThornNum.Insert(1, 3);
-                        
+                        ThornMoveX(0.5f, 0);
+                        ThornMoveX(1f, 1);
+                        ThornMoveY(0.7f, 2);
 
-                        FThornNum.Insert(0, 0);
-                        FThornNum.Insert(1, 1);
-                        if (ReversePotal.Count < 4)
+                        ThornMoveX(0.5f, 3);
+                        ThornMoveX(0.5f, 4);
+                        ThornMoveY(1f, 3);
+                        ThornMoveY(1f, 4);
+                        break;
+                    }
+                case 8:
+                    {
+                        ThornMoveX(0.5f, 5);
+                        ThornMoveX(0.5f, 6);
+                        break;
+                    }
+                case 36:
+                    {
+                        ThornMoveX(1.5f, 17);
+                        ThornMoveX(1f, 18);
+                        ThornMoveX(0.5f, 19);
+                        if (ReversePotal.Count == 0 && check == false)
                         {
-                            TThornNum.Insert(2, 5);
+                            List<int> TThornNum = new List<int>();
+                            List<int> FThornNum = new List<int>();
+                            List<int> TWallNum = new List<int>();
+                            List<int> FWallNum = new List<int>();
+                            TThornNum.Insert(0, 11);
+                            TThornNum.Insert(1, 12);
+                            TThornNum.Insert(2, 13);
+                            TThornNum.Insert(3, 14);
+
+                            FThornNum.Insert(0, 0);
+                            FThornNum.Insert(1, 1);
+                            FThornNum.Insert(2, 16);
+                            FThornNum.Insert(3, 15);
+
+                            FWallNum.Insert(0, 18);
+                            FWallNum.Insert(1, 17);
+                            FWallNum.Insert(2, 16);
+
+                            TWallNum.Insert(0, 19);
+                            TWallNum.Insert(1, 20);
+                            TWallNum.Insert(2, 21);
+                            for (int i = 0; i < FThornNum.Count; i++)
+                                Thorn[FThornNum[i]].SetActive(false);//0,1,13,14,15
+                            for (int i = 0; i < FWallNum.Count; i++)
+                                Wall[FWallNum[i]].SetActive(false);//6,15,16
+
+
+                            for (int i = 0; i < TThornNum.Count; i++)
+                                Thorn[TThornNum[i]].SetActive(true);//16,17,18,19
+                            for (int i = 0; i < TWallNum.Count; i++)
+                                Wall[TWallNum[i]].SetActive(true);//19,20,21
+                            check = true;
                         }
-                        if (ReversePotal.Count < 3)
+                        break;
+                    }
+                case 37:
+                    {
+
+                        if (ReversePotal.Count % 2 == 1 && check == true)
                         {
-                            FThornNum.Insert(2, 4);
+                            List<int> TThornNum = new List<int>();
+                            List<int> FThornNum = new List<int>();
+
+                            TThornNum.Insert(0, 2);
+                            TThornNum.Insert(1, 3);
+
+
+                            FThornNum.Insert(0, 0);
+                            FThornNum.Insert(1, 1);
+                            if (ReversePotal.Count < 4)
+                            {
+                                TThornNum.Insert(2, 5);
+                            }
+                            if (ReversePotal.Count < 3)
+                            {
+                                FThornNum.Insert(2, 4);
+                            }
+
+
+                            for (int i = 0; i < FThornNum.Count; i++)
+                                Thorn[FThornNum[i]].SetActive(false);//0,1,13,14,15
+
+
+
+                            for (int i = 0; i < TThornNum.Count; i++)
+                                Thorn[TThornNum[i]].SetActive(true);//16,17,18,19
+
+                            check = false;
                         }
 
+                        if (ReversePotal.Count % 2 == 0 && check == false)
+                        {
+                            List<int> TThornNum = new List<int>();
+                            List<int> FThornNum = new List<int>();
 
-                        for (int i = 0; i < FThornNum.Count; i++)
-                            Thorn[FThornNum[i]].SetActive(false);//0,1,13,14,15
+                            TThornNum.Insert(0, 0);
+                            TThornNum.Insert(1, 1);
+
+
+                            FThornNum.Insert(0, 2);
+                            FThornNum.Insert(1, 3);
+
+                            if (ReversePotal.Count < 4)
+                            {
+                                FThornNum.Insert(2, 5);
+                            }
+                            if (ReversePotal.Count < 3)
+                            {
+                                TThornNum.Insert(2, 4);
+                            }
+
+                            for (int i = 0; i < FThornNum.Count; i++)
+                                Thorn[FThornNum[i]].SetActive(false);//0,1,13,14,15
+
+
+                            for (int i = 0; i < TThornNum.Count; i++)
+                                Thorn[TThornNum[i]].SetActive(true);//16,17,18,19
+
+                            check = true;
+                        }
+                        break;
+                    }
+                case 38:
+                    {
+                        if (Wall[33].transform.localPosition.y > -4f && check == false)
+                        {
+                            List<int> TThornNum = new List<int>();
+                            List<int> FThornNum = new List<int>();
+                            List<int> TWallNum = new List<int>();
+                            List<int> FWallNum = new List<int>();
+                            TThornNum.Insert(0, 24);
+                            TThornNum.Insert(1, 25);
+                            TThornNum.Insert(2, 26);
+                            TThornNum.Insert(3, 27);
+
+                            FThornNum.Insert(0, 2);
+                            FThornNum.Insert(1, 3);
+                            FThornNum.Insert(2, 17);
+                            FThornNum.Insert(3, 18);
+
+                            FWallNum.Insert(0, 35);
+                            FWallNum.Insert(1, 36);
+                            FWallNum.Insert(2, 37);
+
+                            TWallNum.Insert(0, 38);
+                            TWallNum.Insert(1, 39);
+                            TWallNum.Insert(2, 40);
+                            for (int i = 0; i < FThornNum.Count; i++)
+                                Thorn[FThornNum[i]].SetActive(false);//0,1,13,14,15
+                            for (int i = 0; i < FWallNum.Count; i++)
+                                Wall[FWallNum[i]].SetActive(false);//6,15,16
+
+
+                            for (int i = 0; i < TThornNum.Count; i++)
+                                Thorn[TThornNum[i]].SetActive(true);//16,17,18,19
+                            for (int i = 0; i < TWallNum.Count; i++)
+                                Wall[TWallNum[i]].SetActive(true);//19,20,21
+                            check = true;
+                        }
+                        break;
+                    }
+                case 39:
+                    {
+                        ThornMoveX(0.7f, 19);
+                        ThornMoveX(0.7f, 21);
+
+                        ThornMoveY(0.7f, 19);
+                        ThornMoveY(0.7f, 21);
+
+                        ThornMoveX(0.7f, 22);
+                        ThornMoveX(0.7f, 23);
+
+                        ThornMoveY(0.7f, 22);
+                        ThornMoveY(0.7f, 23);
+                        break;
+
+                    }
+                case 40:
+                    {
+                        ThornMoveX(-0.7f, 19);
+                        ThornMoveX(-0.7f, 21);
+
+                        ThornMoveY(-0.7f, 19);
+                        ThornMoveY(-0.7f, 21);
+
+                        ThornMoveX(-0.7f, 22);
+                        ThornMoveX(-0.7f, 23);
+
+                        ThornMoveY(-0.7f, 22);
+                        ThornMoveY(-0.7f, 23);
+                        if (ReversePotal.Count == 1 && check == false)
+                        {
+                            List<int> TThornNum = new List<int>();
+                            List<int> FThornNum = new List<int>();
+                            List<int> TWallNum = new List<int>();
+                            List<int> FWallNum = new List<int>();
+                            TThornNum.Insert(0, 24);
+                            TThornNum.Insert(1, 25);
+                            TThornNum.Insert(2, 26);
+                            TThornNum.Insert(3, 27);
+
+                            FThornNum.Insert(0, 0);
+                            FThornNum.Insert(1, 1);
+                            FThornNum.Insert(2, 13);
+                            FThornNum.Insert(3, 14);
+
+                            FWallNum.Insert(0, 16);
+                            FWallNum.Insert(1, 17);
+                            FWallNum.Insert(2, 18);
+
+                            TWallNum.Insert(0, 35);
+                            TWallNum.Insert(1, 36);
+                            TWallNum.Insert(2, 37);
+                            for (int i = 0; i < FThornNum.Count; i++)
+                                Thorn[FThornNum[i]].SetActive(false);//0,1,13,14,15
+                            for (int i = 0; i < FWallNum.Count; i++)
+                                Wall[FWallNum[i]].SetActive(false);//6,15,16
+
+
+                            for (int i = 0; i < TThornNum.Count; i++)
+                                Thorn[TThornNum[i]].SetActive(true);//16,17,18,19
+                            for (int i = 0; i < TWallNum.Count; i++)
+                                Wall[TWallNum[i]].SetActive(true);//19,20,21
+                            check = true;
+                        }
+                        break;
                        
+                    }
+
+                case 45:
+                    {
+
+                        if (Thorn[5].transform.localPosition.y >=1 && ReversePotal.Count == 1)
+                            Thorn[5].SetActive(true);
+                        if (Thorn[6].transform.localPosition.y >= 1 && ReversePotal.Count == 1)
+                            Thorn[6].SetActive(true);
+                        if (Wall[0].transform.localPosition.y >= 0&&check==false && ReversePotal.Count == 1)
+                        {
+                            List<int> TThornNum = new List<int>();
+                            List<int> FThornNum = new List<int>();
+                            List<int> TWallNum = new List<int>();
+                            List<int> FWallNum = new List<int>();
+                            TThornNum.Insert(0, 7);
+                            TThornNum.Insert(1, 8);
+                            TThornNum.Insert(2, 9);
+                            TThornNum.Insert(3, 10);
+
+                            FThornNum.Insert(0, 0);
+                            FThornNum.Insert(1, 1);
+                            FThornNum.Insert(2, 2);
+                            FThornNum.Insert(3, 3);
+
+                            FWallNum.Insert(0, 5);
+                            FWallNum.Insert(1, 6);
+                            FWallNum.Insert(2, 7);
+
+                            TWallNum.Insert(0, 8);
+                            TWallNum.Insert(1, 9);
+                            TWallNum.Insert(2, 10);
+                            for (int i = 0; i < FThornNum.Count; i++)
+                                Thorn[FThornNum[i]].SetActive(false);//0,1,13,14,15
+                            for (int i = 0; i < FWallNum.Count; i++)
+                                Wall[FWallNum[i]].SetActive(false);//6,15,16
 
 
-                        for (int i = 0; i < TThornNum.Count; i++)
-                            Thorn[TThornNum[i]].SetActive(true);//16,17,18,19
+                            for (int i = 0; i < TThornNum.Count; i++)
+                                Thorn[TThornNum[i]].SetActive(true);//16,17,18,19
+                            for (int i = 0; i < TWallNum.Count; i++)
+                                Wall[TWallNum[i]].SetActive(true);//19,20,21
+                            check = true;
+                        }
                         
-                        check = false;
-                    }
-
-                    if (ReversePotal.Count % 2 == 0 && check == false)
-                    {
-                        List<int> TThornNum = new List<int>();
-                        List<int> FThornNum = new List<int>();
-
-                        TThornNum.Insert(0, 0);
-                        TThornNum.Insert(1, 1);
-
-
-                        FThornNum.Insert(0, 2);
-                        FThornNum.Insert(1, 3);
-
-                        if (ReversePotal.Count < 4)
+                        if (Wall[14].transform.localPosition.y >= 0&&check==true && ReversePotal.Count == 1)
                         {
-                            FThornNum.Insert(2, 5);
+                            List<int> TThornNum = new List<int>();
+                            List<int> FThornNum = new List<int>();
+                            List<int> TWallNum = new List<int>();
+                            List<int> FWallNum = new List<int>();
+                            TThornNum.Insert(0, 16);
+                            TThornNum.Insert(1, 17);
+                            TThornNum.Insert(2, 18);
+                            TThornNum.Insert(3, 19);
+
+                            FThornNum.Insert(0,11);
+                            FThornNum.Insert(1, 12);
+                            FThornNum.Insert(2, 13);
+                            FThornNum.Insert(3, 14);
+
+                            FWallNum.Insert(0, 19);
+                            FWallNum.Insert(1, 20);
+                            FWallNum.Insert(2, 21);
+
+                            TWallNum.Insert(0, 13);
+                            TWallNum.Insert(1, 12);
+                            TWallNum.Insert(2, 11);
+                            for (int i = 0; i < FThornNum.Count; i++)
+                                Thorn[FThornNum[i]].SetActive(false);//0,1,13,14,15
+                            for (int i = 0; i < FWallNum.Count; i++)
+                                Wall[FWallNum[i]].SetActive(false);//6,15,16
+
+
+                            for (int i = 0; i < TThornNum.Count; i++)
+                                Thorn[TThornNum[i]].SetActive(true);//16,17,18,19
+                            for (int i = 0; i < TWallNum.Count; i++)
+                                Wall[TWallNum[i]].SetActive(true);//19,20,21
+                            check = false;
                         }
-                        if (ReversePotal.Count < 3)
+                        if (Thorn[37].transform.localPosition.y >= 0.5 && ReversePotal.Count == 1)
                         {
-                            TThornNum.Insert(2, 4);
+                            Thorn[37].SetActive(true);
                         }
+                        if (Wall[30].transform.localPosition.y >= 0 && TextManager.gamecoin >= 3 && ReversePotal.Count == 1)
+                        {
+                            
+                            List<int> FThornNum = new List<int>();
+                           
+                            List<int> FWallNum = new List<int>();
+                            
 
-                        for (int i = 0; i < FThornNum.Count; i++)
-                            Thorn[FThornNum[i]].SetActive(false);//0,1,13,14,15
-                      
+                            FThornNum.Insert(0, 30);
+                            FThornNum.Insert(1, 31);
+                            FThornNum.Insert(2, 32);
+                            FThornNum.Insert(3, 33);
 
-                        for (int i = 0; i < TThornNum.Count; i++)
-                            Thorn[TThornNum[i]].SetActive(true);//16,17,18,19
-                     
-                        check = true;
+                            FWallNum.Insert(0, 38);
+                            FWallNum.Insert(1, 39);
+                            FWallNum.Insert(2, 40);
+
+                            
+                            for (int i = 0; i < FThornNum.Count; i++)
+                                Thorn[FThornNum[i]].SetActive(false);//0,1,13,14,15
+                            for (int i = 0; i < FWallNum.Count; i++)
+                                Wall[FWallNum[i]].SetActive(false);//6,15,16
+
+
+                           
+                        }
+                        if (Thorn[35].transform.localPosition.y >= -0.5&& ReversePotal.Count == 1)
+                        {
+                            Thorn[35].SetActive(true);
+                            Thorn[34].SetActive(false);
+                            ThornMoveY(3f, 35);
+                        }
+                        if (TextManager.gamecoin >= 4 && Potal[0].transform.localPosition.y >= -1)
+                        {
+                            Potal[0].SetActive(true);
+                        }
+                        if (ReversePotal.Count == 0)
+                        {
+                            Potal[0].SetActive(false);
+                            ReversePotal.Insert(0, GameObject.Find("RedReversePortal").transform.Find("RedReverse (" + 1 + ")").gameObject);
+
+                            ReversePotal2 = ReversePotal;
+                            ReversePotal[0].SetActive(true);
+                        }
+                            break;
                     }
-                    break;
-                }
-            case 38:
-                {
-                    if (Wall[33].transform.localPosition.y > -4f && check == false)
-                    {
-                        List<int> TThornNum = new List<int>();
-                        List<int> FThornNum = new List<int>();
-                        List<int> TWallNum = new List<int>();
-                        List<int> FWallNum = new List<int>();
-                        TThornNum.Insert(0, 24);
-                        TThornNum.Insert(1, 25);
-                        TThornNum.Insert(2, 26);
-                        TThornNum.Insert(3, 27);
+            
 
-                        FThornNum.Insert(0, 2);
-                        FThornNum.Insert(1, 3);
-                        FThornNum.Insert(2, 17);
-                        FThornNum.Insert(3, 18);
-
-                        FWallNum.Insert(0, 35);
-                        FWallNum.Insert(1, 36);
-                        FWallNum.Insert(2, 37);
-
-                        TWallNum.Insert(0, 38);
-                        TWallNum.Insert(1, 39);
-                        TWallNum.Insert(2, 40);
-                        for (int i = 0; i < FThornNum.Count; i++)
-                            Thorn[FThornNum[i]].SetActive(false);//0,1,13,14,15
-                        for (int i = 0; i < FWallNum.Count; i++)
-                            Wall[FWallNum[i]].SetActive(false);//6,15,16
-
-
-                        for (int i = 0; i < TThornNum.Count; i++)
-                            Thorn[TThornNum[i]].SetActive(true);//16,17,18,19
-                        for (int i = 0; i < TWallNum.Count; i++)
-                            Wall[TWallNum[i]].SetActive(true);//19,20,21
-                        check = true;
-                    }
-                    break;
-                }
-            case 39:
-                {
-                    ThornMoveX(0.7f, 19);
-                    ThornMoveX(0.7f, 21);
-
-                    ThornMoveY(0.7f, 19);
-                    ThornMoveY(0.7f, 21);
-
-                    ThornMoveX(0.7f, 22);
-                    ThornMoveX(0.7f, 23);
-
-                    ThornMoveY(0.7f, 22);
-                    ThornMoveY(0.7f, 23);
-                    break;
-                    
-                }
-
+            }
         }
         return;
 
@@ -327,39 +513,46 @@ public class RedThornMove : MonoBehaviour
             }
         
     }
-    void ThornMoveY(float speed,  int ThornNum)
+    void ThornMoveY(float speed, int ThornNum)
     {
-        
-        moveY = Thorn[ThornNum].transform.localPosition.y;
-        
-            if (a[ThornNum] == true)
-            {
-                Thorn[ThornNum].transform.Translate(0, -speed * Time.deltaTime, 0, Space.World);
-                if (Thorn[ThornNum].transform.localPosition.y > moveY + 1.2f)
-                {
-                a[ThornNum] = false;
-                }
 
-            }
-            else
+
+
+        if (a[ThornNum] == true)
+        {
+            Thorn[ThornNum].transform.Translate(0, speed * Time.deltaTime, 0, Space.World);
+            if (Thorn[ThornNum].transform.localPosition.y > (moveY[ThornNum] + 2.0f))
             {
-                Thorn[ThornNum].transform.Translate(0, speed * Time.deltaTime, 0, Space.World);
-                if (Thorn[ThornNum].transform.localPosition.y < moveY - 1.2f)
-                {
-                a[ThornNum] = true;
-                }
+                Debug.Log(Thorn[ThornNum].transform.localPosition.y + ">" + (moveY[ThornNum] + 2f));
+                Debug.Log("너무 올라감");
+                a[ThornNum] = false;
             }
-        
+
+        }
+        else if (a[ThornNum] == false)
+        {
+            Thorn[ThornNum].transform.Translate(0, -speed * Time.deltaTime, 0, Space.World);
+            Debug.Log(Thorn[ThornNum].transform.localPosition.y + "<" + (moveY[ThornNum] - 2.0f));
+            if (Thorn[ThornNum].transform.localPosition.y < (moveY[ThornNum] - 2f))
+            {
+
+                Debug.Log("너무 내려감");
+                a[ThornNum] = true;
+            }
+        }
+
     }
     void Move()
     {
         
         if (RedReverse == false)//RedReverse모드가 아닌 경우
         {
-            
-            for (int i = 0; i < Thorn.Length; i++)
-                Thorn[i].transform.Translate(0, 3f * Time.deltaTime, 0, Space.World);
 
+            for (int i = 0; i < Thorn.Length; i++)
+            {
+                Thorn[i].transform.Translate(0, 3f * Time.deltaTime, 0, Space.World);
+                moveY[i] += 3f * Time.deltaTime;
+            }
             for (int i = 0; i < Wall.Length; i++)
                 Wall[i].transform.Translate(0, 3f * Time.deltaTime, 0, Space.World);
 
@@ -370,18 +563,25 @@ public class RedThornMove : MonoBehaviour
                 EndPotal[i].Translate(0, 3f * Time.deltaTime, 0, Space.World);
 
             for (int i = 0; i < ReversePotal.Count; i++)
+            {
                 ReversePotal[i].transform.Translate(0, 3f * Time.deltaTime, 0, Space.World);
-
+                if (PlayerPrefs.GetInt("CurStage", 0) == 45)
+                {
+                    GameObject.Find("RedReversePortal").transform.Find("RedReverse (" + 1 + ")").gameObject.transform.Translate(0, 3f * Time.deltaTime, 0, Space.World);
+                }
+            }
             for (int i = 0; i < coinn.Length; i++)
                 coinn[i].transform.Translate(0, 3f * Time.deltaTime, 0, Space.World);
         }
         else if(RedReverse == true)//RedReverse모드인 경우
         {
-            
+
 
             for (int i = 0; i < Thorn.Length; i++)
+            {
                 Thorn[i].transform.Translate(0, -3f * Time.deltaTime, 0, Space.World);
-
+                moveY[i] -= 3f * Time.deltaTime;
+            }
             for (int i = 0; i < Wall.Length; i++)
                 Wall[i].transform.Translate(0, -3f * Time.deltaTime, 0, Space.World);
 
@@ -392,8 +592,11 @@ public class RedThornMove : MonoBehaviour
                 EndPotal[i].Translate(0, -3f * Time.deltaTime, 0, Space.World);
 
             for (int i = 0; i < ReversePotal.Count; i++)
+            {
                 ReversePotal[i].transform.Translate(0, -3f * Time.deltaTime, 0, Space.World);
-            for (int i = 0; i < coinn.Length; i++)
+                
+            }
+                for (int i = 0; i < coinn.Length; i++)
                 coinn[i].transform.Translate(0, -3f * Time.deltaTime, 0, Space.World);
 
         }
