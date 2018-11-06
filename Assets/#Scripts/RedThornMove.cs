@@ -353,7 +353,7 @@ public class RedThornMove : MonoBehaviour
                         break;
                        
                     }
-                case 41:
+                case 21:
                     ThornMoveX(1.0f, 0);
                     ThornMoveX(1.0f, 1);
                     ThornMoveX(1.0f, 2);
