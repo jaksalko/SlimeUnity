@@ -47859,7 +47859,6 @@ MonoBehaviour:
   blueMan: {fileID: 396449891}
   RedSound: {fileID: 645422915}
   ReverseCount: 0
-  ClearStage: 0
   CurStage: 0
 --- !u!1 &2115166972
 GameObject:
