@@ -55,7 +55,10 @@ EditorBuildSettings:
     guid: 9ec80967e5789054f98a2c448f8ac784
   - enabled: 1
     path: Assets/#Scenes/Stage14.unity
-    guid: cb4ddaeda555e1f4da0fbd163e530ec1
+    guid: d9efb0c3da633c34a9499eafe44a3efa
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 1
     path: Assets/#Scenes/Stage15.unity
     guid: 51320467dbbc29944a4511e621916262
@@ -67,13 +70,22 @@ EditorBuildSettings:
     guid: ed315967a9a23de4c9136c0d74a86f15
   - enabled: 1
     path: Assets/#Scenes/Stage18.unity
-    guid: e1021af89a7835c4593ac4134cd6ae17
+    guid: 9432b35b920f62a47badc8fb3636e7cd
   - enabled: 1
     path: Assets/#Scenes/Stage19.unity
-    guid: 9249d49b84e84104d81543cb5b67dceb
+    guid: 3cb9419d451fa2a45b84dac6b99141e4
   - enabled: 1
     path: Assets/#Scenes/Stage20.unity
-    guid: 2cda990e2423bbf4892e6590ba056729
+    guid: 23ca108b4503761488358d1a7ea7c289
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 1
     path: Assets/#Scenes/Stage21.unity
     guid: 233f93c4f99c5a2498efd37d9fd35cb4
@@ -122,18 +134,27 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/#Scenes/Stage36.unity
     guid: 57aeabd7d46a6434094a960c1f00981e
+  - enabled: 1
+    path: Assets/#Scenes/Stage37.unity
+    guid: fc838a388e743b942aa94ed1b5c2519c
   - enabled: 0
-    path: Assets/__DELETED_GUID_Trash/41919db449db4a64a996d8b33e771b5e
-    guid: 41919db449db4a64a996d8b33e771b5e
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 1
     path: Assets/#Scenes/Stage38.unity
     guid: 01e726b4b76948c43a1ba58589bbd112
   - enabled: 1
     path: Assets/#Scenes/Stage39.unity
-    guid: f87b45d431690cd4396ccb3847e20a5a
+    guid: 70529c66d4660bf45a5666328954b3a5
   - enabled: 1
     path: Assets/#Scenes/Stage40.unity
-    guid: 4ad5af5905c8bc34cbdb186db8f8c6b3
+    guid: bdee2e5ae3bc5db4aa55ebf85c1038a9
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 1
     path: Assets/#Scenes/Stage41.unity
     guid: 78862e7caf499a242b3f3fe8b8ef0831
