@@ -36,14 +36,23 @@ public class MenuButton : MonoBehaviour {
 
        
         StageButton[1].interactable = true;
-        // for (int i = 2; i < StageButton.Length; i++)
-        //StageButton[i].interactable = true;
+
+        //for (int i = 2; i < StageButton.Length; i++)
+
+        //    StageButton[i].interactable = true;
+        
+
         for (int i = 2; i < StageButton.Length; i++)
+
+            StageButton[i].interactable = true;
+       for (int i = 2; i < StageButton.Length; i++)
+
         {
 
             if (PlayerPrefs.GetInt("ClearStage", 0) >= (i - 1))
             {
                 Debug.Log("여기여기" + PlayerPrefs.GetInt("ClearStage", 0));
+
                 StageButton[i].interactable = true;
             }
             else
@@ -51,6 +60,13 @@ public class MenuButton : MonoBehaviour {
 //                StageButton[i].interactable = false;
             }
         }
+
+
+        
+
+      
+
+
     }
     public void Update()
     {
