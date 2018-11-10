@@ -48,7 +48,7 @@ public class MenuButton : MonoBehaviour {
             }
             else
             {
-                StageButton[i].interactable = false;
+//                StageButton[i].interactable = false;
             }
         }
     }
