@@ -28,7 +28,7 @@ public class ButtonManager : MonoBehaviour {
     string str;
     void Awake()
     {
-        //PlayerPrefs.DeleteAll();
+        PlayerPrefs.DeleteAll();
         Application.targetFrameRate = 60;
         check = false;
         //Debug.Log("타임 스케일 1로 변경");
