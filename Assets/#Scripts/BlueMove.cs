@@ -21,6 +21,7 @@ public class BlueMove : MonoBehaviour
     Animator blueManAnimator;
    // private BlueThornMove blue;
     public AudioSource BlueSound;
+    public AudioSource BlueCoinSound;
     public int ClearStage;
     private MenuButton menuButton;
     int CurStage;
@@ -135,7 +136,7 @@ public class BlueMove : MonoBehaviour
     {
         if (other.gameObject.tag == "Coin")
         {
-
+            BlueCoinSound.Play();
             textmanager.getCoin();
             Debug.Log("coin++");
             other.gameObject.SetActive(false);//방금 트리거가 발생한 코인을 숨기기
