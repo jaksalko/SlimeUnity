@@ -15,6 +15,7 @@ public class StoreManager : MonoBehaviour {
     public GameObject BeretButton;
     public GameObject CookButton;
     public GameObject CatButton;
+    public GameObject ChickButton;
     public GameObject redItem;
     public GameObject blueItem;
     public Toggle[] RedWearButton;
@@ -56,6 +57,9 @@ public class StoreManager : MonoBehaviour {
                     case 6:
                         redItem.GetComponent<SpriteRenderer>().sprite = Resources.Load("#Images/Cat", typeof(Sprite)) as Sprite;
                         break;
+                    case 7:
+                        redItem.GetComponent<SpriteRenderer>().sprite = Resources.Load("#Images/Chick", typeof(Sprite)) as Sprite;
+                        break;
 
                 }
                 RedWearButton[a].isOn = true;
@@ -86,6 +90,9 @@ public class StoreManager : MonoBehaviour {
                     case 6:
                         blueItem.GetComponent<SpriteRenderer>().sprite = Resources.Load("#Images/Cat", typeof(Sprite)) as Sprite;
                         break;
+                    case 7:
+                        blueItem.GetComponent<SpriteRenderer>().sprite = Resources.Load("#Images/Chick", typeof(Sprite)) as Sprite;
+                        break;
 
                 }
                 BlueWearButton[a].isOn = true;
@@ -93,11 +100,11 @@ public class StoreManager : MonoBehaviour {
             }
         }
 
-        //str => Santa == 0  Crown == 1 Straw == 2 Beret == 3 Cook == 4 Cat == 5
+        //str => Santa == 0  Crown == 1 Straw == 2 Beret == 3 Cook == 4 Cat == 5 Chick == 6
         itemstate = new List<int>();//itemstate[itemnumber] : 0 -> Not buy  1 -> Buy   2 -> Wear
 
 
-        for (int k =  i ; k < 6; k++)// i is itemnumber and Itemstate is state of itemnumber
+        for (int k =  i ; k < 7; k++)// i is itemnumber and Itemstate is state of itemnumber
         {
             
             itemstate.Add(PlayerPrefs.GetInt(k.ToString(), 0));
@@ -116,6 +123,8 @@ public class StoreManager : MonoBehaviour {
                     CookButton.SetActive(true);
                 else if (k == 5)
                     CatButton.SetActive(true);
+                else if (k == 6)
+                    ChickButton.SetActive(true);
 
                 Debug.Log("산게 있음");
             }
@@ -178,6 +187,12 @@ public class StoreManager : MonoBehaviour {
             str = "5";
             paycoin = 1;
         }
+        else if (str == "Chick")
+        {
+            Debug.Log("Chick Yesbutton" + str + " is clicked");
+            str = "6";
+            paycoin = 1;
+        }
 
 
 
@@ -227,6 +242,12 @@ public class StoreManager : MonoBehaviour {
                 Debug.Log("Cat is Sold out");
 
                 CatButton.SetActive(true);
+            }
+            else if (str == "6")
+            {
+                Debug.Log("Chick is Sold out");
+
+                ChickButton.SetActive(true);
             }
 
             payPopup.SetActive(false);
@@ -281,6 +302,12 @@ public class StoreManager : MonoBehaviour {
                 redItem.GetComponent<SpriteRenderer>().sprite = Resources.Load("#Images/Cat", typeof(Sprite)) as Sprite;
                 redItem.transform.localPosition = new Vector3(-85f, -367f, -17280f);
             }
+            else if (toggle.ToString() == "ChickRedToggle (UnityEngine.UI.Toggle)")
+            {
+                redItem.transform.localScale = new Vector3(55f, 50f, 0);
+                redItem.GetComponent<SpriteRenderer>().sprite = Resources.Load("#Images/Chick", typeof(Sprite)) as Sprite;
+                redItem.transform.localPosition = new Vector3(-85f, -367f, -17280f);
+            }
         }
             
     }
@@ -314,6 +341,12 @@ public class StoreManager : MonoBehaviour {
             else if (toggle.ToString() == "CatBlueToggle (UnityEngine.UI.Toggle)")
             {
                 blueItem.GetComponent<SpriteRenderer>().sprite = Resources.Load("#Images/Cat", typeof(Sprite)) as Sprite;
+                blueItem.transform.localScale = new Vector3(55f, 50f, 0);
+                blueItem.transform.localPosition = new Vector3(85f, -367f, -17280f);
+            }
+            else if (toggle.ToString() == "ChickBlueToggle (UnityEngine.UI.Toggle)")
+            {
+                blueItem.GetComponent<SpriteRenderer>().sprite = Resources.Load("#Images/Chick", typeof(Sprite)) as Sprite;
                 blueItem.transform.localScale = new Vector3(55f, 50f, 0);
                 blueItem.transform.localPosition = new Vector3(85f, -367f, -17280f);
             }

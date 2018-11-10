@@ -42,6 +42,12 @@ public class CharWearItem : MonoBehaviour {
             redhat.GetComponent<SpriteRenderer>().sprite = Resources.Load("#Images/Cat", typeof(Sprite)) as Sprite;
 
         }
+        else if (PlayerPrefs.GetString("RedWear", "DefaultRedToggle") == "ChickRedToggle (UnityEngine.UI.Toggle)")
+        {
+            redhat.transform.localScale = new Vector3(0.5f, 0.5f, 0);
+            redhat.GetComponent<SpriteRenderer>().sprite = Resources.Load("#Images/Chick", typeof(Sprite)) as Sprite;
+
+        }
 
 
 
@@ -73,6 +79,11 @@ public class CharWearItem : MonoBehaviour {
         {
             bluehat.transform.localScale = new Vector3(0.5f, 0.5f, 0);
             bluehat.GetComponent<SpriteRenderer>().sprite = Resources.Load("#Images/Cat", typeof(Sprite)) as Sprite;
+        }
+        else if (PlayerPrefs.GetString("BlueWear", "DefaultRedToggle") == "ChickBlueToggle (UnityEngine.UI.Toggle)")
+        {
+            bluehat.transform.localScale = new Vector3(0.5f, 0.5f, 0);
+            bluehat.GetComponent<SpriteRenderer>().sprite = Resources.Load("#Images/Chick", typeof(Sprite)) as Sprite;
         }
     }
     // Update is called once per frame
