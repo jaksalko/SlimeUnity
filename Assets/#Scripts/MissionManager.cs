@@ -38,6 +38,14 @@ public class MissionManager : MonoBehaviour {
         {
             PlayerPrefs.SetString("mission6", "cn");//mission 0을 cn 상태로 바꿔줌
         }
+        if (PlayerPrefs.GetString("mission7", "nc") == "nc" && PlayerPrefs.GetInt("ClearStage", 0) > 39)//mission6 이 안깬 상태고 클리어 스테이지가 40이상 이면
+        {
+            PlayerPrefs.SetString("mission7", "cn");//mission 0을 cn 상태로 바꿔줌
+        }
+        if (PlayerPrefs.GetString("mission8", "nc") == "nc" && PlayerPrefs.GetInt("ClearStage", 0) > 44)//mission6 이 안깬 상태고 클리어 스테이지가 45이상 이면
+        {
+            PlayerPrefs.SetString("mission8", "cn");//mission 0을 cn 상태로 바꿔줌
+        }
 
 
 
