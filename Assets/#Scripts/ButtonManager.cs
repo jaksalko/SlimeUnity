@@ -28,11 +28,11 @@ public class ButtonManager : MonoBehaviour {
     string str;
     void Awake()
     {
-<<<<<<< HEAD
+
 //        PlayerPrefs.DeleteAll();
-=======
+
         //PlayerPrefs.DeleteAll();
->>>>>>> 3132e7d364fe9e421a2dac1dab6362c0da2cf861
+
         Application.targetFrameRate = 60;
         check = false;
         //Debug.Log("타임 스케일 1로 변경");
