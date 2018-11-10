@@ -17,6 +17,7 @@ public class StoreManager : MonoBehaviour {
     public GameObject CatButton;
     public GameObject ChickButton;
     public GameObject RabbitButton;
+    public GameObject FrogButton;
     public GameObject redItem;
     public GameObject blueItem;
     public Toggle[] RedWearButton;
@@ -64,6 +65,9 @@ public class StoreManager : MonoBehaviour {
                     case 8:
                         redItem.GetComponent<SpriteRenderer>().sprite = Resources.Load("#Images/Rabbit", typeof(Sprite)) as Sprite;
                         break;
+                    case 9:
+                        redItem.GetComponent<SpriteRenderer>().sprite = Resources.Load("#Images/Frog", typeof(Sprite)) as Sprite;
+                        break;
 
                 }
                 RedWearButton[a].isOn = true;
@@ -100,6 +104,9 @@ public class StoreManager : MonoBehaviour {
                     case 8:
                         blueItem.GetComponent<SpriteRenderer>().sprite = Resources.Load("#Images/Rabbit", typeof(Sprite)) as Sprite;
                         break;
+                    case 9:
+                        blueItem.GetComponent<SpriteRenderer>().sprite = Resources.Load("#Images/Frog", typeof(Sprite)) as Sprite;
+                        break;
 
                 }
                 BlueWearButton[a].isOn = true;
@@ -107,7 +114,7 @@ public class StoreManager : MonoBehaviour {
             }
         }
 
-        //str => Santa == 0  Crown == 1 Straw == 2 Beret == 3 Cook == 4 Cat == 5 Chick == 6 Rabbit == 7
+        //str => Santa == 0  Crown == 1 Straw == 2 Beret == 3 Cook == 4 Cat == 5 Chick == 6 Rabbit == 7 Frog == 8
         itemstate = new List<int>();//itemstate[itemnumber] : 0 -> Not buy  1 -> Buy   2 -> Wear
 
 
@@ -134,6 +141,8 @@ public class StoreManager : MonoBehaviour {
                     ChickButton.SetActive(true);
                 else if (k == 7)
                     RabbitButton.SetActive(true);
+                else if (k == 8)
+                    FrogButton.SetActive(true);
 
                 Debug.Log("산게 있음");
             }
@@ -208,6 +217,12 @@ public class StoreManager : MonoBehaviour {
             str = "7";
             paycoin = 1;
         }
+        else if (str == "Frog")
+        {
+            Debug.Log("Frog Yesbutton" + str + " is clicked");
+            str = "8";
+            paycoin = 1;
+        }
 
 
 
@@ -269,6 +284,12 @@ public class StoreManager : MonoBehaviour {
                 Debug.Log("Rabbit is Sold out");
 
                 RabbitButton.SetActive(true);
+            }
+            else if (str == "8")
+            {
+                Debug.Log("Frog is Sold out");
+
+                FrogButton.SetActive(true);
             }
 
             payPopup.SetActive(false);
@@ -335,6 +356,12 @@ public class StoreManager : MonoBehaviour {
                 redItem.GetComponent<SpriteRenderer>().sprite = Resources.Load("#Images/Rabbit", typeof(Sprite)) as Sprite;
                 redItem.transform.localPosition = new Vector3(-75f, -367f, -17280f);
             }
+            else if (toggle.ToString() == "FrogRedToggle (UnityEngine.UI.Toggle)")
+            {
+                redItem.transform.localScale = new Vector3(55f, 50f, 0);
+                redItem.GetComponent<SpriteRenderer>().sprite = Resources.Load("#Images/Frog", typeof(Sprite)) as Sprite;
+                redItem.transform.localPosition = new Vector3(-75f, -347f, -17280f);
+            }
         }
             
     }
@@ -382,6 +409,12 @@ public class StoreManager : MonoBehaviour {
                 blueItem.GetComponent<SpriteRenderer>().sprite = Resources.Load("#Images/Rabbit", typeof(Sprite)) as Sprite;
                 blueItem.transform.localScale = new Vector3(55f, 50f, 0);
                 blueItem.transform.localPosition = new Vector3(85f, -367f, -17280f);
+            }
+            else if (toggle.ToString() == "FrogBlueToggle (UnityEngine.UI.Toggle)")
+            {
+                blueItem.GetComponent<SpriteRenderer>().sprite = Resources.Load("#Images/Frog", typeof(Sprite)) as Sprite;
+                blueItem.transform.localScale = new Vector3(55f, 50f, 0);
+                blueItem.transform.localPosition = new Vector3(85f, -347f, -17280f);
             }
         }
     }

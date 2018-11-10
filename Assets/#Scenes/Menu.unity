@@ -26929,6 +26929,7 @@ MonoBehaviour:
   CatButton: {fileID: 204305220}
   ChickButton: {fileID: 1635279487}
   RabbitButton: {fileID: 1810877624}
+  FrogButton: {fileID: 857762166}
   redItem: {fileID: 929675139}
   blueItem: {fileID: 552003187}
   RedWearButton:
@@ -26941,6 +26942,7 @@ MonoBehaviour:
   - {fileID: 323060088}
   - {fileID: 734671683}
   - {fileID: 1320792425}
+  - {fileID: 1193614704}
   BlueWearButton:
   - {fileID: 1360937033}
   - {fileID: 99413947}
@@ -26951,6 +26953,7 @@ MonoBehaviour:
   - {fileID: 1965902811}
   - {fileID: 358343805}
   - {fileID: 1510997905}
+  - {fileID: 6194675}
 --- !u!4 &1787941088
 Transform:
   m_ObjectHideFlags: 0
