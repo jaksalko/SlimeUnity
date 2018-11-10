@@ -123,7 +123,7 @@ GameObject:
   - component: {fileID: 6194674}
   - component: {fileID: 6194675}
   m_Layer: 5
-  m_Name: CookBlueToggle
+  m_Name: FrogBlueToggle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4467,7 +4467,7 @@ GameObject:
   m_Component:
   - component: {fileID: 280908071}
   m_Layer: 5
-  m_Name: CookHat
+  m_Name: FrogHat
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12231,7 +12231,7 @@ GameObject:
   m_Component:
   - component: {fileID: 857762167}
   m_Layer: 5
-  m_Name: 4Wear
+  m_Name: 8Wear
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -14160,7 +14160,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 9256b6f886437294b8d9acdd7cdb849b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 5ed7c9081dc228b4db975b5962f392ed, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -17611,7 +17611,7 @@ GameObject:
   - component: {fileID: 1193614703}
   - component: {fileID: 1193614704}
   m_Layer: 5
-  m_Name: CookRedToggle
+  m_Name: FrogRedToggle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -21570,7 +21570,7 @@ GameObject:
   - component: {fileID: 1436439088}
   - component: {fileID: 1436439087}
   m_Layer: 5
-  m_Name: CookPayBtn
+  m_Name: FrogPayBtn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
