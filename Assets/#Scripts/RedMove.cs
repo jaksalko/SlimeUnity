@@ -7,6 +7,8 @@ public class RedMove : MonoBehaviour
     public delegate void reverR();
     public static event reverR Redrev;
 
+
+
     private PopupCoinTextManager popuptextmanager;
     private TextManager textmanager;
     public static bool RedEndPortalLook;
@@ -25,6 +27,7 @@ public class RedMove : MonoBehaviour
     public GameObject blueMan;
     private GameObject RedHidePortal;
     public AudioSource RedSound;
+    public AudioSource RedCoinSound;
     Animator redManAnimator;
     public static bool RedAlive;
     public static bool AllAlive;
@@ -213,7 +216,7 @@ public class RedMove : MonoBehaviour
     {
         if (other.gameObject.tag == "Coin")
         {
-
+            RedCoinSound.Play();
             textmanager.getCoin();
           //  Debug.Log("coin++");
             other.gameObject.SetActive(false);//방금 트리거가 발생한 코인을 숨기기

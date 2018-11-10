@@ -566,6 +566,204 @@ public class RedThornMove : MonoBehaviour
                         ThornMoveX(1.0f, 43);
                     }
                     break;
+                case 42:
+                    ThornMoveX(1.0f, 0);
+                    ThornMoveX(1.0f, 1);
+                    ThornMoveX(1.0f, 2);
+                    ThornMoveX(1.0f, 3);
+                    ThornMoveX(1.0f, 4);
+                    ThornMoveX(1.0f, 5);
+                    ThornMoveX(1.0f, 6);
+                    ThornMoveX(1.0f, 7);
+                    ThornMoveX(1.0f, 8);
+                    ThornMoveX(1.0f, 26);
+                    ThornMoveX(1.0f, 27);
+                    ThornMoveX(1.0f, 81);
+                    ThornMoveX(1.0f, 82);
+                    ThornMoveX(1.0f, 83);
+                    ThornMoveX(1.0f, 84);
+                    ThornMoveX(1.0f, 85);
+                    ThornMoveX(1.0f, 86);
+                    if (Wall[0].transform.localPosition.y >= 1)
+                    {
+                        List<int> TThornNum = new List<int>();
+                        List<int> FThornNum = new List<int>();
+                        TThornNum.Insert(0, 10);
+                        TThornNum.Insert(1, 11);
+                        TThornNum.Insert(2, 12);
+                        TThornNum.Insert(3, 13);
+                        TThornNum.Insert(4, 14);
+
+                        FThornNum.Insert(0, 15);
+                        FThornNum.Insert(1, 16);
+                        FThornNum.Insert(2, 17);
+                        FThornNum.Insert(3, 18);
+                        FThornNum.Insert(4, 19);
+
+                        for (int i = 0; i < FThornNum.Count; i++)
+                            Thorn[FThornNum[i]].SetActive(false);
+                        for (int i = 0; i < TThornNum.Count; i++)
+                            Thorn[TThornNum[i]].SetActive(true);
+
+                    }
+                    if (Wall[4].transform.localPosition.y >= 1)
+                    {
+                        List<int> TThornNum = new List<int>();
+                        List<int> FThornNum = new List<int>();
+
+                        TThornNum.Insert(0, 22);
+                        TThornNum.Insert(1, 24);
+
+
+                        FThornNum.Insert(0, 20);
+                        FThornNum.Insert(1, 25);
+                        FThornNum.Insert(2, 77);
+                        FThornNum.Insert(3, 78);
+                        FThornNum.Insert(4, 79);
+                        FThornNum.Insert(5, 80);
+
+                        for (int i = 0; i < FThornNum.Count; i++)
+                            Thorn[FThornNum[i]].SetActive(false);
+                        for (int i = 0; i < TThornNum.Count; i++)
+                            Thorn[TThornNum[i]].SetActive(true);
+                    }
+                    if (Wall[11].transform.localPosition.y >= 1)
+                    {
+                        List<int> TThornNum = new List<int>();
+                        List<int> FThornNum = new List<int>();
+
+                        FThornNum.Insert(0, 24);
+
+                        TThornNum.Insert(0, 25);
+
+                        for (int i = 0; i < FThornNum.Count; i++)
+                            Thorn[FThornNum[i]].SetActive(false);
+                        for (int i = 0; i < TThornNum.Count; i++)
+                            Thorn[TThornNum[i]].SetActive(true);
+                    }
+                    if (Wall[14].transform.localPosition.y >= 1)
+                    {
+                        List<int> TThornNum = new List<int>();
+                        List<int> FThornNum = new List<int>();
+
+                        TThornNum.Insert(0, 23);
+
+                        FThornNum.Insert(0, 21);
+
+                        for (int i = 0; i < FThornNum.Count; i++)
+                            Thorn[FThornNum[i]].SetActive(false);
+                        for (int i = 0; i < TThornNum.Count; i++)
+                            Thorn[TThornNum[i]].SetActive(true);
+                    }
+                    if (Thorn[30].transform.localPosition.y >= 1)
+                    {
+                        List<int> TThornNum = new List<int>();
+                        List<int> FThornNum = new List<int>();
+
+                        TThornNum.Insert(0, 44);
+
+                        FThornNum.Insert(0, 28);
+
+                        for (int i = 0; i < FThornNum.Count; i++)
+                            Thorn[FThornNum[i]].SetActive(false);
+                        for (int i = 0; i < TThornNum.Count; i++)
+                            Thorn[TThornNum[i]].SetActive(true);
+                    }
+                    if (Thorn[31].transform.localPosition.y >= 1)
+                    {
+                        List<int> TThornNum = new List<int>();
+                        List<int> FThornNum = new List<int>();
+
+                        TThornNum.Insert(0, 45);
+
+                        FThornNum.Insert(0, 29);
+
+                        for (int i = 0; i < FThornNum.Count; i++)
+                            Thorn[FThornNum[i]].SetActive(false);
+                        for (int i = 0; i < TThornNum.Count; i++)
+                            Thorn[TThornNum[i]].SetActive(true);
+                    }
+                    if (Thorn[32].transform.localPosition.y >= 1)
+                    {
+                        List<int> TThornNum = new List<int>();
+                        List<int> FThornNum = new List<int>();
+
+
+                        FThornNum.Insert(0, 30);
+
+                        for (int i = 0; i < FThornNum.Count; i++)
+                            Thorn[FThornNum[i]].SetActive(false);
+                        for (int i = 0; i < TThornNum.Count; i++)
+                            Thorn[TThornNum[i]].SetActive(true);
+                    }
+                    if (Thorn[34].transform.localPosition.y >= 1)
+                    {
+                        List<int> TThornNum = new List<int>();
+                        List<int> FThornNum = new List<int>();
+
+                        TThornNum.Insert(0, 48);
+
+                        FThornNum.Insert(0, 32);
+
+                        for (int i = 0; i < FThornNum.Count; i++)
+                            Thorn[FThornNum[i]].SetActive(false);
+                        for (int i = 0; i < TThornNum.Count; i++)
+                            Thorn[TThornNum[i]].SetActive(true);
+                    }
+                    if (Thorn[35].transform.localPosition.y >= 1)
+                    {
+                        List<int> TThornNum = new List<int>();
+                        List<int> FThornNum = new List<int>();
+
+                        TThornNum.Insert(0, 49);
+
+                        FThornNum.Insert(0, 33);
+                        ThornMoveX(1.0f, 37);
+
+                        for (int i = 0; i < FThornNum.Count; i++)
+                            Thorn[FThornNum[i]].SetActive(false);
+                        for (int i = 0; i < TThornNum.Count; i++)
+                            Thorn[TThornNum[i]].SetActive(true);
+                    }
+                    if (Thorn[36].transform.localPosition.y >= 1)
+                    {
+                        List<int> TThornNum = new List<int>();
+                        List<int> FThornNum = new List<int>();
+
+                        TThornNum.Insert(0, 50);
+
+                        FThornNum.Insert(0, 34);
+                        FThornNum.Insert(0, 35);
+                        FThornNum.Insert(0, 36);
+
+                        ThornMoveX(1.0f, 38);
+
+                        for (int i = 0; i < FThornNum.Count; i++)
+                            Thorn[FThornNum[i]].SetActive(false);
+                        for (int i = 0; i < TThornNum.Count; i++)
+                            Thorn[TThornNum[i]].SetActive(true);
+                    }
+                    if (Thorn[82].transform.localPosition.y >= 1)
+                    {
+                        ThornMoveX(1.0f, 39);
+                    }
+                    if (Thorn[81].transform.localPosition.y >= 1)
+                    {
+                        ThornMoveX(1.0f, 40);
+                    }
+                    if (Thorn[39].transform.localPosition.y >= 1)
+                    {
+                        ThornMoveX(1.0f, 41);
+                    }
+                    if (Thorn[40].transform.localPosition.y >= 1)
+                    {
+                        ThornMoveX(1.0f, 42);
+                    }
+                    if (Thorn[41].transform.localPosition.y >= 1)
+                    {
+                        ThornMoveX(1.0f, 43);
+                    }
+                    break;
                 case 43:
                     if (Wall[10].transform.localPosition.y >= 0)
                     {

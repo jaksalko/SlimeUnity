@@ -353,6 +353,51 @@ public class BlueThornMove : MonoBehaviour
 
                         break;
                     }
+                case 42:
+                    if (Wall[11].transform.localPosition.y >= 0)
+                    {
+                        List<int> TThornNum = new List<int>();
+                        List<int> FThornNum = new List<int>();
+                        TThornNum.Insert(0, 19);
+                        TThornNum.Insert(1, 20);
+
+                        FThornNum.Insert(0, 18);
+
+                        for (int i = 0; i < FThornNum.Count; i++)
+                            Thorn[FThornNum[i]].SetActive(false);
+
+                        for (int i = 0; i < TThornNum.Count; i++)
+                            Thorn[TThornNum[i]].SetActive(true);
+                    }
+                    if (Wall[19].transform.localPosition.y >= 0)
+                    {
+                        List<int> TThornNum = new List<int>();
+                        List<int> FThornNum = new List<int>();
+                        TThornNum.Insert(0, 21);
+
+                        FThornNum.Insert(0, 8);
+
+                        for (int i = 0; i < FThornNum.Count; i++)
+                            Thorn[FThornNum[i]].SetActive(false);
+
+                        for (int i = 0; i < TThornNum.Count; i++)
+                            Thorn[TThornNum[i]].SetActive(true);
+                    }
+                    if (Wall[22].transform.localPosition.y >= 0)
+                    {
+                        List<int> TThornNum = new List<int>();
+                        List<int> FThornNum = new List<int>();
+                        TThornNum.Insert(0, 8);
+
+                        FThornNum.Insert(0, 21);
+
+                        for (int i = 0; i < FThornNum.Count; i++)
+                            Thorn[FThornNum[i]].SetActive(false);
+
+                        for (int i = 0; i < TThornNum.Count; i++)
+                            Thorn[TThornNum[i]].SetActive(true);
+                    }
+                    break;
                 case 45:
                     {
                         if (Thorn[0].transform.localPosition.y >= 1)

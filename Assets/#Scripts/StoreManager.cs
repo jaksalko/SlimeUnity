@@ -16,6 +16,7 @@ public class StoreManager : MonoBehaviour {
     public GameObject CookButton;
     public GameObject CatButton;
     public GameObject ChickButton;
+    public GameObject RabbitButton;
     public GameObject redItem;
     public GameObject blueItem;
     public Toggle[] RedWearButton;
@@ -60,6 +61,9 @@ public class StoreManager : MonoBehaviour {
                     case 7:
                         redItem.GetComponent<SpriteRenderer>().sprite = Resources.Load("#Images/Chick", typeof(Sprite)) as Sprite;
                         break;
+                    case 8:
+                        redItem.GetComponent<SpriteRenderer>().sprite = Resources.Load("#Images/Rabbit", typeof(Sprite)) as Sprite;
+                        break;
 
                 }
                 RedWearButton[a].isOn = true;
@@ -93,6 +97,9 @@ public class StoreManager : MonoBehaviour {
                     case 7:
                         blueItem.GetComponent<SpriteRenderer>().sprite = Resources.Load("#Images/Chick", typeof(Sprite)) as Sprite;
                         break;
+                    case 8:
+                        blueItem.GetComponent<SpriteRenderer>().sprite = Resources.Load("#Images/Rabbit", typeof(Sprite)) as Sprite;
+                        break;
 
                 }
                 BlueWearButton[a].isOn = true;
@@ -100,7 +107,7 @@ public class StoreManager : MonoBehaviour {
             }
         }
 
-        //str => Santa == 0  Crown == 1 Straw == 2 Beret == 3 Cook == 4 Cat == 5 Chick == 6
+        //str => Santa == 0  Crown == 1 Straw == 2 Beret == 3 Cook == 4 Cat == 5 Chick == 6 Rabbit == 7
         itemstate = new List<int>();//itemstate[itemnumber] : 0 -> Not buy  1 -> Buy   2 -> Wear
 
 
@@ -125,6 +132,8 @@ public class StoreManager : MonoBehaviour {
                     CatButton.SetActive(true);
                 else if (k == 6)
                     ChickButton.SetActive(true);
+                else if (k == 7)
+                    RabbitButton.SetActive(true);
 
                 Debug.Log("산게 있음");
             }
@@ -193,6 +202,12 @@ public class StoreManager : MonoBehaviour {
             str = "6";
             paycoin = 1;
         }
+        else if (str == "Rabbit")
+        {
+            Debug.Log("Rabbit Yesbutton" + str + " is clicked");
+            str = "7";
+            paycoin = 1;
+        }
 
 
 
@@ -248,6 +263,12 @@ public class StoreManager : MonoBehaviour {
                 Debug.Log("Chick is Sold out");
 
                 ChickButton.SetActive(true);
+            }
+            else if (str == "7")
+            {
+                Debug.Log("Rabbit is Sold out");
+
+                RabbitButton.SetActive(true);
             }
 
             payPopup.SetActive(false);
@@ -308,6 +329,12 @@ public class StoreManager : MonoBehaviour {
                 redItem.GetComponent<SpriteRenderer>().sprite = Resources.Load("#Images/Chick", typeof(Sprite)) as Sprite;
                 redItem.transform.localPosition = new Vector3(-85f, -367f, -17280f);
             }
+            else if (toggle.ToString() == "RabbitRedToggle (UnityEngine.UI.Toggle)")
+            {
+                redItem.transform.localScale = new Vector3(55f, 50f, 0);
+                redItem.GetComponent<SpriteRenderer>().sprite = Resources.Load("#Images/Rabbit", typeof(Sprite)) as Sprite;
+                redItem.transform.localPosition = new Vector3(-75f, -367f, -17280f);
+            }
         }
             
     }
@@ -347,6 +374,12 @@ public class StoreManager : MonoBehaviour {
             else if (toggle.ToString() == "ChickBlueToggle (UnityEngine.UI.Toggle)")
             {
                 blueItem.GetComponent<SpriteRenderer>().sprite = Resources.Load("#Images/Chick", typeof(Sprite)) as Sprite;
+                blueItem.transform.localScale = new Vector3(55f, 50f, 0);
+                blueItem.transform.localPosition = new Vector3(85f, -367f, -17280f);
+            }
+            else if (toggle.ToString() == "RabbitBlueToggle (UnityEngine.UI.Toggle)")
+            {
+                blueItem.GetComponent<SpriteRenderer>().sprite = Resources.Load("#Images/Rabbit", typeof(Sprite)) as Sprite;
                 blueItem.transform.localScale = new Vector3(55f, 50f, 0);
                 blueItem.transform.localPosition = new Vector3(85f, -367f, -17280f);
             }
