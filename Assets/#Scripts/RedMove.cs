@@ -132,20 +132,13 @@ public class RedMove : MonoBehaviour
             return;
         }
         if (RedMove.RedEndPortalLook == true)//포탈이 화면에 보이면 슬라임이 떨어짐
-
-        
-
-            {
-
-                
-
-                
+        {
 
                 if (RedThornMove.RedReverse == false)
                     this.transform.Translate(0, -3f * Time.deltaTime, 0, Space.World);
                 else
                     this.transform.Translate(0, 3f * Time.deltaTime, 0, Space.World);
-            }
+        }
 
             if (RedMove.RedReversePortalLook == true)//포탈이 화면에 보이면 슬라임이 떨어짐
             {
@@ -272,7 +265,7 @@ public class RedMove : MonoBehaviour
 
 
         }
-        if (other.gameObject.tag == "BlueReversePortal" && this.tag.ToString() == "BlueMan")
+        if (other.gameObject.tag == "BlueReversePortal" && this.tag.ToString() == "RedMan")
         {
             popuptextmanager.totalcoinPlus();
            
