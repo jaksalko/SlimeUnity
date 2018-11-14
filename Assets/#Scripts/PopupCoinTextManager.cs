@@ -30,7 +30,7 @@ public class PopupCoinTextManager : MonoBehaviour {
     }
     public void GameOver()
     {
-        Debug.Log("GameOver()1");
+       
         //이부분에 게임 종료시 스코어 패널, 실행될 프로그램 입력 
         StartCoroutine(GameOverScoreView()); // 코루틴 
         click = false;
@@ -76,7 +76,6 @@ public class PopupCoinTextManager : MonoBehaviour {
     {
         temp = MenuTextManager.totalcoin;
         MenuTextManager.totalcoin += TextManager.gamecoin;
-        Debug.Log(MenuTextManager.totalcoin + "로 저장됨 토탈코인");
         PlayerPrefs.SetInt("TotalCoin", MenuTextManager.totalcoin);
         PlayerPrefs.Save();
     }

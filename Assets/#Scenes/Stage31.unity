@@ -82431,7 +82431,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 55.53, y: 277.07}
+  m_AnchoredPosition: {x: 55, y: 280}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1574124773
@@ -82468,8 +82468,8 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_text: 0
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: bad25916e0a2e4a49ab9e60488e3953b, type: 2}
-  m_sharedMaterial: {fileID: 21276843152795864, guid: bad25916e0a2e4a49ab9e60488e3953b,
+  m_fontAsset: {fileID: 11400000, guid: d980aed595cbfc54389301122101cb19, type: 2}
+  m_sharedMaterial: {fileID: 21808775285572596, guid: d980aed595cbfc54389301122101cb19,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -82549,7 +82549,7 @@ MonoBehaviour:
   m_spriteAnimator: {fileID: 0}
   m_isInputParsingRequired: 0
   m_inputSource: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_subTextObjects:
   - {fileID: 0}
   - {fileID: 0}
@@ -106670,8 +106670,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 55.53, y: 410}
-  m_SizeDelta: {x: 200, y: 50}
+  m_AnchoredPosition: {x: 110, y: 415}
+  m_SizeDelta: {x: 300, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2086623407
 MonoBehaviour:
@@ -106694,8 +106694,8 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_text: 0
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: bad25916e0a2e4a49ab9e60488e3953b, type: 2}
-  m_sharedMaterial: {fileID: 21276843152795864, guid: bad25916e0a2e4a49ab9e60488e3953b,
+  m_fontAsset: {fileID: 11400000, guid: d980aed595cbfc54389301122101cb19, type: 2}
+  m_sharedMaterial: {fileID: 21808775285572596, guid: d980aed595cbfc54389301122101cb19,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -106775,7 +106775,7 @@ MonoBehaviour:
   m_spriteAnimator: {fileID: 0}
   m_isInputParsingRequired: 0
   m_inputSource: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_subTextObjects:
   - {fileID: 0}
   - {fileID: 0}

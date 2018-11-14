@@ -45,7 +45,7 @@ public class RedMove : MonoBehaviour
     void Awake()
     {
 
-        Debug.Log("레드 슬라임Awake");
+        
         ReverseCount = 0;
         RedStart = true;
         RedAlive = true;
@@ -70,8 +70,7 @@ public class RedMove : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log("CurStage = " + PlayerPrefs.GetInt("CurStage", 0) + "현재 ");
-
+       
         if (RedStart == true)
         {
             if (this.transform.localPosition.y > 3)
@@ -94,9 +93,7 @@ public class RedMove : MonoBehaviour
             nextStage.gameObject.SetActive(false);
 
 
-           // Debug.Log("GameOver");
-            //popup.gameObject.SetActive(true);
-            //resume.gameObject.SetActive(false);
+         
 
             redManAnimator.Play("RedSlimeDie");
             AllAlive = false;
@@ -106,23 +103,11 @@ public class RedMove : MonoBehaviour
 
         if (AllAlive == false && RedDieOrClear == true && BlueMove.BlueDieOrClear == true)//클리어 시
         {
-            Debug.Log("클리어 했음");
-            //redManAnimator.Play("RedSlimeDie");
-            //만일 클리어 하면
-            //클리어한 가장 마지막 스테이지 저장
-            //if (PlayerPrefs.GetInt("ClearStage", 0) < PlayerPrefs.GetInt("CurStage", 0) )
-            //{
-            //    Debug.Log("클리어 스테이지 증가"+ PlayerPrefs.GetInt("ClearStage", 0)+" -> "+ PlayerPrefs.GetInt("CurStage", 0));
-            //   int ClearStage = PlayerPrefs.GetInt("CurStage", 0);
-
-
-            //    PlayerPrefs.SetInt("ClearStage", ClearStage);
-            //    PlayerPrefs.Save();
-
-            //}
+           
+            
             if (DieCheck == 0)
             {
-                //Debug.Log("레드 슬라임 다이체크");
+              
                 popuptextmanager.OnGameOverIn();
                 clearSt = true;
                 DieCheck++;
@@ -143,24 +128,17 @@ public class RedMove : MonoBehaviour
 
         if (RedAlive == false || RedMove.AllAlive == false)//둘중에 하나가 false 상태면 움직x
         {
-            Debug.Log("레드 멈춤");
+            
             return;
         }
         if (RedMove.RedEndPortalLook == true)//포탈이 화면에 보이면 슬라임이 떨어짐
-
-        
-
-            {
-
-                
-
-                
+        {
 
                 if (RedThornMove.RedReverse == false)
                     this.transform.Translate(0, -3f * Time.deltaTime, 0, Space.World);
                 else
                     this.transform.Translate(0, 3f * Time.deltaTime, 0, Space.World);
-            }
+        }
 
             if (RedMove.RedReversePortalLook == true)//포탈이 화면에 보이면 슬라임이 떨어짐
             {
@@ -197,7 +175,7 @@ public class RedMove : MonoBehaviour
         if (coll.gameObject.tag == "Enemy")
         {
             popuptextmanager.totalcoinPlus();
-            //Debug.Log("가시에 찔림");
+          
             RedDieOrClear = false;
             redManAnimator.Play("RedSlimeDie");
             RedAlive = false;
@@ -218,7 +196,7 @@ public class RedMove : MonoBehaviour
         {
             RedCoinSound.Play();
             textmanager.getCoin();
-          //  Debug.Log("coin++");
+       
             other.gameObject.SetActive(false);//방금 트리거가 발생한 코인을 숨기기
 
         }
@@ -227,7 +205,7 @@ public class RedMove : MonoBehaviour
             if (PlayerPrefs.GetInt("Vibrate", 0) != 0)
             {
                 Handheld.Vibrate(); // 진동 메소드
-              //  Debug.Log("Vibrate");
+            
             }
            
             other.gameObject.SetActive(false);
@@ -271,7 +249,6 @@ public class RedMove : MonoBehaviour
         if (other.gameObject.tag == "RedReversePortal" && this.tag.ToString() == "RedMan")
         {
 
-            Debug.Log("reverse   Redreversecount = " + ReverseCount);
             if (ReverseCount % 2 == 0)//리버스 포탈이 아래쪽에 있을 때
                 RedThornMove.RedReverse = true;
             else//리버스 포탈이 위쪽에 있을 때
@@ -288,10 +265,10 @@ public class RedMove : MonoBehaviour
 
 
         }
-        if (other.gameObject.tag == "BlueReversePortal" && this.tag.ToString() == "BlueMan")
+        if (other.gameObject.tag == "BlueReversePortal" && this.tag.ToString() == "RedMan")
         {
             popuptextmanager.totalcoinPlus();
-            //Debug.Log("가시에 찔림");
+           
             RedDieOrClear = false;
             redManAnimator.Play("RedSlimeDie");
             RedAlive = false;
@@ -304,7 +281,7 @@ public class RedMove : MonoBehaviour
         if (other.gameObject.tag == "BlueEndPortal")
         {
             popuptextmanager.totalcoinPlus();
-            //Debug.Log("가시에 찔림");
+           
             RedDieOrClear = false;
             redManAnimator.Play("RedSlimeDie");
             RedAlive = false;
@@ -316,11 +293,11 @@ public class RedMove : MonoBehaviour
         }
         if (other.gameObject.tag == "RedEndPortal")
         {
-           // Debug.Log("레드슬라임 앤드포탈 만남");
+           
             popuptextmanager.totalcoinPlus();
             RedAlive = false;
             RedDieOrClear = true;
-            //Debug.Log("Red Clear Game");
+            
 
 
 
@@ -335,11 +312,11 @@ public class RedMove : MonoBehaviour
         }
         if (other.gameObject.tag == "EndPortal")
         {
-           // Debug.Log("레드슬라임 앤드포탈 만남");
+          
             popuptextmanager.totalcoinPlus();
             RedAlive = false;
             RedDieOrClear = true;
-            //Debug.Log("Red Clear Game");
+           
 
 
 

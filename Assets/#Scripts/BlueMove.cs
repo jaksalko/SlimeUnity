@@ -32,7 +32,7 @@ public class BlueMove : MonoBehaviour
     void Awake()
     {
 
-        Debug.Log("블루무브 awake");
+       
         BlueStart = true;
         BlueDieOrClear = true;
         BlueAlive = true;
@@ -67,7 +67,7 @@ public class BlueMove : MonoBehaviour
         }
         if (RedMove.DieCheck != 0)
         {
-            Debug.Log("블루 슬라임 다이체크");
+            
             if (BlueThornMove.BlueReverse == false)
                 this.transform.Translate(0, -3f * Time.deltaTime, 0, Space.World);
             else
@@ -77,7 +77,7 @@ public class BlueMove : MonoBehaviour
 
         if (BlueAlive == false || RedMove.AllAlive == false)
         {
-            Debug.Log("블루 멈춤");
+            
             return;
         }
         if (BlueMove.BlueEndPortalLook == true)//포탈이 화면에 보이면 슬라임이 떨어짐
@@ -138,7 +138,7 @@ public class BlueMove : MonoBehaviour
         {
             BlueCoinSound.Play();
             textmanager.getCoin();
-            Debug.Log("coin++");
+
             other.gameObject.SetActive(false);//방금 트리거가 발생한 코인을 숨기기
 
         }
@@ -147,7 +147,7 @@ public class BlueMove : MonoBehaviour
             if (PlayerPrefs.GetInt("Vibrate", 0) != 0)
             {
                 Handheld.Vibrate(); // 진동 메소드
-                Debug.Log("Vibrate");
+
             }
             other.gameObject.SetActive(false);
             posRed = redMan.transform.position;
@@ -181,7 +181,7 @@ public class BlueMove : MonoBehaviour
                 ButtonManager.RedWallCheck = false;
                 ButtonManager.BlueWallCheck = false;
             }// Red = 오른쪽 Blue = 오른쪽
-            Debug.Log("Blueportal");
+
 
 
 
@@ -211,7 +211,7 @@ public class BlueMove : MonoBehaviour
         }
             if (other.gameObject.tag == "BlueReversePortal" && this.tag.ToString() == "BlueMan")
         {
-            Debug.Log("reverse Bluereversecount = " + ReverseCount);
+          
             if (ReverseCount % 2 == 0)//리버스 포탈이 아래쪽에 있을 때
                 BlueThornMove.BlueReverse = true;
             else//리버스 포탈이 위쪽에 있을 때
@@ -221,8 +221,7 @@ public class BlueMove : MonoBehaviour
 
 
 
-            Debug.Log(this.ToString());
-            Debug.Log("들어옴블루" + BlueThornMove.ReversePotal2.Count);
+           
             Destroy(BlueThornMove.ReversePotal2[0]);
             BlueThornMove.ReversePotal2.RemoveAt(0);
 
@@ -251,7 +250,7 @@ public class BlueMove : MonoBehaviour
         }//ReversePortal을 만나고 그것이 BlueMan일 경우
         if (other.gameObject.tag == "BlueEndPortal")
         {
-            Debug.Log("블루슬라임 앤드포탈 만남");
+           
             BlueAlive = false;
             BlueMove.BlueDieOrClear = true;
             
@@ -261,13 +260,13 @@ public class BlueMove : MonoBehaviour
             if (RedMove.RedAlive == true)
                 return;
             RedMove.AllAlive = false;
-            Debug.Log("Blue Clear Game");
+           
 
 
         }
         if (other.gameObject.tag == "EndPortal")
         {
-            Debug.Log("블루슬라임 앤드포탈 만남");
+           
             BlueAlive = false;
             BlueMove.BlueDieOrClear = true;
 
@@ -277,7 +276,7 @@ public class BlueMove : MonoBehaviour
             if (RedMove.RedAlive == true)
                 return;
             RedMove.AllAlive = false;
-            Debug.Log("Blue Clear Game");
+           
 
 
         }

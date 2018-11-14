@@ -95,7 +95,6 @@ public class MissionManager : MonoBehaviour {
         str = EventSystem.current.currentSelectedGameObject.name;
         str = str.Replace("missionbutton", "");
         int num = Convert.ToInt32(str);
-        Debug.Log(num);
         if (PlayerPrefs.GetString("mission" + num.ToString(), "nc") == "cn")//보상을 받지 않았고, 미션을 깼다면
         {
             missionButton[num].interactable = false;// cy 상태로 바꿔줌
@@ -111,12 +110,12 @@ public class MissionManager : MonoBehaviour {
                     menutextmanager.GetComponent<TextMeshProUGUI>().text = PlayerPrefs.GetInt("TotalCoin", 0).ToString();
                     break;
                 case 1:
-                    //Debug.Log("미션전 " + PlayerPrefs.GetInt("TotalCoin", 0));
+                   
                     PlayerPrefs.SetInt("TotalCoin", PlayerPrefs.GetInt("TotalCoin", 0) + 100);
                     PlayerPrefs.SetString("mission1", "cy");
                     MenuTextManager.totalcoin += 100;
                     menutextmanager.GetComponent<TextMeshProUGUI>().text = PlayerPrefs.GetInt("TotalCoin", 0).ToString();
-                    //Debug.Log("미션 후  " + PlayerPrefs.GetInt("TotalCoin", 0));
+                   
                     break;
                 case 2:
                     PlayerPrefs.SetInt("TotalCoin", PlayerPrefs.GetInt("TotalCoin", 0) + 500);
