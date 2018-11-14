@@ -139,6 +139,37 @@ public class RedThornMove : MonoBehaviour
                         ThornMoveX(0.5f, 6);
                         break;
                     }
+                case 35:
+                    {
+                        if (ReversePotal.Count == 1 && check == false)
+                        {
+                            List<int> TThornNum = new List<int>();
+                         
+                            List<int> TWallNum = new List<int>();
+                     
+
+                            TThornNum.Insert(0, 11);
+                            TThornNum.Insert(1, 12);
+                            TThornNum.Insert(2, 13);
+                            TThornNum.Insert(3, 10);
+
+
+
+
+
+                            TWallNum.Insert(0, 16);
+                            TWallNum.Insert(1, 17);
+                            TWallNum.Insert(2, 18);
+                            
+                         
+
+                            for (int i = 0; i < TThornNum.Count; i++)
+                                Thorn[TThornNum[i]].SetActive(true);//16,17,18,19
+                            for (int i = 0; i < TWallNum.Count; i++)
+                                Wall[TWallNum[i]].SetActive(true);//19
+                        }
+                        break;
+                    }
                 case 37:
                     {
                         ThornMoveX(1.5f, 17);
@@ -252,6 +283,17 @@ public class RedThornMove : MonoBehaviour
                     }
                 case 39:
                     {
+                        ThornMoveX(0.7f, 19);
+                        ThornMoveX(0.7f, 21);
+
+                        ThornMoveY(0.7f, 19);
+                        ThornMoveY(0.7f, 21);
+
+                        ThornMoveX(0.7f, 22);
+                        ThornMoveX(0.7f, 23);
+
+                        ThornMoveY(0.7f, 22);
+                        ThornMoveY(0.7f, 23);
                         if (Wall[33].transform.localPosition.y > -4f && check == false)
                         {
                             List<int> TThornNum = new List<int>();

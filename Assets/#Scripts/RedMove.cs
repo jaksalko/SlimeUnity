@@ -246,6 +246,7 @@ public class RedMove : MonoBehaviour
 
 
         }
+
         if (other.gameObject.tag == "RedReversePortal" && this.tag.ToString() == "RedMan")
         {
 

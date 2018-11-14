@@ -173,55 +173,55 @@ public class StoreManager : MonoBehaviour {
         {
            
             str = "0";
-            paycoin = 1;
+            paycoin = 8000;
         }
         else if (str == "Crown")
         {
          
             str = "1";
-            paycoin = 1;
+            paycoin = 15000;
         }
         else if (str == "Straw")
         {
            
             str = "2";
-            paycoin = 1;
+            paycoin = 18000;
         }
         else if (str == "Beret")
         {
           
             str = "3";
-            paycoin = 1;
+            paycoin = 20000;
         }
         else if (str == "Cook")
         {
            
             str = "4";
-            paycoin = 1;
+            paycoin = 35000;
         }
         else if (str == "Cat")
         {
            
             str = "5";
-            paycoin = 1;
+            paycoin = 80000;
         }
         else if (str == "Chick")
         {
            
             str = "6";
-            paycoin = 1;
+            paycoin = 70000;
         }
         else if (str == "Rabbit")
         {
            
             str = "7";
-            paycoin = 1;
+            paycoin = 20000;
         }
         else if (str == "Frog")
         {
            
             str = "8";
-            paycoin = 1;
+            paycoin = 50000;
         }
 
 
