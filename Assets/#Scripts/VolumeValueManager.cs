@@ -15,9 +15,10 @@ public class VolumeValueManager : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+        Debug.Log("start volumemanager : BGM :" + PlayerPrefs.GetFloat("BGMVolume", 1f)+ "Global: " + PlayerPrefs.GetFloat("GlobalVolume", 1f));
         audiosrc = GetComponent<AudioSource>();
-        BGMSlider.value = PlayerPrefs.GetFloat("BGMVolume", 1);
-        SoundSlider.value = PlayerPrefs.GetFloat("GlobalVolume", 1);
+        BGMSlider.value = PlayerPrefs.GetFloat("BGMVolume", 1f);
+        SoundSlider.value = PlayerPrefs.GetFloat("GlobalVolume", 1f);
         
         if (BGMSlider.value == 0)
         {
@@ -54,6 +55,7 @@ public class VolumeValueManager : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+        //Debug.Log("start volumemanager : BGM :" + PlayerPrefs.GetFloat("BGMVolume", 1) + "Global: " + PlayerPrefs.GetFloat("GlobalVolume", 1));
         AudioListener.volume = SoundSlider.value;
         audiosrc.volume = BGMSlider.value;
 	}
@@ -75,6 +77,7 @@ public class VolumeValueManager : MonoBehaviour {
       
         BGMSlider.value = vol;
         PlayerPrefs.SetFloat("BGMVolume", vol);
+        PlayerPrefs.Save();
         
     }
     public void SetGlobalVolume(float vol)
@@ -94,7 +97,7 @@ public class VolumeValueManager : MonoBehaviour {
 
         SoundSlider.value = vol;
         PlayerPrefs.SetFloat("GlobalVolume", vol);
-
+        PlayerPrefs.Save();
     }
 
     public void setBGMButtonClick() {
