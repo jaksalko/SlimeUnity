@@ -11167,7 +11167,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   Potal:
-  - {fileID: 0}
+  - {fileID: 1581104633}
   EndPotal:
   - {fileID: 292913403}
   ReversePotalArr: []
@@ -22123,7 +22123,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   Potal:
-  - {fileID: 0}
+  - {fileID: 22206708}
   EndPotal:
   - {fileID: 463927577}
   ReversePotalArr: []

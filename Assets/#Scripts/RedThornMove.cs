@@ -55,6 +55,7 @@ public class RedThornMove : MonoBehaviour
 
         for (int i=0; i<coinn.Length;i++)
             coinn[i] = GameObject.Find("RCoins").transform.Find("rcoin ("+i+")").gameObject;
+
         if (PlayerPrefs.GetInt("CurStage",0)>30)
         {
             for (int i = 0; i < ReversePotalArr.Length; i++)
@@ -91,8 +92,7 @@ public class RedThornMove : MonoBehaviour
         ReverseMove();
         RedReversePortalisLooked();
         RedPotalisLooked();
-        //ThornMoveX(1, 1);
-        //ThornMoveY(1, 0);
+       
     }
 
    
@@ -767,7 +767,6 @@ public class RedThornMove : MonoBehaviour
                 case 43:
                     if (Wall[10].transform.localPosition.y >= 0)
                     {
-                        Debug.Log("in wall10");
                         List<int> TThornNum = new List<int>();
                         List<int> FThornNum = new List<int>();
                         FThornNum.Insert(0, 57);
@@ -801,7 +800,7 @@ public class RedThornMove : MonoBehaviour
                     }
                     if (Wall[23].transform.localPosition.y >= 1)
                     {
-                        Debug.Log("in wall23");
+                      
                        
                         List<int> FThornNum = new List<int>();
                         FThornNum.Insert(0, 70);
@@ -835,7 +834,7 @@ public class RedThornMove : MonoBehaviour
                     }
                     if (Wall[49].transform.localPosition.y >= 0)
                     {
-                        Debug.Log("in wall10");
+                      
                         List<int> TThornNum = new List<int>();
                         List<int> FThornNum = new List<int>();
                         
@@ -858,7 +857,6 @@ public class RedThornMove : MonoBehaviour
                     }
                     if (Wall[53].transform.localPosition.y >= 0)
                     {
-                        Debug.Log("in wall10");
                         List<int> TThornNum = new List<int>();
                         List<int> FThornNum = new List<int>();
 
@@ -881,7 +879,6 @@ public class RedThornMove : MonoBehaviour
                 case 44:
                     if (Wall[10].transform.localPosition.y >= 0)
                     {
-                        Debug.Log("in wall10");
                         List<int> TThornNum = new List<int>();
                         List<int> FThornNum = new List<int>();
                         FThornNum.Insert(0, 57);
@@ -915,7 +912,6 @@ public class RedThornMove : MonoBehaviour
                     }
                     if (Wall[23].transform.localPosition.y >= 1)
                     {
-                        Debug.Log("in wall23");
 
                         List<int> FThornNum = new List<int>();
                         FThornNum.Insert(0, 70);
@@ -949,7 +945,6 @@ public class RedThornMove : MonoBehaviour
                     }
                     if (Wall[49].transform.localPosition.y >= 0)
                     {
-                        Debug.Log("in wall10");
                         List<int> TThornNum = new List<int>();
                         List<int> FThornNum = new List<int>();
 
@@ -972,7 +967,6 @@ public class RedThornMove : MonoBehaviour
                     }
                     if (Wall[53].transform.localPosition.y >= 0)
                     {
-                        Debug.Log("in wall10");
                         List<int> TThornNum = new List<int>();
                         List<int> FThornNum = new List<int>();
 

@@ -13,8 +13,7 @@ public class TextManager : MonoBehaviour {
 
     private void Awake()
     {
-        Debug.Log("Awake");
-        
+       
         
         gamecoin = 0;
         stageText.text = "Stage " + MenuButton.CurStage.ToString();

@@ -122,7 +122,7 @@ public class StoreManager : MonoBehaviour {
         {
             
             itemstate.Add(PlayerPrefs.GetInt(k.ToString(), 0));
-            //Debug.Log(k + " itemstate =" +itemstate[k]);
+           
             if (itemstate[k] != 0)//if itemstate is "bought", buy button is "false"
             {
                 if (k == 0)
@@ -144,7 +144,7 @@ public class StoreManager : MonoBehaviour {
                 else if (k == 8)
                     FrogButton.SetActive(true);
 
-                Debug.Log("산게 있음");
+             
             }
         }//i = 2;
 
@@ -163,7 +163,7 @@ public class StoreManager : MonoBehaviour {
     public void PaybuttonClick() {
         str = EventSystem.current.currentSelectedGameObject.name;
         str = str.Replace("PayBtn", "");
-        Debug.Log("PayBtn" + str + " is clicked");
+       
         payPopup.SetActive(true);
     }
     public void YesbuttonClick()
@@ -171,55 +171,55 @@ public class StoreManager : MonoBehaviour {
 
         if (str == "Santa")
         {
-            Debug.Log("Santa Yesbutton" + str + " is clicked");
+           
             str = "0";
             paycoin = 1;
         }
         else if (str == "Crown")
         {
-            Debug.Log("Crown Yesbutton" + str + " is clicked");
+         
             str = "1";
             paycoin = 1;
         }
         else if (str == "Straw")
         {
-            Debug.Log("Crown Yesbutton" + str + " is clicked");
+           
             str = "2";
             paycoin = 1;
         }
         else if (str == "Beret")
         {
-            Debug.Log("Beret Yesbutton" + str + " is clicked");
+          
             str = "3";
             paycoin = 1;
         }
         else if (str == "Cook")
         {
-            Debug.Log("Cook Yesbutton" + str + " is clicked");
+           
             str = "4";
             paycoin = 1;
         }
         else if (str == "Cat")
         {
-            Debug.Log("Cat Yesbutton" + str + " is clicked");
+           
             str = "5";
             paycoin = 1;
         }
         else if (str == "Chick")
         {
-            Debug.Log("Chick Yesbutton" + str + " is clicked");
+           
             str = "6";
             paycoin = 1;
         }
         else if (str == "Rabbit")
         {
-            Debug.Log("Rabbit Yesbutton" + str + " is clicked");
+           
             str = "7";
             paycoin = 1;
         }
         else if (str == "Frog")
         {
-            Debug.Log("Frog Yesbutton" + str + " is clicked");
+           
             str = "8";
             paycoin = 1;
         }
@@ -229,7 +229,7 @@ public class StoreManager : MonoBehaviour {
         if (MenuTextManager.totalcoin < paycoin)
         {
             Handheld.Vibrate();
-            Debug.Log("can't buy this" + paycoin);
+           
             iTween.ShakePosition(payPopup,vibrate,0.5f);
         }
         else {
@@ -237,7 +237,7 @@ public class StoreManager : MonoBehaviour {
             PlayerPrefs.SetInt("TotalCoin", MenuTextManager.totalcoin);
             if (str == "0")
             {
-                Debug.Log("Santa is Sold out");
+              
 
                 SantaButton.SetActive(true);
 
@@ -245,50 +245,39 @@ public class StoreManager : MonoBehaviour {
 
             else if (str == "1")
             {
-                Debug.Log("Crown is Sold out");
-
+               
                 CrownButton.SetActive(true);
             }
             else if (str == "2")
             {
-                Debug.Log("Crown is Sold out");
-
                 StrawButton.SetActive(true);
             }
             else if (str == "3")
             {
-                Debug.Log("Beret is Sold out");
-
                 BeretButton.SetActive(true);
             }
             else if (str == "4")
             {
-                Debug.Log("Cook is Sold out");
-
                 CookButton.SetActive(true);
             }
             else if (str == "5")
             {
-                Debug.Log("Cat is Sold out");
-
+              
                 CatButton.SetActive(true);
             }
             else if (str == "6")
             {
-                Debug.Log("Chick is Sold out");
-
+               
                 ChickButton.SetActive(true);
             }
             else if (str == "7")
             {
-                Debug.Log("Rabbit is Sold out");
-
+                
                 RabbitButton.SetActive(true);
             }
             else if (str == "8")
             {
-                Debug.Log("Frog is Sold out");
-
+               
                 FrogButton.SetActive(true);
             }
 
@@ -302,9 +291,7 @@ public class StoreManager : MonoBehaviour {
 
         }
         
-        Debug.Log(MenuTextManager.totalcoin);
-        
-        
+      
 
     }
     public void NobuttonClick()
