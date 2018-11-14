@@ -17959,10 +17959,10 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   Potal:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 1704844855}
+  - {fileID: 970084110}
+  - {fileID: 1285575931}
+  - {fileID: 560399098}
   EndPotal:
   - {fileID: 292913403}
   ReversePotalArr: []
@@ -41577,10 +41577,10 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   Potal:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 206786624}
+  - {fileID: 1861940994}
+  - {fileID: 1167341552}
+  - {fileID: 886399}
   EndPotal:
   - {fileID: 463927577}
   ReversePotalArr: []

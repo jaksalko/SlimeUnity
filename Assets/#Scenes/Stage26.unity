@@ -17135,7 +17135,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   Potal:
-  - {fileID: 0}
+  - {fileID: 1642432911}
   EndPotal:
   - {fileID: 500094428}
   ReversePotalArr: []
@@ -24666,8 +24666,8 @@ MonoBehaviour:
   - {fileID: 0}
   Wall: []
   Potal:
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 256519975}
+  - {fileID: 230374059}
   EndPotal:
   - {fileID: 365399855}
   ReversePotalArr: []

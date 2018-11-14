@@ -69513,9 +69513,9 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   Potal:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 782547038}
+  - {fileID: 958590985}
+  - {fileID: 252468931}
   EndPotal:
   - {fileID: 1384040513}
   ReversePotalArr: []
