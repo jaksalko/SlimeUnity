@@ -102,9 +102,19 @@ public class MenuButton : MonoBehaviour {
 
 
     public void gameStartButton() {
-        
-            
-            if (PlayerPrefs.GetInt("ClearStage", 0) == 0)
+        if (PlayerPrefs.GetInt("PlayCount", 0) > 0)
+        {
+            int count = PlayerPrefs.GetInt("PlayCount", 0);
+            count++;
+            PlayerPrefs.SetInt("PlayCount", count);
+            Debug.Log("PlayCount = " + PlayerPrefs.GetInt("PlayCount", 0));
+        }
+        else
+        {
+            PlayerPrefs.SetInt("PlayCount", 0);
+            Debug.Log("PlayCount = " + PlayerPrefs.GetInt("PlayCount", 0));
+        }
+        if (PlayerPrefs.GetInt("ClearStage", 0) == 0)
                 AutoFade.LoadLevel("Stage0", 1, 1, Color.black);
             else
             {

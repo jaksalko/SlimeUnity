@@ -187,6 +187,7 @@ public class BlueMove : MonoBehaviour
 
 
         }
+      
         if (other.gameObject.tag == "RedReversePortal" && this.tag.ToString() == "BlueMan")
         {
             popuptextmanager.totalcoinPlus();
@@ -224,24 +225,6 @@ public class BlueMove : MonoBehaviour
            
             Destroy(BlueThornMove.ReversePotal2[0]);
             BlueThornMove.ReversePotal2.RemoveAt(0);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
             this.transform.Rotate(new Vector3(180, 0, 180));
             ReverseCount++;

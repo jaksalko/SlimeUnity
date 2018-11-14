@@ -21,7 +21,7 @@ public class BlueThornMove : MonoBehaviour
     float[] moveY;
     void Awake()
     {
-        
+
 
         check = false;
         RedMove.RedEndPortalLook = false;
@@ -86,7 +86,7 @@ public class BlueThornMove : MonoBehaviour
     void ReverseMove()
     {
 
-        if (BlueMove.BlueEndPortalLook == true|| BlueMove.BlueReversePortalLook == true)
+        if (BlueMove.BlueEndPortalLook == true || BlueMove.BlueReversePortalLook == true)
         {
 
             return;
@@ -94,13 +94,13 @@ public class BlueThornMove : MonoBehaviour
 
         if (BlueMove.BlueReversePortalLook == false)
         {
-            
+
             Move();
             //Debug.Log("redreverse");
             //return;
-        
+
             //여러번 실행되지 않게 하기위한 변수
-            Debug.Log(PlayerPrefs.GetInt("CurStage", 0) + "stage");
+            //Debug.Log(PlayerPrefs.GetInt("CurStage", 0) + "stage");
 
             switch (PlayerPrefs.GetInt("CurStage", 0))
             {
@@ -126,6 +126,7 @@ public class BlueThornMove : MonoBehaviour
                         ThornMoveX(0.5f, 4);
                         break;
                     }
+                
                 case 36:
                     {
 
@@ -235,7 +236,7 @@ public class BlueThornMove : MonoBehaviour
                             for (int i = 0; i < TPortalNum.Count; i++)
                                 Potal[TPortalNum[i]].SetActive(true);//19,20,21
                             check = false;
-                            Debug.Log("레드포탈 On");
+                            //Debug.Log("레드포탈 On");
                         }
 
                         if (ReversePotal.Count % 2 == 0 && check == false)
@@ -257,13 +258,13 @@ public class BlueThornMove : MonoBehaviour
                             for (int i = 0; i < TPortalNum.Count; i++)
                                 Potal[TPortalNum[i]].SetActive(true);//19,20,21
                             check = true;
-                            Debug.Log("블루포탈 On");
+                            //Debug.Log("블루포탈 On");
                         }
                         break;
                     }
                 case 39:
                     {
-                        
+
                         if (ReversePotal.Count == 0 && check == false)
                         {
 
@@ -324,15 +325,15 @@ public class BlueThornMove : MonoBehaviour
                         {
 
                             List<int> TThornNum = new List<int>();
-                            
+
                             List<int> TWallNum = new List<int>();
-                          
+
                             TThornNum.Insert(0, 15);
                             TThornNum.Insert(1, 16);
                             TThornNum.Insert(2, 17);
                             TThornNum.Insert(3, 18);
 
-                            
+
 
                             TWallNum.Insert(0, 19);
                             TWallNum.Insert(1, 20);
@@ -341,8 +342,8 @@ public class BlueThornMove : MonoBehaviour
 
 
 
-                            
-                          
+
+
 
 
                             for (int i = 0; i < TThornNum.Count; i++)
@@ -403,7 +404,7 @@ public class BlueThornMove : MonoBehaviour
                     {
                         if (Thorn[0].transform.localPosition.y >= 1)
                             Thorn[0].SetActive(true);
-                        if (Wall[8].transform.localPosition.y >= 0&& ReversePotal.Count == 1)
+                        if (Wall[8].transform.localPosition.y >= 0 && ReversePotal.Count == 1)
                         {
                             List<int> TThornNum = new List<int>();
                             List<int> FThornNum = new List<int>();
@@ -436,7 +437,7 @@ public class BlueThornMove : MonoBehaviour
                                 Thorn[TThornNum[i]].SetActive(true);//16,17,18,19
                             for (int i = 0; i < TWallNum.Count; i++)
                                 Wall[TWallNum[i]].SetActive(true);//19,20,21
-                       
+
                         }
                         if (Wall[19].transform.localPosition.y >= 0 && TextManager.gamecoin >= 3 && ReversePotal.Count == 1)
                         {
@@ -461,36 +462,36 @@ public class BlueThornMove : MonoBehaviour
                                 Wall[FWallNum[i]].SetActive(false);//6,15,16
 
 
-                           
+
                             check = true;
                         }
                         if (Potal[0].transform.localPosition.y >= 2.5 && ReversePotal.Count == 1)
                         {
                             Potal[0].SetActive(true);
                         }
-                        if (Thorn[24].transform.localPosition.y >= 0&& ReversePotal.Count ==1)
+                        if (Thorn[24].transform.localPosition.y >= 0 && ReversePotal.Count == 1)
                         {
-                            Thorn[24].transform.localPosition=new Vector3(1.9f,moveY[24],0);
+                            Thorn[24].transform.localPosition = new Vector3(1.9f, moveY[24], 0);
                         }
                         if (ReversePotal.Count == 0)
                         {
                             List<int> TThornNum = new List<int>();
                             List<int> FThornNum = new List<int>();
-                            
+
                             TThornNum.Insert(0, 29);
                             TThornNum.Insert(1, 30);
                             TThornNum.Insert(2, 31);
-                           // TThornNum.Insert(3, 14);
+                            // TThornNum.Insert(3, 14);
 
                             FThornNum.Insert(0, 26);
                             FThornNum.Insert(1, 27);
                             FThornNum.Insert(2, 28);
-                           // FThornNum.Insert(3, 10);
+                            // FThornNum.Insert(3, 10);
 
-                          
+
                             for (int i = 0; i < FThornNum.Count; i++)
                                 Thorn[FThornNum[i]].SetActive(false);//0,1,13,14,15
-                           
+
 
 
                             for (int i = 0; i < TThornNum.Count; i++)
@@ -498,8 +499,8 @@ public class BlueThornMove : MonoBehaviour
                             Potal[0].SetActive(false);
 
                             ReversePotal.Insert(0, GameObject.Find("BlueReversePortal").transform.Find("BlueReverse (" + 1 + ")").gameObject);
-                        
-                        ReversePotal2 = ReversePotal;
+
+                            ReversePotal2 = ReversePotal;
                             ReversePotal[0].SetActive(true);
                         }
                         if (Thorn[35].transform.localPosition.y >= -1 && ReversePotal.Count == 0)
@@ -516,7 +517,7 @@ public class BlueThornMove : MonoBehaviour
                         break;
                     }
             }
-         
+
         }
 
     }
@@ -538,63 +539,63 @@ public class BlueThornMove : MonoBehaviour
 
     void ThornMoveX(float speed, int ThornNum)//0.5f가 적당한 속도
     {
-        
-        
-            if (a[ThornNum] == true)
-            {
-                Thorn[ThornNum].transform.Translate(-speed * Time.deltaTime, 0, 0, Space.World);
-                if (Thorn[ThornNum].transform.localPosition.x < 0.75f)
-                {
-                    a[ThornNum] = false;
-                }
 
-            }
-            else
+
+        if (a[ThornNum] == true)
+        {
+            Thorn[ThornNum].transform.Translate(-speed * Time.deltaTime, 0, 0, Space.World);
+            if (Thorn[ThornNum].transform.localPosition.x < 0.75f)
             {
-                Thorn[ThornNum].transform.Translate(speed * Time.deltaTime, 0, 0, Space.World);
-                if (Thorn[ThornNum].transform.localPosition.x > 2.1f)
-                {
-                    a[ThornNum] = true;
-                }
+                a[ThornNum] = false;
             }
-        
+
+        }
+        else
+        {
+            Thorn[ThornNum].transform.Translate(speed * Time.deltaTime, 0, 0, Space.World);
+            if (Thorn[ThornNum].transform.localPosition.x > 2.1f)
+            {
+                a[ThornNum] = true;
+            }
+        }
+
     }
     void ThornMoveY(float speed, int ThornNum)
     {
-        
 
 
-            if (a[ThornNum] == true)
+
+        if (a[ThornNum] == true)
+        {
+            Thorn[ThornNum].transform.Translate(0, speed * Time.deltaTime, 0, Space.World);
+            if (Thorn[ThornNum].transform.localPosition.y > (moveY[ThornNum] + 2.0f))
             {
-                Thorn[ThornNum].transform.Translate(0, speed * Time.deltaTime, 0, Space.World);
-                if (Thorn[ThornNum].transform.localPosition.y > (moveY[ThornNum] + 2.0f))
-                {
-               
-                    a[ThornNum] = false;
-                }
 
+                a[ThornNum] = false;
             }
-            else if(a[ThornNum]==false)
-            {
-                Thorn[ThornNum].transform.Translate(0, -speed * Time.deltaTime, 0, Space.World);
-            
+
+        }
+        else if (a[ThornNum] == false)
+        {
+            Thorn[ThornNum].transform.Translate(0, -speed * Time.deltaTime, 0, Space.World);
+
             if (Thorn[ThornNum].transform.localPosition.y < (moveY[ThornNum] - 2f))
-                {
-                
-                
+            {
+
+
                 a[ThornNum] = true;
-                }
             }
-        
+        }
+
     }
     void Move()
     {
-        
-        
+
+
         if (BlueReverse == false)
         {
 
-            
+
             for (int i = 0; i < Thorn.Length; i++)
             {
                 Thorn[i].transform.Translate(0, 3f * Time.deltaTime, 0, Space.World);
@@ -612,13 +613,13 @@ public class BlueThornMove : MonoBehaviour
             for (int i = 0; i < ReversePotal.Count; i++)
             {
                 ReversePotal[i].transform.Translate(0, 3f * Time.deltaTime, 0, Space.World);
-                Debug.Log("카운트 = " + ReversePotal.Count);
+                //Debug.Log("카운트 = " + ReversePotal.Count);
                 if (PlayerPrefs.GetInt("CurStage", 0) == 45)
                 {
                     GameObject.Find("BlueReversePortal").transform.Find("BlueReverse (" + 1 + ")").gameObject.transform.Translate(0, 3f * Time.deltaTime, 0, Space.World);
                 }
-            }  
-            
+            }
+
 
             for (int i = 0; i < coinn.Length; i++)
                 coinn[i].transform.Translate(0, 3f * Time.deltaTime, 0, Space.World);
@@ -645,8 +646,8 @@ public class BlueThornMove : MonoBehaviour
             for (int i = 0; i < ReversePotal.Count; i++)
             {
                 ReversePotal[i].transform.Translate(0, -3f * Time.deltaTime, 0, Space.World);
-                Debug.Log("카운트 = " + ReversePotal.Count);
-               
+                //Debug.Log("카운트 = " + ReversePotal.Count);
+
             }
             for (int i = 0; i < coinn.Length; i++)
                 coinn[i].transform.Translate(0, -3f * Time.deltaTime, 0, Space.World);
