@@ -12,7 +12,7 @@ public class MenuTextManager : MonoBehaviour {
         totalcoin = PlayerPrefs.GetInt("TotalCoin", totalcoin);
         PopupCoinTextManager.temp = totalcoin;
         totalcoinText.text = totalcoin.ToString();
-        Debug.Log("menu text manager script awake    " + totalcoin.ToString());
+       
     }
    
     // Update is called once per frame

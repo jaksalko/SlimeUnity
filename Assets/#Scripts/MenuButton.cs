@@ -28,7 +28,7 @@ public class MenuButton : MonoBehaviour {
     {
         
 
-        //PlayerPrefs.DeleteAll();
+       
 
         StageButton[0] = GetComponent<Button>();
         for (int i = 1; i < StageButton.Length; i++)
@@ -37,34 +37,32 @@ public class MenuButton : MonoBehaviour {
        
         StageButton[1].interactable = true;
 
-        //for (int i = 2; i < StageButton.Length; i++)
-
-        //    StageButton[i].interactable = true;
-        
-
         for (int i = 2; i < StageButton.Length; i++)
 
             StageButton[i].interactable = true;
-       for (int i = 2; i < StageButton.Length; i++)
-
-        {
-
-            if (PlayerPrefs.GetInt("ClearStage", 0) >= (i - 1))
-            {
-                Debug.Log("여기여기" + PlayerPrefs.GetInt("ClearStage", 0));
-
-                StageButton[i].interactable = true;
-            }
-            else
-            {
-                StageButton[i].interactable = false;
-            }
-        }
 
 
-        
 
-      
+        //for (int i = 2; i < StageButton.Length; i++)
+
+        //{
+
+        //    if (PlayerPrefs.GetInt("ClearStage", 0) >= (i - 1))
+        //    {
+
+
+        //        StageButton[i].interactable = true;
+        //    }
+        //    else
+        //    {
+        //        StageButton[i].interactable = false;
+        //    }
+        //}
+
+
+
+
+
 
 
     }
@@ -105,7 +103,7 @@ public class MenuButton : MonoBehaviour {
 
     public void gameStartButton() {
         
-            //Debug.Log("ClearStage = " + ClearStage);
+            
             if (PlayerPrefs.GetInt("ClearStage", 0) == 0)
                 AutoFade.LoadLevel("Stage0", 1, 1, Color.black);
             else
@@ -116,8 +114,7 @@ public class MenuButton : MonoBehaviour {
                 PlayerPrefs.SetInt("CurStage", CurStage);
                 AutoFade.LoadLevel("Stage" + CurStage.ToString(), 1, 1, Color.black);
 
-            Debug.Log("CurStage = " + PlayerPrefs.GetInt("CurStage", 0)+"로 저장");
-
+          
                 RedMove.DieCheck = 0;
            }
 

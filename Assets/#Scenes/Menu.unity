@@ -123,7 +123,7 @@ GameObject:
   - component: {fileID: 6194674}
   - component: {fileID: 6194675}
   m_Layer: 5
-  m_Name: CookBlueToggle
+  m_Name: FrogBlueToggle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4467,7 +4467,7 @@ GameObject:
   m_Component:
   - component: {fileID: 280908071}
   m_Layer: 5
-  m_Name: CookHat
+  m_Name: FrogHat
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12231,7 +12231,7 @@ GameObject:
   m_Component:
   - component: {fileID: 857762167}
   m_Layer: 5
-  m_Name: 4Wear
+  m_Name: 8Wear
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -14160,7 +14160,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 9256b6f886437294b8d9acdd7cdb849b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 5ed7c9081dc228b4db975b5962f392ed, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -15326,15 +15326,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.392}
+  m_Color: {r: 1, g: 0.98101735, b: 0, a: 0.392}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 0}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -17611,7 +17611,7 @@ GameObject:
   - component: {fileID: 1193614703}
   - component: {fileID: 1193614704}
   m_Layer: 5
-  m_Name: CookRedToggle
+  m_Name: FrogRedToggle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -21570,7 +21570,7 @@ GameObject:
   - component: {fileID: 1436439088}
   - component: {fileID: 1436439087}
   m_Layer: 5
-  m_Name: CookPayBtn
+  m_Name: FrogPayBtn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -26929,6 +26929,7 @@ MonoBehaviour:
   CatButton: {fileID: 204305220}
   ChickButton: {fileID: 1635279487}
   RabbitButton: {fileID: 1810877624}
+  FrogButton: {fileID: 857762166}
   redItem: {fileID: 929675139}
   blueItem: {fileID: 552003187}
   RedWearButton:
@@ -26941,6 +26942,7 @@ MonoBehaviour:
   - {fileID: 323060088}
   - {fileID: 734671683}
   - {fileID: 1320792425}
+  - {fileID: 1193614704}
   BlueWearButton:
   - {fileID: 1360937033}
   - {fileID: 99413947}
@@ -26951,6 +26953,7 @@ MonoBehaviour:
   - {fileID: 1965902811}
   - {fileID: 358343805}
   - {fileID: 1510997905}
+  - {fileID: 6194675}
 --- !u!4 &1787941088
 Transform:
   m_ObjectHideFlags: 0

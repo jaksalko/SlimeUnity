@@ -33,6 +33,7 @@ public class BlueThornMove : MonoBehaviour
         BlueReverse = false;
         a = new bool[Thorn.Length];
         moveY = new float[Thorn.Length];
+
         for (int i = 0; i < Wall.Length; i++)
             Wall[i] = GameObject.Find("BWall").transform.Find("blue_wall (" + i + ")").gameObject;
 
@@ -125,7 +126,7 @@ public class BlueThornMove : MonoBehaviour
                         ThornMoveX(0.5f, 4);
                         break;
                     }
-                case 35:
+                case 36:
                     {
 
                         if (ReversePotal.Count == 0 && check == false)
@@ -166,7 +167,7 @@ public class BlueThornMove : MonoBehaviour
                         }
                         break;
                     }
-                case 36:
+                case 37:
                     {
                         ThornMoveX(0.5f, 5);
                         ThornMoveY(1f, 5);
@@ -210,7 +211,7 @@ public class BlueThornMove : MonoBehaviour
                         }
                         break;
                     }
-                case 37:
+                case 38:
                     {
 
                         if (ReversePotal.Count % 2 == 1 && check == true)
@@ -260,7 +261,7 @@ public class BlueThornMove : MonoBehaviour
                         }
                         break;
                     }
-                case 38:
+                case 39:
                     {
                         
                         if (ReversePotal.Count == 0 && check == false)
@@ -305,15 +306,15 @@ public class BlueThornMove : MonoBehaviour
                         }
                         break;
                     }
-                case 39:
+                case 40:
                     {
                         ThornMoveY(1f, 9);
                         ThornMoveX(1f, 0);
-                        ThornMoveX(1f, 21);
+                        ThornMoveX(1f, 20);
                         break;
                     }
 
-                case 40:
+                case 41:
                     {
                         ThornMoveY(1f, 9);
                         ThornMoveX(1f, 0);
@@ -515,7 +516,7 @@ public class BlueThornMove : MonoBehaviour
                         break;
                     }
             }
-            return;
+         
         }
 
     }
