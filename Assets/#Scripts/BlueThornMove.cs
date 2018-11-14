@@ -33,6 +33,7 @@ public class BlueThornMove : MonoBehaviour
         BlueReverse = false;
         a = new bool[Thorn.Length];
         moveY = new float[Thorn.Length];
+
         for (int i = 0; i < Wall.Length; i++)
             Wall[i] = GameObject.Find("BWall").transform.Find("blue_wall (" + i + ")").gameObject;
 
@@ -309,7 +310,7 @@ public class BlueThornMove : MonoBehaviour
                     {
                         ThornMoveY(1f, 9);
                         ThornMoveX(1f, 0);
-                        ThornMoveX(1f, 21);
+                        ThornMoveX(1f, 20);
                         break;
                     }
 
