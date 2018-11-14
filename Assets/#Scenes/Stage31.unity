@@ -34204,17 +34204,17 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   Potal:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 8557262}
+  - {fileID: 1669552307}
+  - {fileID: 327427939}
+  - {fileID: 995276086}
+  - {fileID: 2021878825}
+  - {fileID: 1118194234}
+  - {fileID: 170154820}
+  - {fileID: 1206946907}
+  - {fileID: 445911398}
+  - {fileID: 43604576}
+  - {fileID: 241724983}
   EndPotal:
   - {fileID: 1157662331}
   ReversePotalArr: []
