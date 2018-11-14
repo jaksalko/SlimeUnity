@@ -183,7 +183,10 @@ public class ButtonManager : MonoBehaviour {
     }
     public void RestartButton()
     {
-        
+        int count = PlayerPrefs.GetInt("PlayCount", 0);
+        count++;
+        PlayerPrefs.SetInt("PlayCount", count);
+        Debug.Log("PlayCount = " + PlayerPrefs.GetInt("PlayCount", 0));
         popup.SetActive(false);
         if (RedMove.DieCheck > 0 && RedMove.clearSt == true)
         {
@@ -203,6 +206,11 @@ public class ButtonManager : MonoBehaviour {
     }
     public void NextStageButton()
     {
+
+        int count = PlayerPrefs.GetInt("PlayCount", 0);
+        count++;
+        PlayerPrefs.SetInt("PlayCount", count);
+        Debug.Log("PlayCount = " + PlayerPrefs.GetInt("PlayCount", 0));
 
         if (RedMove.DieCheck > 0 && RedMove.clearSt == true)
         {

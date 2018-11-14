@@ -26004,7 +26004,7 @@ GameObject:
   - component: {fileID: 1341792464}
   m_Layer: 0
   m_Name: RedEndPortal
-  m_TagString: RedEndPortal
+  m_TagString: EndPortal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -28015,7 +28015,7 @@ GameObject:
   - component: {fileID: 1545528871}
   m_Layer: 0
   m_Name: BlueEndPortal
-  m_TagString: BlueEndPortal
+  m_TagString: EndPortal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
