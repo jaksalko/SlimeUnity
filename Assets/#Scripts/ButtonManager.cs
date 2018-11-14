@@ -36,8 +36,8 @@ public class ButtonManager : MonoBehaviour {
         Application.targetFrameRate = 60;
         check = false;
         //Debug.Log("타임 스케일 1로 변경");
-        //RedWallCheck = true;
-        //BlueWallCheck = false;
+        RedWallCheck = true;
+        BlueWallCheck = false;
         Screen.SetResolution(1080, 1920, true);
         redManAnimator = red.GetComponent<Animator>();
         blueManAnimator = blue.GetComponent<Animator>();

@@ -3445,8 +3445,8 @@ MonoBehaviour:
   popup: {fileID: 1886102086}
   option: {fileID: 0}
   next: {fileID: 838521474}
-  red: {fileID: 0}
-  blue: {fileID: 0}
+  red: {fileID: 1922725979}
+  blue: {fileID: 1602676060}
   cointxt: {fileID: 1941993130}
   redbutton: {fileID: 1928434905}
   bluebutton: {fileID: 1312945859}
@@ -3618,8 +3618,8 @@ MonoBehaviour:
   popup: {fileID: 1886102086}
   option: {fileID: 0}
   next: {fileID: 838521474}
-  red: {fileID: 0}
-  blue: {fileID: 0}
+  red: {fileID: 1922725979}
+  blue: {fileID: 1602676060}
   cointxt: {fileID: 1941993130}
   redbutton: {fileID: 0}
   bluebutton: {fileID: 0}
@@ -4806,8 +4806,8 @@ MonoBehaviour:
   popup: {fileID: 1886102086}
   option: {fileID: 0}
   next: {fileID: 838521474}
-  red: {fileID: 0}
-  blue: {fileID: 0}
+  red: {fileID: 1922725979}
+  blue: {fileID: 1602676060}
   cointxt: {fileID: 1941993130}
   redbutton: {fileID: 0}
   bluebutton: {fileID: 0}
@@ -7137,8 +7137,8 @@ MonoBehaviour:
   popup: {fileID: 1886102086}
   option: {fileID: 0}
   next: {fileID: 0}
-  red: {fileID: 0}
-  blue: {fileID: 0}
+  red: {fileID: 1922725979}
+  blue: {fileID: 1602676060}
   cointxt: {fileID: 0}
   redbutton: {fileID: 0}
   bluebutton: {fileID: 0}
@@ -8948,8 +8948,8 @@ MonoBehaviour:
   popup: {fileID: 1886102086}
   option: {fileID: 0}
   next: {fileID: 838521474}
-  red: {fileID: 0}
-  blue: {fileID: 0}
+  red: {fileID: 1922725979}
+  blue: {fileID: 1602676060}
   cointxt: {fileID: 1941993130}
   redbutton: {fileID: 0}
   bluebutton: {fileID: 0}
@@ -9131,7 +9131,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc0b629c936ee124c96aea70126e83d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  popup: {fileID: 0}
+  popup: {fileID: 1886102086}
   tempx: 0
   tempy: 0
   posRed: {x: 0, y: 0, z: 0}
@@ -9303,8 +9303,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9edf26f034207e24fa3c4429a241f643, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  redhat: {fileID: 0}
-  bluehat: {fileID: 0}
+  redhat: {fileID: 1142239987}
+  bluehat: {fileID: 2037028086}
 --- !u!4 &1629786090
 Transform:
   m_ObjectHideFlags: 0
@@ -11585,8 +11585,8 @@ MonoBehaviour:
   popup: {fileID: 1886102086}
   option: {fileID: 0}
   next: {fileID: 0}
-  red: {fileID: 0}
-  blue: {fileID: 0}
+  red: {fileID: 1922725979}
+  blue: {fileID: 1602676060}
   cointxt: {fileID: 0}
   redbutton: {fileID: 0}
   bluebutton: {fileID: 0}
@@ -12502,8 +12502,8 @@ MonoBehaviour:
   popup: {fileID: 1886102086}
   option: {fileID: 0}
   next: {fileID: 838521474}
-  red: {fileID: 0}
-  blue: {fileID: 0}
+  red: {fileID: 1922725979}
+  blue: {fileID: 1602676060}
   cointxt: {fileID: 1941993130}
   redbutton: {fileID: 0}
   bluebutton: {fileID: 0}
