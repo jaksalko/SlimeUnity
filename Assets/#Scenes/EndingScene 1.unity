@@ -3407,7 +3407,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 818406976}
-  - component: {fileID: 818406975}
   m_Layer: 0
   m_Name: ChangeScene
   m_TagString: Untagged
@@ -3415,17 +3414,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &818406975
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 818406974}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 430d5be34a9f6b140812ef70447f4cd0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &818406976
 Transform:
   m_ObjectHideFlags: 0

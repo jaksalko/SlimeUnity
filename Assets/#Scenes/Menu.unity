@@ -26744,6 +26744,8 @@ MonoBehaviour:
   FrogButton: {fileID: 857762166}
   redItem: {fileID: 929675139}
   blueItem: {fileID: 552003187}
+  defaultred: {fileID: 670698574}
+  defaultblue: {fileID: 1360937033}
   RedWearButton:
   - {fileID: 670698574}
   - {fileID: 1327366610}

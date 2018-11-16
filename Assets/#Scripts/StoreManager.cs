@@ -20,19 +20,24 @@ public class StoreManager : MonoBehaviour {
     public GameObject FrogButton;
     public GameObject redItem;
     public GameObject blueItem;
+    public Toggle defaultred;
+    public Toggle defaultblue;
     public Toggle[] RedWearButton;
     public Toggle[] BlueWearButton;
     static string str;
     List<int> itemstate;
     static int i ;
+    int a;
     int paycoin;
     Vector3 vibrate;
     // Use this for initialization
     void Start () {
-
-        
+       // PlayerPrefs.DeleteAll();
+        a = 0;
+        PlayerPrefs.SetInt("TotalCoin", 100000);
+        PlayerPrefs.Save();
         //Debug.Log(PlayerPrefs.GetString("RedWear", "DefaultRedToggle") + "      " + RedWearButton[2].ToString());
-        for (int a = 0; a < 3; a++)
+        for (int a = 0; a < 10; a++)
         {
             if (RedWearButton[a].ToString() == PlayerPrefs.GetString("RedWear", "DefaultRedToggle"))
             {
@@ -118,11 +123,11 @@ public class StoreManager : MonoBehaviour {
         itemstate = new List<int>();//itemstate[itemnumber] : 0 -> Not buy  1 -> Buy   2 -> Wear
 
 
-        for (int k =  i ; k < 7; k++)// i is itemnumber and Itemstate is state of itemnumber
+        for (int k =  i ; k < 9; k++)// i is itemnumber and Itemstate is state of itemnumber
         {
             
             itemstate.Add(PlayerPrefs.GetInt(k.ToString(), 0));
-           
+
             if (itemstate[k] != 0)//if itemstate is "bought", buy button is "false"
             {
                 if (k == 0)
@@ -144,9 +149,20 @@ public class StoreManager : MonoBehaviour {
                 else if (k == 8)
                     FrogButton.SetActive(true);
 
-             
+
+            }
+            else
+            {
+                Debug.Log("a++");
+                a++;
             }
         }//i = 2;
+        if (a == 9)
+        {
+            Debug.Log("아무것도 안삼");
+            defaultred.isOn = true;
+            defaultblue.isOn = true;
+        }
 
 
         PlayerPrefs.Save();
@@ -350,7 +366,7 @@ public class StoreManager : MonoBehaviour {
                 redItem.transform.localPosition = new Vector3(-75f, -347f, -17280f);
             }
         }
-            
+       
     }
     public void BlueToggleControl(Toggle toggle)
     {
