@@ -38,31 +38,44 @@ public class MissionManager : MonoBehaviour {
         {
             PlayerPrefs.SetString("mission6", "cn");//mission 0을 cn 상태로 바꿔줌
         }
-        if (PlayerPrefs.GetString("mission7", "nc") == "nc" && PlayerPrefs.GetInt("ClearStage", 0) > 39)//mission6 이 안깬 상태고 클리어 스테이지가 40이상 이면
+        if (PlayerPrefs.GetString("mission7", "nc") == "nc" && PlayerPrefs.GetInt("ClearStage", 0) > 39)//mission7 이 안깬 상태고 클리어 스테이지가 40이상 이면
         {
             PlayerPrefs.SetString("mission7", "cn");//mission 0을 cn 상태로 바꿔줌
         }
-        if (PlayerPrefs.GetString("mission8", "nc") == "nc" && PlayerPrefs.GetInt("ClearStage", 0) > 44)//mission6 이 안깬 상태고 클리어 스테이지가 45이상 이면
-        {
-            PlayerPrefs.SetString("mission8", "cn");//mission 0을 cn 상태로 바꿔줌
-        }
+       
 
 
 
-        if (PlayerPrefs.GetString("mission1", "nc") == "nc" && PlayerPrefs.GetInt("TotalCoin", 0) > 99)//mission1 이 안깬 상태고 코인 갯수가 100개 이상이면
+        if (PlayerPrefs.GetString("mission1", "nc") == "nc" && PlayerPrefs.GetInt("TotalCoin", 0) > 999)//mission1 이 안깬 상태고 코인 갯수가 1000개 이상이면
         {
             PlayerPrefs.SetString("mission1", "cn");//mission 1을 cn 상태로 바꿔줌
         }
-        if (PlayerPrefs.GetString("mission3", "nc") == "nc" && PlayerPrefs.GetInt("TotalCoin", 0) > 999)//mission1 이 안깬 상태고 코인 갯수가 1000개 이상이면
+        if (PlayerPrefs.GetString("mission3", "nc") == "nc" && PlayerPrefs.GetInt("TotalCoin", 0) > 9999)//mission3 이 안깬 상태고 코인 갯수가 10000개 이상이면
         {
             PlayerPrefs.SetString("mission3", "cn");//mission 3을 cn 상태로 바꿔줌
         }
-        if (PlayerPrefs.GetString("mission5", "nc") == "nc" && PlayerPrefs.GetInt("TotalCoin", 0) > 9999)//mission1 이 안깬 상태고 코인 갯수가 10000개 이상이면
+        if (PlayerPrefs.GetString("mission5", "nc") == "nc" && PlayerPrefs.GetInt("TotalCoin", 0) > 49999)//mission5 이 안깬 상태고 코인 갯수가 50000개 이상이면
         {
             PlayerPrefs.SetString("mission5", "cn");//mission 5을 cn 상태로 바꿔줌
         }
+       
 
-
+        if (PlayerPrefs.GetString("mission8", "nc") == "nc" && PlayerPrefs.GetInt("PlayCount", 0) > 99)//mission8 이 안깬 상태고 플레이 횟수가 100 이면
+        {
+            PlayerPrefs.SetString("mission8", "cn");//mission 0을 cn 상태로 바꿔줌
+        }
+        if (PlayerPrefs.GetString("mission9", "nc") == "nc" && PlayerPrefs.GetInt("PlayCount", 0) > 299)//mission9 이 안깬 상태고 플레이 횟수가 300 이면
+        {
+            PlayerPrefs.SetString("mission9", "cn");//mission 0을 cn 상태로 바꿔줌
+        }
+        if (PlayerPrefs.GetString("mission10", "nc") == "nc" && PlayerPrefs.GetInt("PlayCount", 0) > 499)//mission10 이 안깬 상태고 플레이 횟수가 500 이면
+        {
+            PlayerPrefs.SetString("mission10", "cn");//mission 0을 cn 상태로 바꿔줌
+        }
+        if (PlayerPrefs.GetString("mission11", "nc") == "nc" && PlayerPrefs.GetInt("ClearStage", 0) > 44)//mission11 이 안깬 상태고 클리어 스테이지가 45이상 이면
+        {
+            PlayerPrefs.SetString("mission11", "cn");//mission 0을 cn 상태로 바꿔줌
+        }
 
 
         for (int i = 0; i < treasureButton.Length; i++)//미션 상황에 따라 버튼의 이미지를 설정
@@ -111,7 +124,7 @@ public class MissionManager : MonoBehaviour {
                     break;
                 case 1:
                    
-                    PlayerPrefs.SetInt("TotalCoin", PlayerPrefs.GetInt("TotalCoin", 0) + 100);
+                    PlayerPrefs.SetInt("TotalCoin", PlayerPrefs.GetInt("TotalCoin", 0) + 500);
                     PlayerPrefs.SetString("mission1", "cy");
                     MenuTextManager.totalcoin += 100;
                     menutextmanager.GetComponent<TextMeshProUGUI>().text = PlayerPrefs.GetInt("TotalCoin", 0).ToString();
@@ -124,7 +137,7 @@ public class MissionManager : MonoBehaviour {
                     menutextmanager.GetComponent<TextMeshProUGUI>().text = PlayerPrefs.GetInt("TotalCoin", 0).ToString();
                     break;
                 case 3:
-                    PlayerPrefs.SetInt("TotalCoin", PlayerPrefs.GetInt("TotalCoin", 0) + 500);
+                    PlayerPrefs.SetInt("TotalCoin", PlayerPrefs.GetInt("TotalCoin", 0) + 2000);
                     PlayerPrefs.SetString("mission3", "cy");
                     MenuTextManager.totalcoin += 500;
                     menutextmanager.GetComponent<TextMeshProUGUI>().text = PlayerPrefs.GetInt("TotalCoin", 0).ToString();
@@ -136,7 +149,7 @@ public class MissionManager : MonoBehaviour {
                     menutextmanager.GetComponent<TextMeshProUGUI>().text = PlayerPrefs.GetInt("TotalCoin", 0).ToString();
                     break;
                 case 5:
-                    PlayerPrefs.SetInt("TotalCoin", PlayerPrefs.GetInt("TotalCoin", 0) + 5000);
+                    PlayerPrefs.SetInt("TotalCoin", PlayerPrefs.GetInt("TotalCoin", 0) + 10000);
                     PlayerPrefs.SetString("mission5", "cy");
                     MenuTextManager.totalcoin += 5000;
                     menutextmanager.GetComponent<TextMeshProUGUI>().text = PlayerPrefs.GetInt("TotalCoin", 0).ToString();
@@ -154,7 +167,25 @@ public class MissionManager : MonoBehaviour {
                     menutextmanager.GetComponent<TextMeshProUGUI>().text = PlayerPrefs.GetInt("TotalCoin", 0).ToString();
                     break;
                 case 8:
-                    PlayerPrefs.SetInt("TotalCoin", PlayerPrefs.GetInt("TotalCoin", 0) + 20000);
+                    PlayerPrefs.SetInt("TotalCoin", PlayerPrefs.GetInt("TotalCoin", 0) + 500);
+                    PlayerPrefs.SetString("mission9", "cy");
+                    MenuTextManager.totalcoin += 500;
+                    menutextmanager.GetComponent<TextMeshProUGUI>().text = PlayerPrefs.GetInt("TotalCoin", 0).ToString();
+                    break;
+                case 9:
+                    PlayerPrefs.SetInt("TotalCoin", PlayerPrefs.GetInt("TotalCoin", 0) + 5000);
+                    PlayerPrefs.SetString("mission9", "cy");
+                    MenuTextManager.totalcoin += 5000;
+                    menutextmanager.GetComponent<TextMeshProUGUI>().text = PlayerPrefs.GetInt("TotalCoin", 0).ToString();
+                    break;
+                case 10:
+                    PlayerPrefs.SetInt("TotalCoin", PlayerPrefs.GetInt("TotalCoin", 0) + 10000);
+                    PlayerPrefs.SetString("mission9", "cy");
+                    MenuTextManager.totalcoin += 10000;
+                    menutextmanager.GetComponent<TextMeshProUGUI>().text = PlayerPrefs.GetInt("TotalCoin", 0).ToString();
+                    break;
+                case 11:
+                    PlayerPrefs.SetInt("TotalCoin", PlayerPrefs.GetInt("TotalCoin", 0) + 20000);//다깼을때
                     PlayerPrefs.SetString("mission8", "cy");
                     MenuTextManager.totalcoin += 20000;
                     menutextmanager.GetComponent<TextMeshProUGUI>().text = PlayerPrefs.GetInt("TotalCoin", 0).ToString();

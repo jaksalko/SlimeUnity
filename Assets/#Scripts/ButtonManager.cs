@@ -15,6 +15,7 @@ public class ButtonManager : MonoBehaviour {
     public static bool BlueWallCheck;//Blue의 벽위치
     public GameObject popup;
     public GameObject option;
+   
     public GameObject next;
     public GameObject red;
     public GameObject blue;
@@ -28,10 +29,10 @@ public class ButtonManager : MonoBehaviour {
     string str;
     void Awake()
     {
+       
 
-//        PlayerPrefs.DeleteAll();
 
-        //PlayerPrefs.DeleteAll();
+
 
         Application.targetFrameRate = 60;
         check = false;
@@ -42,7 +43,7 @@ public class ButtonManager : MonoBehaviour {
         redManAnimator = red.GetComponent<Animator>();
         blueManAnimator = blue.GetComponent<Animator>();
 
-
+        
 
     }
     void Start()
@@ -238,6 +239,11 @@ public class ButtonManager : MonoBehaviour {
         option.SetActive(true);
         Time.timeScale = 0;
     }
-   
+    public void OptionExitButton()
+    {
+        option.SetActive(false);
+        Time.timeScale = 1;
+    }
+
 
 }

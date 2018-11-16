@@ -15,11 +15,13 @@ public class VolumeValueManager : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        Debug.Log("start volumemanager : BGM :" + PlayerPrefs.GetFloat("BGMVolume", 1f)+ "Global: " + PlayerPrefs.GetFloat("GlobalVolume", 1f));
-        audiosrc = GetComponent<AudioSource>();
-        BGMSlider.value = PlayerPrefs.GetFloat("BGMVolume", 1f);
-        SoundSlider.value = PlayerPrefs.GetFloat("GlobalVolume", 1f);
+        Debug.Log("start volumemanager : BGM :" + PlayerPrefs.GetFloat("BGMVolume", 1f)+ "  Global: " + PlayerPrefs.GetFloat("GlobalVolume", 1f));
         
+        BGMSlider.value = PlayerPrefs.GetFloat("BGMVolume", 1f);
+        Debug.Log("start volumemanager2 : BGM :" + BGMSlider.value + "  Pref: " + PlayerPrefs.GetFloat("BGMVolume", 1f));
+        SoundSlider.value = PlayerPrefs.GetFloat("GlobalVolume", 1f);
+        Debug.Log("start volumemanager3 : BGM :" + BGMSlider.value + "  Global: " + SoundSlider.value);
+        audiosrc = GetComponent<AudioSource>();
         if (BGMSlider.value == 0)
         {
             bgmbtn.GetComponent<Image>().sprite = Resources.Load("#Images/BGMSilent", typeof(Sprite)) as Sprite;
@@ -73,7 +75,7 @@ public class VolumeValueManager : MonoBehaviour {
             bgmbtn.GetComponent<Image>().sprite = Resources.Load("#Images/BGM", typeof(Sprite)) as Sprite;
             
         }
-        Debug.Log(vol.ToString());
+        Debug.Log(this + vol.ToString());
       
         BGMSlider.value = vol;
         PlayerPrefs.SetFloat("BGMVolume", vol);
@@ -93,7 +95,7 @@ public class VolumeValueManager : MonoBehaviour {
             soundbtn.GetComponent<Image>().sprite = Resources.Load("#Images/OptionButton", typeof(Sprite)) as Sprite;
            
         }
-        Debug.Log(vol.ToString());
+        Debug.Log(this + vol.ToString());
 
         SoundSlider.value = vol;
         PlayerPrefs.SetFloat("GlobalVolume", vol);
