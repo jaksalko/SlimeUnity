@@ -187,8 +187,8 @@ public class MissionManager : MonoBehaviour {
                 case 11:
                     PlayerPrefs.SetInt("TotalCoin", PlayerPrefs.GetInt("TotalCoin", 0) + 20000);//다깼을때
                     PlayerPrefs.SetString("mission8", "cy");
-                    MenuTextManager.totalcoin += 20000;
-                    menutextmanager.GetComponent<TextMeshProUGUI>().text = PlayerPrefs.GetInt("TotalCoin", 0).ToString();
+                    AutoFade.LoadLevel("Ending2", 1, 1, Color.black);
+                    
                     break;
 
             }

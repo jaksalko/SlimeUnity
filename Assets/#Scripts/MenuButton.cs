@@ -26,9 +26,9 @@ public class MenuButton : MonoBehaviour {
 
     private void Awake()
     {
-        
 
-       
+
+        //PlayerPrefs.DeleteAll();
 
         StageButton[0] = GetComponent<Button>();
         for (int i = 1; i < StageButton.Length; i++)
@@ -37,27 +37,27 @@ public class MenuButton : MonoBehaviour {
        
         StageButton[1].interactable = true;
 
-        //for (int i = 2; i < StageButton.Length; i++)
-
-        //    StageButton[i].interactable = true;
-
-
-
         for (int i = 2; i < StageButton.Length; i++)
 
-        {
-
-            if (PlayerPrefs.GetInt("ClearStage", 0) >= (i - 1))
-            {
+            StageButton[i].interactable = true;
 
 
-                StageButton[i].interactable = true;
-            }
-            else
-            {
-                StageButton[i].interactable = false;
-            }
-        }
+
+        //for (int i = 2; i < StageButton.Length; i++)
+
+        //{
+
+        //    if (PlayerPrefs.GetInt("ClearStage", 0) >= (i - 1))
+        //    {
+
+
+        //        StageButton[i].interactable = true;
+        //    }
+        //    else
+        //    {
+        //        StageButton[i].interactable = false;
+        //    }
+        //}
 
 
 
@@ -114,19 +114,22 @@ public class MenuButton : MonoBehaviour {
             PlayerPrefs.SetInt("PlayCount", 0);
             Debug.Log("PlayCount = " + PlayerPrefs.GetInt("PlayCount", 0));
         }
-        if (PlayerPrefs.GetInt("ClearStage", 0) == 0)
-                AutoFade.LoadLevel("Stage0", 1, 1, Color.black);
-            else
-            {
-                str = EventSystem.current.currentSelectedGameObject.name;
-                str = str.Replace("Stage", "");
-                CurStage = Convert.ToInt32(str);
-                PlayerPrefs.SetInt("CurStage", CurStage);
-                AutoFade.LoadLevel("Stage" + CurStage.ToString(), 1, 1, Color.black);
+        if (PlayerPrefs.GetInt("PlayCount", 0) == 0)
+        {
+            AutoFade.LoadLevel("Stage0", 1, 1, Color.black);
+            PlayerPrefs.SetInt("CurStage", 0);
+        }
+        else
+        {
+            str = EventSystem.current.currentSelectedGameObject.name;
+            str = str.Replace("Stage", "");
+            CurStage = Convert.ToInt32(str);
+            PlayerPrefs.SetInt("CurStage", CurStage);
+            AutoFade.LoadLevel("Stage" + CurStage.ToString(), 1, 1, Color.black);
 
-          
-                RedMove.DieCheck = 0;
-           }
+
+            RedMove.DieCheck = 0;
+        }
 
         
 
