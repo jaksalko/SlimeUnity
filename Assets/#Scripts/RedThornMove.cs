@@ -1037,7 +1037,7 @@ public class RedThornMove : MonoBehaviour
                             Thorn[5].SetActive(true);
                         if (Thorn[6].transform.localPosition.y >= 1 && ReversePotal.Count == 1)
                             Thorn[6].SetActive(true);
-                        if (Wall[0].transform.localPosition.y >= 0&&check==false && ReversePotal.Count == 1)
+                        if (Wall[0].transform.localPosition.y >= 0 && ReversePotal.Count == 1)
                         {
                             List<int> TThornNum = new List<int>();
                             List<int> FThornNum = new List<int>();
@@ -1070,10 +1070,10 @@ public class RedThornMove : MonoBehaviour
                                 Thorn[TThornNum[i]].SetActive(true);//16,17,18,19
                             for (int i = 0; i < TWallNum.Count; i++)
                                 Wall[TWallNum[i]].SetActive(true);//19,20,21
-                            check = true;
+                           
                         }
-                        
-                        if (Wall[14].transform.localPosition.y >= 0&&check==true && ReversePotal.Count == 1)//벽 15번이 0에 위치할때 실행
+                      
+                        if (Wall[14].transform.localPosition.y >= 0&& ReversePotal.Count == 1)//벽 15번이 0에 위치할때 실행
                         {
                             List<int> TThornNum = new List<int>();
                             List<int> FThornNum = new List<int>();
@@ -1106,7 +1106,7 @@ public class RedThornMove : MonoBehaviour
                                 Thorn[TThornNum[i]].SetActive(true);//16,17,18,19
                             for (int i = 0; i < TWallNum.Count; i++)
                                 Wall[TWallNum[i]].SetActive(true);//19,20,21
-                            check = false;
+                           
                         }
                         if (Thorn[37].transform.localPosition.y >= 0.5 && ReversePotal.Count == 1)
                         {
@@ -1148,13 +1148,14 @@ public class RedThornMove : MonoBehaviour
                         {
                             Potal[0].SetActive(true);
                         }
-                        if (ReversePotal.Count == 0)
+                        if (ReversePotal.Count == 0&&check==false)
                         {
                             Potal[0].SetActive(false);
                             ReversePotal.Insert(0, GameObject.Find("RedReversePortal").transform.Find("RedReverse (" + 1 + ")").gameObject);
 
                             ReversePotal2 = ReversePotal;
                             ReversePotal[0].SetActive(true);
+                            check = true;
                         }
                             break;
                     }

@@ -463,7 +463,7 @@ public class BlueThornMove : MonoBehaviour
 
 
 
-                            check = true;
+                            
                         }
                         if (Potal[0].transform.localPosition.y >= 2.5 && ReversePotal.Count == 1)
                         {
@@ -473,7 +473,7 @@ public class BlueThornMove : MonoBehaviour
                         {
                             Thorn[24].transform.localPosition = new Vector3(1.9f, moveY[24], 0);
                         }
-                        if (ReversePotal.Count == 0)
+                        if (ReversePotal.Count == 0&&check==false)
                         {
                             List<int> TThornNum = new List<int>();
                             List<int> FThornNum = new List<int>();
@@ -502,6 +502,7 @@ public class BlueThornMove : MonoBehaviour
 
                             ReversePotal2 = ReversePotal;
                             ReversePotal[0].SetActive(true);
+                            check = true;
                         }
                         if (Thorn[35].transform.localPosition.y >= -1 && ReversePotal.Count == 0)
                         {
