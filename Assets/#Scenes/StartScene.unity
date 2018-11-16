@@ -293,7 +293,7 @@ GameObject:
   - component: {fileID: 267467646}
   - component: {fileID: 267467645}
   m_Layer: 0
-  m_Name: blue_slime_clear1
+  m_Name: start_blue
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -793,7 +793,7 @@ GameObject:
   - component: {fileID: 1535887094}
   - component: {fileID: 1535887093}
   m_Layer: 0
-  m_Name: red_slime_clear1
+  m_Name: start_red
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

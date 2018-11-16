@@ -14,6 +14,7 @@ public class EndingScene : MonoBehaviour
     // Use this for initialization
     void Awake ()
     {
+
         check = false;
         blueAnimator = blue.GetComponent<Animator>();
     }
@@ -21,10 +22,11 @@ public class EndingScene : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
     {
-        if (blue.transform.localPosition.y == -800)
+        if (red.transform.localPosition.x == -79 && blue.transform.localPosition.x == 79)
         {
-            blueAnimator.Play("bluehappy1");
+            AutoFade.LoadLevel("EndingScene", 1, 1, Color.black);
         }
        
+
     }
 }
