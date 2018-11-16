@@ -123,8 +123,9 @@ public class RedMove : MonoBehaviour
             popup.gameObject.SetActive(true);
             resume.gameObject.SetActive(false);
 
-            if(PlayerPrefs.GetInt("CurStage",0)==45)
+            if (PlayerPrefs.GetInt("CurStage", 0) == 45)
                 nextStage.gameObject.SetActive(false);
+            
             else
                 nextStage.gameObject.SetActive(true);
 
