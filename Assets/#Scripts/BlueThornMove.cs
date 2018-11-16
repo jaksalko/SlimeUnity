@@ -504,7 +504,7 @@ public class BlueThornMove : MonoBehaviour
                             ReversePotal[0].SetActive(true);
                             check = true;
                         }
-                        if (Thorn[35].transform.localPosition.y >= -1 && ReversePotal.Count == 0&&check==true)
+                        if (Thorn[35].transform.localPosition.y >= -1 && ReversePotal.Count == 0)
                         {
                             Vector3 posRed = Thorn[35].transform.position;
                             Vector3 posBlue = Potal[4].transform.position;
@@ -514,7 +514,6 @@ public class BlueThornMove : MonoBehaviour
                             Potal[4].transform.position = new Vector3(tempx, tempy, 0);
                             Potal[4].transform.Rotate(0, 180, 0);
                             Thorn[35].transform.Rotate(180, 0, 0);
-                            check = false;
                         }
                         break;
                     }
@@ -660,6 +659,7 @@ public class BlueThornMove : MonoBehaviour
     void BluePotalisLooked()//화면은 움직이지 않고 슬라임이 움직일 EndPortal의 y좌표값 입력
     {
         if (EndPotal.Length > 0)
+        {
             if (EndPotal[0].localPosition.y >= -4f && EndPotal[0].localPosition.y <= -3.5f)
             {
                 //BlueMove.BlueEndPortalLook = true;
@@ -670,6 +670,7 @@ public class BlueThornMove : MonoBehaviour
             {
                 BlueMove.BlueEndPortalLook = true;
             }
+        }
     }
 
     void BlueReversePortalisLooked()//화면은 움직이지 않고 슬라임이 움직일 ReversePortal의 y좌표값 입력
