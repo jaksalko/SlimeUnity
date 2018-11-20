@@ -34,8 +34,8 @@ public class StoreManager : MonoBehaviour {
     void Start () {
        // PlayerPrefs.DeleteAll();
         a = 0;
-        PlayerPrefs.SetInt("TotalCoin", 100000);
-        PlayerPrefs.Save();
+        //PlayerPrefs.SetInt("TotalCoin", 100000);
+        //PlayerPrefs.Save();
         //Debug.Log(PlayerPrefs.GetString("RedWear", "DefaultRedToggle") + "      " + RedWearButton[2].ToString());
         for (int a = 0; a < 10; a++)
         {

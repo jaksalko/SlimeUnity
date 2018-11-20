@@ -37,35 +37,35 @@ public class MenuButton : MonoBehaviour {
        
         StageButton[1].interactable = true;
 
-        for (int i = 2; i < StageButton.Length; i++)
-
-            StageButton[i].interactable = true;
-
-
-
         //for (int i = 2; i < StageButton.Length; i++)
 
-        //{
-
-        //    if (PlayerPrefs.GetInt("ClearStage", 0) >= (i - 1))
-        //    {
-
-
-        //        StageButton[i].interactable = true;
-        //    }
-        //    else
-        //    {
-        //        StageButton[i].interactable = false;
-        //    }
-        //}
+        //    StageButton[i].interactable = true;
 
 
 
+        for (int i = 2; i < StageButton.Length; i++)
+
+        {
+
+            if (PlayerPrefs.GetInt("ClearStage", 0) >= (i - 1))
+            {
+
+
+                StageButton[i].interactable = true;
+            }
+            else
+            {
+                StageButton[i].interactable = false;
+            }
+            }
 
 
 
 
-    }
+
+
+
+        }
     public void Update()
     {
         if (Application.platform == RuntimePlatform.Android)
@@ -108,16 +108,23 @@ public class MenuButton : MonoBehaviour {
             count++;
             PlayerPrefs.SetInt("PlayCount", count);
             Debug.Log("PlayCount = " + PlayerPrefs.GetInt("PlayCount", 0));
+            PlayerPrefs.Save();
         }
         else
         {
             PlayerPrefs.SetInt("PlayCount", 0);
+            PlayerPrefs.Save();
             Debug.Log("PlayCount = " + PlayerPrefs.GetInt("PlayCount", 0));
         }
+
         if (PlayerPrefs.GetInt("PlayCount", 0) == 0)
         {
             AutoFade.LoadLevel("Stage0", 1, 1, Color.black);
             PlayerPrefs.SetInt("CurStage", 0);
+            int count = PlayerPrefs.GetInt("PlayCount", 0);
+            count++;
+            PlayerPrefs.SetInt("PlayCount", count);
+            PlayerPrefs.Save();
         }
         else
         {
@@ -127,7 +134,7 @@ public class MenuButton : MonoBehaviour {
             PlayerPrefs.SetInt("CurStage", CurStage);
             AutoFade.LoadLevel("Stage" + CurStage.ToString(), 1, 1, Color.black);
 
-
+            PlayerPrefs.Save();
             RedMove.DieCheck = 0;
         }
 
