@@ -504,7 +504,7 @@ public class BlueThornMove : MonoBehaviour
                             ReversePotal[0].SetActive(true);
                             check = true;
                         }
-                        if (Thorn[35].transform.localPosition.y >= -1 && ReversePotal.Count == 0)
+                        if (Thorn[35].transform.localPosition.y >= -1 && ReversePotal.Count == 0&&check==true)
                         {
                             Vector3 posRed = Thorn[35].transform.position;
                             Vector3 posBlue = Potal[4].transform.position;
@@ -514,6 +514,7 @@ public class BlueThornMove : MonoBehaviour
                             Potal[4].transform.position = new Vector3(tempx, tempy, 0);
                             Potal[4].transform.Rotate(0, 180, 0);
                             Thorn[35].transform.Rotate(180, 0, 0);
+                            check = false;
                         }
                         break;
                     }

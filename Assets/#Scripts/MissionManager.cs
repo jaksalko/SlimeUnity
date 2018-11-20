@@ -77,7 +77,6 @@ public class MissionManager : MonoBehaviour {
             PlayerPrefs.SetString("mission11", "cn");//mission 0을 cn 상태로 바꿔줌
         }
 
-
         for (int i = 0; i < treasureButton.Length; i++)//미션 상황에 따라 버튼의 이미지를 설정
         {
 

@@ -11,6 +11,7 @@ public class Ending2 : MonoBehaviour
     // Use this for initialization
     void Awake ()
     {
+        Screen.SetResolution(1080, 1920, true);
         for (int i = 0; i < Red.Length; i++)
         {
             Red[i] = GameObject.Find("RedRain").transform.Find("RedHeart (" + i + ")").gameObject;

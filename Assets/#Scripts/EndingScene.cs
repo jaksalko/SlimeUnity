@@ -17,6 +17,7 @@ public class EndingScene : MonoBehaviour
 
         check = false;
         blueAnimator = blue.GetComponent<Animator>();
+        Screen.SetResolution(1080, 1920, true);
     }
 	
 	// Update is called once per frame
